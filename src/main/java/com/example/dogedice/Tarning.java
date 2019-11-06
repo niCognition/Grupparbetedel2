@@ -20,7 +20,7 @@ public class Tarning {
   }
 
 
-  public int getvarde() {
+  public int getVarde() {
     return varde;
   }
 }
