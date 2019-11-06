@@ -87,7 +87,7 @@ public class Resultat {
     }
     return 0;
   }
-  
+
   public int kontrolleraKåk(int[] kast){
     if ((kontrolleraTretal(kast) != 0)) {
       if ((kontrolleraTretal(kast)/3) != (kontrolleraPar(kast)/2)){
