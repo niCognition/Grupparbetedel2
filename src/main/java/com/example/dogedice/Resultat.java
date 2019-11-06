@@ -153,4 +153,18 @@ public class Resultat {
     return resultat;
   }
 
+  public int[] sortera(int[] vardenAttSortera) {
+    int len = vardenAttSortera.length;
+
+    for (int i = 0; i < len; i++) {
+      for (int j = len - 1; j > i; j--) {
+        if (vardenAttSortera[j] > vardenAttSortera[j - 1]) {
+          int tmp = vardenAttSortera[j];
+          vardenAttSortera[j] = vardenAttSortera[j - 1];
+          vardenAttSortera[j - 1] = tmp;
+        }
+      }
+    }
+    return vardenAttSortera;
+  }
 }
