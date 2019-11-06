@@ -43,6 +43,9 @@ public class Resultat {
 
 
   public int kontrolleraPar(int[]kast) {
+
+    kast = sortera(kast);
+
     for (int i = 0; i < 4; i++) {
       if (kast[i] == kast[i + 1]) {
         return 2 * kast[i];
@@ -52,6 +55,9 @@ public class Resultat {
   }
 
   public int kontrolleraTvaPar(int[] kast){
+
+    kast = sortera(kast);
+
     for (int i = 0; i < 2; i++){
       if (kast[i] == kast[i + 1]){
         for (int j = i+2; j<4; j++){
@@ -65,6 +71,9 @@ public class Resultat {
   }
 
   public int kontrolleraTretal(int[] kast){
+
+    kast = sortera(kast);
+
     for (int i = 0; i < 3; i++){
       if (kast[i] == kast [i+1]){
         if (kast[i+1] == kast[i+2]){
@@ -76,6 +85,9 @@ public class Resultat {
   }
 
   public int kontrolleraFyrtal(int[] kast){
+
+    kast = sortera(kast);
+
     for (int i = 0; i < 2; i++){
       if (kast[i] == kast [i+1]){
         if (kast[i+1] == kast[i+2]){
@@ -89,6 +101,9 @@ public class Resultat {
   }
 
   public int kontrolleraKak(int[] kast){
+
+    kast = sortera(kast);
+
     if ((kontrolleraTretal(kast) != 0)) {
       if ((kontrolleraTretal(kast)/3) != (kontrolleraPar(kast)/2)){
         return kontrolleraTretal(kast) + kontrolleraPar(kast);
@@ -109,6 +124,9 @@ public class Resultat {
   }
 
   public int kontrolleraLitenStege(int[] kast){
+
+    kast = sortera(kast);
+
     for (int i = 4; i > 2; i--){
       if ((kontrolleraPar(kast) == 0) && (kast[0] == 5)){
         return 15;
@@ -118,6 +136,9 @@ public class Resultat {
   }
 
   public int kontrolleraStorStege(int[] kast){
+
+    kast = sortera(kast);
+
     for (int i = 4; i > 2; i--){
       if ((kontrolleraPar(kast) == 0) && (kast[4] == 2)){
         return 20;
@@ -127,6 +148,7 @@ public class Resultat {
   }
 
   public int kontrolleraChans(int[] kast){
+
     int resultat = 0;
     for (int i = 0; i < 5; i++){
       resultat += kast[i];
@@ -135,13 +157,16 @@ public class Resultat {
   }
 
   public int kontrolleraYatzy(int[] kast){
+
+    kast = sortera(kast);
+
     if (kast[0] == kast[4]){
       return 50;
     }
     return 0;
   }
 
-  public int antal( int[] kast, int eftersoktNummer){
+  private int antal( int[] kast, int eftersoktNummer){
 
     int resultat = 0;
 
@@ -153,7 +178,7 @@ public class Resultat {
     return resultat;
   }
 
-  public int[] sortera(int[] vardenAttSortera) {
+  private int[] sortera(int[] vardenAttSortera) {
     int len = vardenAttSortera.length;
 
     for (int i = 0; i < len; i++) {
