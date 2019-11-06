@@ -88,20 +88,20 @@ public class Resultat {
     return 0;
   }
 
-  public int kontrolleraKåk(int[] kast){
+  public int kontrolleraKak(int[] kast){
     if ((kontrolleraTretal(kast) != 0)) {
       if ((kontrolleraTretal(kast)/3) != (kontrolleraPar(kast)/2)){
         return kontrolleraTretal(kast) + kontrolleraPar(kast);
       }
       else {
-        int[] omväntKast = new int[5];
-        omväntKast[0] = kast[5];
-        omväntKast[1] = kast[4];
-        omväntKast[2] = kast[2];
-        omväntKast[3] = kast[1];
-        omväntKast[4] = kast[0];
-        if ((kontrolleraTretal(kast)/3) != (kontrolleraPar(omväntKast)/2)){
-          return kontrolleraTretal(kast) + kontrolleraPar(omväntKast);
+        int[] omvantKast = new int[5];
+        omvantKast[0] = kast[4];
+        omvantKast[1] = kast[3];
+        omvantKast[2] = kast[2];
+        omvantKast[3] = kast[1];
+        omvantKast[4] = kast[0];
+        if ((kontrolleraTretal(kast)/3) != (kontrolleraPar(omvantKast)/2)){
+          return kontrolleraTretal(kast) + kontrolleraPar(omvantKast);
         }
       }
     }
@@ -119,7 +119,7 @@ public class Resultat {
 
   public int kontrolleraStorStege(int[] kast){
     for (int i = 4; i > 2; i--){
-      if ((kontrolleraPar(kast) == 0) && (kast[5] == 2)){
+      if ((kontrolleraPar(kast) == 0) && (kast[4] == 2)){
         return 20;
       }
     }
@@ -135,7 +135,7 @@ public class Resultat {
   }
 
   public int kontrolleraYatzy(int[] kast){
-    if (kast[0] == kast[5]){
+    if (kast[0] == kast[4]){
       return 50;
     }
     return 0;
