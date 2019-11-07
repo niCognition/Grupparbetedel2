@@ -27,6 +27,7 @@ public class Main extends Application {
     FlowPane rootNode = new FlowPane(Orientation.VERTICAL);
     rootNode.setVgap(10);
 
+    //Skapar HBox
     HBox quitInfo = new HBox();
     //Sätter mellanrummet mellan Quit och Info knapp
     quitInfo.setSpacing(157);
@@ -54,10 +55,12 @@ public class Main extends Application {
     Button highScore = new Button("High Score");
     highScore.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 28; -fx-font-size: 30pt");
 
+    //Kod för att lägga till bild som knapp för quit
     Button quit = new Button();
     quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     quit.setAlignment(Pos.BOTTOM_LEFT);
 
+    //Kod för att lägga till bild som knapp för info
     Button info = new Button();
     info.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://www.iconsdb.com/icons/preview/tropical-blue/info-xxl.png'); -fx-background-size: 65px 65px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     info.setAlignment(Pos.BOTTOM_RIGHT);
