@@ -1,5 +1,7 @@
 package com.example.dogedice;
 
+//Niclas
+
 /* As far as I understand it has something to do with jfx only being available
  * as a jar, and any class the Main class extends needs to be available as a module.
  * Since JFX isn't available as a module, this is our only solution.
