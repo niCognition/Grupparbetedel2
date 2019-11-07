@@ -23,4 +23,8 @@ public class Tarning {
   public int getVarde() {
     return varde;
   }
+
+  public void setVarde(int varde){
+    this.varde = varde;
+  }
 }
