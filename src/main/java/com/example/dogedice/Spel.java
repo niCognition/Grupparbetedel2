@@ -16,7 +16,6 @@ public class Spel {
     while (kastOmgang < 16) {
 
       for (int i = 0; i < 5; i++) {
-         kastOmgang[i] = tarningar.getVarde();
         System.out.println(i);
       }
       return kastOmgang;
