@@ -26,15 +26,14 @@ public class Main extends Application {
     // Use a FlowPane for the root node.
     FlowPane rootNode = new FlowPane(Orientation.VERTICAL);
     rootNode.setVgap(10);
+    //Center the controls in the scene.
+    rootNode.setAlignment(Pos.CENTER);
 
     //Skapar HBox
     HBox quitInfo = new HBox();
     //Sätter mellanrummet mellan Quit och Info knapp
     quitInfo.setSpacing(157);
     quitInfo.setAlignment(Pos.CENTER);
-
-    //Center the controls in the scene.
-    rootNode.setAlignment(Pos.CENTER);
 
     // Create a scene.
     Scene startSida = new Scene(rootNode, 400, 500);
@@ -64,11 +63,6 @@ public class Main extends Application {
     Button info = new Button();
     info.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://www.iconsdb.com/icons/preview/tropical-blue/info-xxl.png'); -fx-background-size: 65px 65px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     info.setAlignment(Pos.BOTTOM_RIGHT);
-
-
-    // Create a label, then add the label to the scene graph.
-    //Label myLabel = new Label("JavaFX is a powerful GUI");
-    //rootNode.getChildren().add(myLabel);
 
     quitInfo.getChildren().addAll(quit, info);
 
