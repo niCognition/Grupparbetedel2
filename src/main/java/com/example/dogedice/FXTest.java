@@ -112,7 +112,9 @@ public class FXTest extends Application {
 
     // Show the stage and its scene.
     //myStage.show();
-    visaHighScore(myStage);
+    HighScoreSida highScoreSida = new HighScoreSida();
+    highScoreSida.visaHighScore(myStage);
+    //visaHighScore(myStage);
   }
 
   public void visaHighScore(Stage myStage) {
