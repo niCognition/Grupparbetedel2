@@ -18,7 +18,6 @@ public class Main extends Application {
     FakeMain startSida = new FakeMain();
     startSida.visaStartSida(myStage);
 
-
   }
 }
 
