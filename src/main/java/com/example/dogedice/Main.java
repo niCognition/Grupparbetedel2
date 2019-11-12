@@ -27,12 +27,16 @@ public class Main extends Application {
 
 
     //Visar Highscoresidan
-    //HighScoreSida highScoreSida = new HighScoreSida();
+    //HighScoreSida highScoreSida = new HighScoreSida(myStage);
     //highScoreSida.visaHighScore(myStage);
 
     //Visar AntalSpelareSidan
-    //AntalSpelareSida antalSpelareSida = new AntalSpelareSida();
+    //AntalSpelareSida antalSpelareSida = new AntalSpelareSida(myStage);
     //antalSpelareSida.visaAntalSpelareSida(myStage);
+
+    //Visar protokollet
+    Protokoll protokoll = new Protokoll(myStage);
+    protokoll.visaProtokoll(myStage);
   }
 }
 

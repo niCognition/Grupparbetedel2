@@ -1,5 +1,7 @@
 package com.example.dogedice;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -14,6 +16,7 @@ import javafx.stage.Stage;
 
 public class AntalSpelareSida {
 
+  private Stage myStage;
   private Scene antalSpelareScen;
 
   private RadioButton enSpelare;
@@ -25,7 +28,9 @@ public class AntalSpelareSida {
   private Button quit;
   private Button vidare;
 
-  public AntalSpelareSida(){
+  public AntalSpelareSida(Stage myStage){
+
+    this.myStage = myStage;
     enSpelare = new RadioButton();
     tvaSpelare = new RadioButton();
     treSpelare = new RadioButton();
@@ -51,12 +56,14 @@ public class AntalSpelareSida {
     rubrik.setPadding(new Insets(10, 10, 30, 10));
 
     ToggleGroup antalKnappar = new ToggleGroup();
+
     Insets knappPadding = new Insets(10, 10, 10, 50);
 
     enSpelare.setText("1 spelare");
     enSpelare.setToggleGroup(antalKnappar);
     enSpelare.setStyle("-fx-font-size: 20pt");
     enSpelare.setPadding(knappPadding);
+    enSpelare.setSelected(true);
 
     tvaSpelare.setText("2 spelare");
     tvaSpelare.setToggleGroup(antalKnappar);
@@ -78,11 +85,35 @@ public class AntalSpelareSida {
     femSpelare.setStyle("-fx-font-size: 20pt");
     femSpelare.setPadding(knappPadding);
 
+
+
+
     quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     quit.setAlignment(Pos.BOTTOM_LEFT);
 
     vidare.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sTy5PQ5M6cgzvrXj8QAi7OxvIkeMzeefq4WdX89Yxh51Zj7QEQ&s'); -fx-background-size: 40px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     vidare.setAlignment(Pos.BOTTOM_RIGHT);
+    vidare.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        RadioButton valtAntal = (RadioButton) antalKnappar.getSelectedToggle();
+        int antal = 0;
+
+        if (valtAntal.equals(enSpelare)){
+          antal = 1;
+        } else if (valtAntal.equals(tvaSpelare)){
+          antal = 2;
+        } else if (valtAntal.equals(treSpelare)){
+          antal = 3;
+        } else if (valtAntal.equals(fyraSpelare)){
+          antal = 4;
+        } else if (valtAntal.equals(femSpelare)){
+          antal = 5;
+        }
+
+        //till skriv in namn-sidan, skicka med antal
+      }
+    });
 
     HBox quitVidare = new HBox();
 

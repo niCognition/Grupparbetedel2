@@ -58,7 +58,7 @@ public class StartSida {
     starta.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
-        AntalSpelareSida antalSpelareSida = new AntalSpelareSida();
+        AntalSpelareSida antalSpelareSida = new AntalSpelareSida(myStage);
         antalSpelareSida.visaAntalSpelareSida(myStage);
       }
     });
@@ -68,7 +68,7 @@ public class StartSida {
     highScore.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
-        HighScoreSida highScoreSida = new HighScoreSida();
+        HighScoreSida highScoreSida = new HighScoreSida(myStage);
         highScoreSida.visaHighScore(myStage);
       }
     });

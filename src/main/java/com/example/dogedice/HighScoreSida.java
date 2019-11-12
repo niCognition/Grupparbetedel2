@@ -1,5 +1,7 @@
 package com.example.dogedice;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -14,25 +16,25 @@ import java.util.ArrayList;
 
 public class HighScoreSida {
 
+  private Stage myStage;
   private Scene highScoreScene;
 
   private Label plats1;
   private Label plats2;
   private Label plats3;
 
-  private Button quit;
-  private Button vidare;
+  private Button tillbaka;
 
   private int[] highScore;
 
-  public HighScoreSida(){
+  public HighScoreSida(Stage myStage){
 
+    this.myStage = myStage;
     plats1 = new Label("Plats 1");
     plats2 = new Label("Plats 2");
     plats3 = new Label("Plats 3");
 
-    quit = new Button();
-    vidare = new Button();
+    tillbaka = new Button();
     highScore = new int[3];
     setUpSida();
   }
@@ -62,22 +64,17 @@ public class HighScoreSida {
     plats3.setStyle("-fx-font-size: 20pt");
     plats3.setPadding(labelPadding);
 
-    quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
-    quit.setAlignment(Pos.BOTTOM_LEFT);
+    tillbaka.setStyle("-fx-padding: 15 28 15 28; -fx-background-image: url('https://www.netclipart.com/pp/m/0-8877_green-arrow-clipart-green-arrows.png'); -fx-background-size: 50px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    tillbaka.setAlignment(Pos.BOTTOM_LEFT);
+    tillbaka.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        StartSida startSida = new StartSida(myStage);
+        startSida.visaStartSida(myStage);
+      }
+    });
 
-
-    vidare.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sTy5PQ5M6cgzvrXj8QAi7OxvIkeMzeefq4WdX89Yxh51Zj7QEQ&s'); -fx-background-size: 40px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
-    vidare.setAlignment(Pos.BOTTOM_RIGHT);
-
-    HBox quitVidare = new HBox();
-
-    quitVidare.setSpacing(157);
-    quitVidare.setAlignment(Pos.CENTER);
-    quitVidare.setPadding(new Insets(30, 10, 10, 10 ));
-
-    quitVidare.getChildren().addAll(quit, vidare);
-
-    rootNode.getChildren().addAll(rubrik, plats1, plats2, plats3, quitVidare);
+    rootNode.getChildren().addAll(rubrik, plats1, plats2, plats3, tillbaka);
 
   }
 
