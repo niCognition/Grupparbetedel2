@@ -14,10 +14,13 @@ public class Main extends Application {
 
   // Override the start() method.
   public void start(Stage myStage) {
+    //Visar startsidan
+    //StartSida startSida = new StartSida();
+    //startSida.visaStartSida(myStage);
 
-    FakeMain startSida = new FakeMain();
-    startSida.visaStartSida(myStage);
-
+    //Visar Infosidan
+    //InfoSida infoSida = new InfoSida();
+    //infoSida.visaInfoSida(myStage);
   }
 }
 

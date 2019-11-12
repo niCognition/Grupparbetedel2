@@ -1,7 +1,5 @@
 package com.example.dogedice;
 
-//Niclas regel/info javafx
-
 import javafx.application.*;
 import javafx.geometry.Pos;
 import javafx.scene.*;
@@ -11,29 +9,32 @@ import javafx.scene.control.*;
 import javafx.geometry.*;
 import javafx.scene.text.Text;
 
-import java.awt.event.MouseEvent;
-import java.beans.EventHandler;
+public class InfoSida {
 
-public class Info extends Application {
-  public static void main(String[] args) {
-    // Start the JavaFX application by calling launch().
-    launch(args);
+  private Scene infoScen;
+  private Label regelLabel;
+  private Text regelText;
+  private Text infoText;
+  private Button tillbaka;
+
+  public InfoSida(){
+
+    regelLabel = new Label("Regler");
+    regelText = new Text();
+    infoText = new Text();
+    tillbaka = new Button();
+    setUpInfoSida();
   }
 
-  // Override the start() method.
-  public void start(Stage myStage) {
-
-    //Skapar en vertikal flowpane för att separera regler och info text
+  private void setUpInfoSida(){
     FlowPane reglerInfo = new FlowPane(Orientation.VERTICAL);
     reglerInfo.setVgap(30);
     reglerInfo.setAlignment(Pos.CENTER);
 
-    Label regelLabel = new Label("Regler");
+    infoScen = new Scene(reglerInfo, 400, 500);
+
     regelLabel.setStyle("-fx-font-size: 30pt");
 
-    //Skapar ett text objekt för regel text.
-    Text regelText = new Text();
-    //Regeltext.
     regelText.setText("Yatzy g"+(char) 229+"r ut p"+(char) 229+" att med hj"+(char) 228+"lp av 5 t"+(char) 228+"rningar samla ihop " +
         "\ns"+(char) 229+" m"+(char) 229+"nga po"+(char) 228+"ng som m"+(char) 246+"jligt. " +
         "\nMan sl"+(char) 229+"r sina 5 t"+(char) 228+"rningar, alla p"+(char) 229+" en g"+(char) 229+"ng" +
@@ -49,27 +50,19 @@ public class Info extends Application {
         "\nSpelet "+(char) 228+"r slut n"+(char) 228+"r alla spelare har skrivit n"+(char) 229+"got i samtliga rutor." +
         "\nD"+(char) 229+" r"+(char) 228+"knas po"+(char) 228+"ngen samman och spelaren med flest po"+(char) 228+"ng vinner.");
 
-    //Skapar ett text objekt för info text.
-    Text infoText = new Text();
-    //Info om oss.
     infoText.setText("Vi som skapat detta spel heter Karin, Niclas, Mohamed och Ronald");
 
-    Scene infoSida = new Scene(reglerInfo, 400, 500);
-
-    myStage.setTitle("YATZY");
-    myStage.setScene(infoSida);
-
-    //Bild eller Text "Tillbaka" på knappen.
-    Button tillbaka = new Button();
     tillbaka.setStyle("-fx-padding: 10 50 10 50; -fx-background-image: url('https://www.searchpng.com/wp-content/uploads/2019/02/Back-Arrow-Icon-PNG-1024x1024.png'); -fx-background-size: 135px 65px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     tillbaka.setAlignment(Pos.BOTTOM_LEFT);
 
-
-
     reglerInfo.getChildren().addAll(regelLabel, regelText, infoText, tillbaka);
 
-    myStage.show();
-
   }
-}
 
+  public void visaInfoSida(Stage myStage) {
+
+    myStage.setScene(infoScen);
+    myStage.show();
+  }
+
+}
