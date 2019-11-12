@@ -14,7 +14,6 @@ public class Spel {
 
   public int spela() {
     while (kastOmgang < 16) {
-
       for (int i = 0; i < 5; i++) {
         System.out.println(i);
       }
@@ -22,7 +21,5 @@ public class Spel {
 
     }
     return 0;
-
   }
-
 }
