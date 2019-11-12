@@ -1,46 +1,50 @@
 package com.example.dogedice;
 
-// Karins testklass
-//Sidan med antal spelare och highscoresidan
-
-import javafx.application.*;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.*;
-import javafx.stage.*;
-import javafx.scene.layout.*;
-import javafx.scene.control.*;
-import javafx.geometry.*;
-import javafx.scene.text.Text;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
-public class FXTest extends Application {
-  public static void main(String[] args) {
-    // Start the JavaFX application by calling launch().
-    launch(args);
+public class AntalSpelareSida {
+
+  private Scene antalSpelareScen;
+
+  private RadioButton enSpelare;
+  private RadioButton tvaSpelare;
+  private RadioButton treSpelare;
+  private RadioButton fyraSpelare;
+  private RadioButton femSpelare;
+
+  private Button quit;
+  private Button vidare;
+
+  public AntalSpelareSida(){
+    enSpelare = new RadioButton();
+    tvaSpelare = new RadioButton();
+    treSpelare = new RadioButton();
+    fyraSpelare = new RadioButton();
+    femSpelare = new RadioButton();
+
+    quit = new Button();
+    vidare = new Button();
+    setUpSida();
   }
 
-  // Override the start() method.
-  public void start(Stage myStage) {
+  private void setUpSida(){
 
-    // Give the stage a title.
-    myStage.setTitle("Yatzy!");
-
-    // Use a FlowPane for the root node.
     FlowPane rootNode = new FlowPane();
-
-
     rootNode.setOrientation(Orientation.VERTICAL);
     rootNode.setAlignment(Pos.CENTER);
-   // rootNode.setPadding(new Insets(10, 10, 10, 10));
-    //Center the controls in the scene.
 
+    antalSpelareScen = new Scene(rootNode, 400, 500);
 
-    // Create a scene.
-    Scene antalSpelare = new Scene(rootNode, 400, 500);
-
-    // Set the scene on the stage.
-    myStage.setScene(antalSpelare);
-
-    // Lägger till en label med texten "Yatzy!" och sätter storleken på texten till 30pt
     Label rubrik = new Label("Ange antal spelare");
     rubrik.setAlignment(Pos.CENTER);
     rubrik.setStyle("-fx-font-size: 30pt");
@@ -49,42 +53,34 @@ public class FXTest extends Application {
     ToggleGroup antalKnappar = new ToggleGroup();
     Insets knappPadding = new Insets(10, 10, 10, 50);
 
-    // Lägger till en knapp för att starta spelet.
-    RadioButton enSpelare = new RadioButton();
     enSpelare.setText("1 spelare");
     enSpelare.setToggleGroup(antalKnappar);
     enSpelare.setStyle("-fx-font-size: 20pt");
     enSpelare.setPadding(knappPadding);
 
-    RadioButton tvaSpelare = new RadioButton();
     tvaSpelare.setText("2 spelare");
     tvaSpelare.setToggleGroup(antalKnappar);
     tvaSpelare.setStyle("-fx-font-size: 20pt");
     tvaSpelare.setPadding(knappPadding);
 
-    RadioButton treSpelare = new RadioButton();
     treSpelare.setText("3 spelare");
     treSpelare.setToggleGroup(antalKnappar);
     treSpelare.setStyle("-fx-font-size: 20pt");
     treSpelare.setPadding(knappPadding);
 
-    RadioButton fyraSpelare = new RadioButton();
     fyraSpelare.setText("4 spelare");
     fyraSpelare.setToggleGroup(antalKnappar);
     fyraSpelare.setStyle("-fx-font-size: 20pt");
     fyraSpelare.setPadding(knappPadding);
 
-    RadioButton femSpelare = new RadioButton();
     femSpelare.setText("5 spelare");
     femSpelare.setToggleGroup(antalKnappar);
     femSpelare.setStyle("-fx-font-size: 20pt");
     femSpelare.setPadding(knappPadding);
 
-    Button quit = new Button();
     quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     quit.setAlignment(Pos.BOTTOM_LEFT);
 
-    Button vidare = new Button();
     vidare.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sTy5PQ5M6cgzvrXj8QAi7OxvIkeMzeefq4WdX89Yxh51Zj7QEQ&s'); -fx-background-size: 40px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     vidare.setAlignment(Pos.BOTTOM_RIGHT);
 
@@ -96,28 +92,13 @@ public class FXTest extends Application {
 
     quitVidare.getChildren().addAll(quit, vidare);
 
-
-
     rootNode.getChildren().addAll(rubrik, enSpelare, tvaSpelare, treSpelare, fyraSpelare, femSpelare, quitVidare);
-
-    // Lägger till en knapp för att visa High Score.
-    Button highScore = new Button("High Score");
-    highScore.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 50; -fx-font-size: 30pt");
-
-    // Create a label, then add the label to the scene graph.
-    //Label myLabel = new Label("JavaFX is a powerful GUI");
-    //rootNode.getChildren().add(myLabel);
-
-
-
-    // Show the stage and its scene.
-    //myStage.show();
-    HighScoreSida highScoreSida = new HighScoreSida();
-    highScoreSida.visaHighScore(myStage);
-
-    AntalSpelareSida antalSpelareSida = new AntalSpelareSida();
-    antalSpelareSida.visaAntalSpelareSida(myStage);
   }
 
+  public void visaAntalSpelareSida(Stage myStage){
+
+    myStage.setScene(antalSpelareScen);
+    myStage.show();
+  }
 
 }
