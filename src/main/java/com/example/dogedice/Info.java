@@ -11,6 +11,9 @@ import javafx.scene.control.*;
 import javafx.geometry.*;
 import javafx.scene.text.Text;
 
+import java.awt.event.MouseEvent;
+import java.beans.EventHandler;
+
 public class Info extends Application {
   public static void main(String[] args) {
     // Start the JavaFX application by calling launch().
@@ -60,6 +63,10 @@ public class Info extends Application {
     Button tillbaka = new Button();
     tillbaka.setStyle("-fx-padding: 10 50 10 50; -fx-background-image: url('https://www.searchpng.com/wp-content/uploads/2019/02/Back-Arrow-Icon-PNG-1024x1024.png'); -fx-background-size: 135px 65px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     tillbaka.setAlignment(Pos.BOTTOM_LEFT);
+
+    EventHandler<MouseEvent> tillbakaTillStart = new EventHandler<MouseEvent>() {
+      public void
+    }
 
     reglerInfo.getChildren().addAll(regelLabel, regelText, infoText, tillbaka);
 
