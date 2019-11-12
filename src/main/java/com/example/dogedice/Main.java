@@ -22,8 +22,8 @@ public class Main extends Application {
     //InfoSida infoSida = new InfoSida();
     //infoSida.visaInfoSida(myStage);
 
-    Namnge namnge = new Namnge(myStage);
-    namnge.visaNamnge(myStage);
+   // Namnge namnge = new Namnge(myStage);
+    //namnge.visaNamnge(myStage);
 
 
     //Visar Highscoresidan
