@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 public class StartSida {
 
@@ -50,7 +52,6 @@ public class StartSida {
 
     // Stil för Starta spel knapp
     starta.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 30; -fx-font-size: 30pt");
-
 
     // Stil på High Score knapp
     highScore.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 28; -fx-font-size: 30pt");

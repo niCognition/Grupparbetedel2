@@ -52,7 +52,7 @@ public class InfoSida {
 
     infoText.setText("Vi som skapat detta spel heter Karin, Niclas, Mohamed och Ronald");
 
-    tillbaka.setStyle("-fx-padding: 10 50 10 50; -fx-background-image: url('https://www.searchpng.com/wp-content/uploads/2019/02/Back-Arrow-Icon-PNG-1024x1024.png'); -fx-background-size: 135px 65px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    tillbaka.setStyle("-fx-padding: 15 28 15 28; -fx-background-image: url('https://www.netclipart.com/pp/m/0-8877_green-arrow-clipart-green-arrows.png'); -fx-background-size: 50px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     tillbaka.setAlignment(Pos.BOTTOM_LEFT);
 
     reglerInfo.getChildren().addAll(regelLabel, regelText, infoText, tillbaka);
