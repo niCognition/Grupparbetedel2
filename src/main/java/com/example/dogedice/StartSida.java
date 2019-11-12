@@ -20,8 +20,11 @@ public class StartSida {
   private Button highScore;
   private Button quit;
   private Button info;
+  private Stage myStage;
 
-  public StartSida(){
+  public StartSida(Stage myStage){
+
+    this.myStage = myStage;
     quitInfo = new HBox();
     yatzy = new Label();
     starta = new Button("Starta Spel");
@@ -52,9 +55,23 @@ public class StartSida {
 
     // Stil för Starta spel knapp
     starta.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 30; -fx-font-size: 30pt");
+    starta.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        AntalSpelareSida antalSpelareSida = new AntalSpelareSida();
+        antalSpelareSida.visaAntalSpelareSida(myStage);
+      }
+    });
 
     // Stil på High Score knapp
     highScore.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 28; -fx-font-size: 30pt");
+    highScore.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        HighScoreSida highScoreSida = new HighScoreSida();
+        highScoreSida.visaHighScore(myStage);
+      }
+    });
 
     //Stil och position på Quit knapp
     quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
@@ -63,6 +80,13 @@ public class StartSida {
     //Stil och position för info knapp
     info.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://www.iconsdb.com/icons/preview/tropical-blue/info-xxl.png'); -fx-background-size: 65px 65px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     info.setAlignment(Pos.BOTTOM_RIGHT);
+    info.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        InfoSida infoSida = new InfoSida(myStage);
+        infoSida.visaInfoSida(myStage);
+      }
+    });
 
     quitInfo.getChildren().addAll(quit, info);
 

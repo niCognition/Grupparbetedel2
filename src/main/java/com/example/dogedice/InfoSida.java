@@ -11,14 +11,16 @@ import javafx.scene.text.Text;
 
 public class InfoSida {
 
+  private Stage myStage;
   private Scene infoScen;
   private Label regelLabel;
   private Text regelText;
   private Text infoText;
   private Button tillbaka;
 
-  public InfoSida(){
+  public InfoSida(Stage myStage){
 
+    this.myStage = myStage;
     regelLabel = new Label("Regler");
     regelText = new Text();
     infoText = new Text();
