@@ -21,6 +21,14 @@ public class Main extends Application {
     //Visar Infosidan
     //InfoSida infoSida = new InfoSida();
     //infoSida.visaInfoSida(myStage);
+
+    //Visar Highscoresidan
+    //HighScoreSida highScoreSida = new HighScoreSida();
+    //highScoreSida.visaHighScore(myStage);
+
+    //Visar AntalSpelareSidan
+    //AntalSpelareSida antalSpelareSida = new AntalSpelareSida();
+    //antalSpelareSida.visaAntalSpelareSida(myStage);
   }
 }
 
