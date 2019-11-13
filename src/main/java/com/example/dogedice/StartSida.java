@@ -76,17 +76,14 @@ public class StartSida {
     //Stil och position på Quit knapp
     quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     quit.setAlignment(Pos.BOTTOM_LEFT);
-    /*
-    //Eventhandler för quit knapp som tar användaren till avsluta sidan när den är färdig.
-
     quit.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
-        "AvslutaSida avslutaSida" = new "AvslutaSida(myStage);
-        avslutaSida.visaAvslutaSida(myStage);
+        Avslut avslut = new Avslut(myStage);
+        avslut.visaAvslut(myStage);
       }
     });
-     */
+
 
     //Stil och position för info knapp
     info.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://www.iconsdb.com/icons/preview/tropical-blue/info-xxl.png'); -fx-background-size: 65px 65px; -fx-background-repeat: no-repeat; -fx-background-position: center");
