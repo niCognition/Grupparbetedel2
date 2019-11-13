@@ -25,6 +25,9 @@ public class Main extends Application {
    // Namnge namnge = new Namnge(myStage);
     //namnge.visaNamnge(myStage);
 
+    Avslut avslut = new Avslut(myStage);
+    avslut.visaAvslut(myStage);
+
 
     //Visar Highscoresidan
     //HighScoreSida highScoreSida = new HighScoreSida(myStage);
@@ -35,8 +38,8 @@ public class Main extends Application {
     //antalSpelareSida.visaAntalSpelareSida(myStage);
 
     //Visar protokollet
-    Protokoll protokoll = new Protokoll(myStage);
-    protokoll.visaProtokoll(myStage);
+   // Protokoll protokoll = new Protokoll(myStage);
+    //protokoll.visaProtokoll(myStage);
   }
 }
 
