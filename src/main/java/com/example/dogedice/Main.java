@@ -5,6 +5,8 @@ package com.example.dogedice;
 import javafx.application.*;
 import javafx.stage.*;
 
+import java.util.ArrayList;
+
 
 public class Main extends Application {
   public static void main(String[] args) {
@@ -35,8 +37,16 @@ public class Main extends Application {
     //antalSpelareSida.visaAntalSpelareSida(myStage);
 
     //Visar protokollet
-    Protokoll protokoll = new Protokoll(myStage);
-    protokoll.visaProtokoll(myStage);
+    //ArrayList<Spelare> testSpelare = new ArrayList<Spelare>();
+   // testSpelare.add(new Spelare("Karin", 1));
+    //testSpelare.add(new Spelare( "Niclas", 2));
+    //testSpelare.add(new Spelare("Ronald", 3));
+    //testSpelare.add (new Spelare("Mohamed", 4));
+    //testSpelare.add(new Spelare("Jerry", 5));
+    //Spel testSpel = new Spel(testSpelare);
+    //testSpel.getTarningar().kasta();
+   // Protokoll protokoll = new Protokoll(myStage, testSpel);
+    //protokoll.visaProtokoll(myStage);
   }
 }
 

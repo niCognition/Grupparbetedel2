@@ -13,6 +13,13 @@ public class Spel {
     this.tarningar = new Tarningar();
   }
 
+  public ArrayList<Spelare> getSpelare(){
+    return spelare;
+  }
+
+  public Tarningar getTarningar(){
+    return tarningar;
+  }
 
   public void spela () {
     while (kastOmgang < 16) {
