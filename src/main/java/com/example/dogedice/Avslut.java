@@ -1,5 +1,6 @@
 package com.example.dogedice;
 
+import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -24,8 +25,15 @@ import javafx.stage.Stage;
       avsluta = new Button("Avsluta");
       cancel = new Button("Cancel");
       tillbaka = new Button("Tillbaka");
+      avsluta.setOnAction(e-> closeProgram());
+
       setUpAvslut();
 
+
+    }
+
+    private void closeProgram(){
+      myStage.close();
     }
 
     private void setUpAvslut() {
@@ -42,6 +50,9 @@ import javafx.stage.Stage;
       gridPane.add(avsluta, 0, 1);
       gridPane.add(cancel, 0, 2);
       gridPane.add(tillbaka, 0, 3);
+
+
+
 
     }
     public void visaAvslut (Stage myStege){
