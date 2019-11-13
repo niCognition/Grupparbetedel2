@@ -1,6 +1,8 @@
 package com.example.dogedice;
 
 import javafx.application.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.stage.*;
@@ -56,6 +58,13 @@ public class InfoSida {
 
     tillbaka.setStyle("-fx-padding: 15 28 15 28; -fx-background-image: url('https://www.netclipart.com/pp/m/0-8877_green-arrow-clipart-green-arrows.png'); -fx-background-size: 50px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     tillbaka.setAlignment(Pos.BOTTOM_LEFT);
+    tillbaka.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        StartSida startSida = new StartSida(myStage);
+        startSida.visaStartSida(myStage);
+      }
+    });
 
     reglerInfo.getChildren().addAll(regelLabel, regelText, infoText, tillbaka);
 

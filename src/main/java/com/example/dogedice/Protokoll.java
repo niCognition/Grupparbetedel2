@@ -184,7 +184,7 @@ public class Protokoll {
     text04 = new Text(" ");
     text05 = new Text(" ");
     text1 = new Text("Ettor");
-    text2 = new Text("Tvåor");
+    text2 = new Text("Tv"+(char) 229+"or");
     text3 = new Text("Treor");
     text4 = new Text("Fyror");
     text5 = new Text("Femmor");
@@ -192,10 +192,10 @@ public class Protokoll {
     text7 = new Text("SUMMA: ");
     text8 = new Text("BONUS(50) ");
     text9 = new Text("Par");
-    text10 = new Text("Två Par");
+    text10 = new Text("Tv"+(char) 229+" Par");
     text11 = new Text("Triss");
     text12 = new Text("Fyrtal");
-    text13 = new Text("Kåk");
+    text13 = new Text("K"+(char) 229+"k");
     text14 = new Text("Liten Stege");
     text15 = new Text("Stor Stege");
     text16 = new Text("Chans");
@@ -221,11 +221,11 @@ public class Protokoll {
     handelse = new Text("Spelaren 3 ska kasta tärningar ");
 
     //Tärningars label
-    tarning1 = new Text("tärning 1");
-    tarning2 = new Text("tärning2");
-    tarning3 = new Text("tärning3");
-    tarning4 = new Text("tärning4");
-    tarning5 = new Text("tärning5");
+    tarning1 = new Text("t"+(char) 228+"rning 1");
+    tarning2 = new Text("t"+(char) 228+"rning2");
+    tarning3 = new Text("t"+(char) 228+"rning3");
+    tarning4 = new Text("t"+(char) 228+"rning4");
+    tarning5 = new Text("t"+(char) 228+"rning5");
 
 
     //Creating Buttons
