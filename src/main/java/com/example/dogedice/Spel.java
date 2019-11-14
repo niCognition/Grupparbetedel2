@@ -4,13 +4,18 @@ import java.util.ArrayList;
 public class Spel {
   private ArrayList<Spelare> spelare;
   private int kastOmgang;
+  private int kast;
   private Tarningar tarningar;
 
   public Spel(ArrayList<Spelare> spelare) {
     this.spelare = spelare;
     this.kastOmgang = 1;
-
+    this.kast = 1;
     this.tarningar = new Tarningar();
+  }
+
+  public int getKastOmgang(){
+    return kastOmgang;
   }
 
   public ArrayList<Spelare> getSpelare(){
@@ -39,7 +44,7 @@ public class Spel {
 
     tarningar.kasta();
 
-    for (int i = 0; i < 2; i++) {
+    /*for (int i = 0; i < 2; i++) {
       int[] positioner = getInput(); // ofärdig metod, ska få input från spelaren om vilka tärningar som ska sparas
 
       if (positioner.length == 0) {
@@ -47,14 +52,15 @@ public class Spel {
       } else {
         tarningar.sparaKast(positioner);
       }
-    }
+    }*/
   }
 
 
   //Ta emot input från spelaren på vilka tärningar som ska sparas. Positionerna
   // på tärningarna skickas vidare i en int-array
   public int[] getInput () {
-    return new int[1]; // måste ha med return för att inte programmet ska krascha, ingen färdig metod
+    int[] sparadeTarningar = {1, 2};
+    return getInput(); // måste ha med return för att inte programmet ska krascha, ingen färdig metod
   }
 
 
