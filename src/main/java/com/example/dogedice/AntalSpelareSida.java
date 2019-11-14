@@ -90,6 +90,13 @@ public class AntalSpelareSida {
 
     quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     quit.setAlignment(Pos.BOTTOM_LEFT);
+    quit.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        Avslut avslut = new Avslut(myStage);
+        avslut.visaAvslut(myStage);
+      }
+    });
 
     vidare.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sTy5PQ5M6cgzvrXj8QAi7OxvIkeMzeefq4WdX89Yxh51Zj7QEQ&s'); -fx-background-size: 40px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     vidare.setAlignment(Pos.BOTTOM_RIGHT);
@@ -112,6 +119,9 @@ public class AntalSpelareSida {
         }
 
         //till skriv in namn-sidan, skicka med antal
+        Namnge namnge = new Namnge(myStage);
+        namnge.visaNamnge(myStage, antal);
+
       }
     });
 

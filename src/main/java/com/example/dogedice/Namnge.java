@@ -94,7 +94,24 @@ public class Namnge {
 
     }
 
-    public void visaNamnge (Stage myStage){
+    public void visaNamnge (Stage myStage, int antal){
+
+      if (antal < 5) {
+        spelare5.setVisible(false);
+        spel5.setVisible(false);
+      }
+      if (antal < 4) {
+        spelare4.setVisible(false);
+        spel4.setVisible(false);
+      }
+      if (antal < 3) {
+        spelare3.setVisible(false);
+        spel3.setVisible(false);
+      }
+      if (antal < 2) {
+        spelare2.setVisible(false);
+        spel2.setVisible(false);
+      }
 
       myStage.setScene(namngeScene);
       myStage.show();

@@ -15,18 +15,18 @@ public class Main extends Application {
   // Override the start() method.
   public void start(Stage myStage) {
     //Skapar och visar startsidan
-    //StartSida startSida = new StartSida(myStage);
-    //startSida.visaStartSida(myStage);
+    StartSida startSida = new StartSida(myStage);
+    startSida.visaStartSida(myStage);
 
     //Skapar och visar Infosidan
     //InfoSida infoSida = new InfoSida();
     //infoSida.visaInfoSida(myStage);
 
-   // Namnge namnge = new Namnge(myStage);
+    //Namnge namnge = new Namnge(myStage);
     //namnge.visaNamnge(myStage);
 
-    Avslut avslut = new Avslut(myStage);
-    avslut.visaAvslut(myStage);
+    //Avslut avslut = new Avslut(myStage);
+    //avslut.visaAvslut(myStage);
 
 
     //Visar Highscoresidan
