@@ -102,13 +102,13 @@ public class Namnge {
 
           ArrayList<Spelare> deltagare = new ArrayList<Spelare>();
           deltagare.add(new Spelare(namn1, 1));
-          if (namn2 != null){
+          if (!namn2.equals("")){
             deltagare.add(new Spelare(namn2, 2));
-            if(namn3 != null){
+            if(!namn3.equals("")){
               deltagare.add(new Spelare(namn3, 3));
-              if(namn4 != null){
+              if(!namn4.equals("")){
                 deltagare.add(new Spelare(namn4, 4));
-                if (namn5 != null){
+                if (!namn5.equals("")){
                   deltagare.add(new Spelare(namn5, 5));
                 }
               }
