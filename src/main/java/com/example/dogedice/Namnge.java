@@ -1,5 +1,7 @@
 package com.example.dogedice;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,6 +12,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class Namnge {
 
@@ -77,9 +81,44 @@ public class Namnge {
 
       quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
       quit.setAlignment(Pos.BOTTOM_LEFT);
+      quit.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+          Avslut avslut = new Avslut(myStage);
+          avslut.visaAvslut(myStage);
+        }
+      });
 
       vidare.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sTy5PQ5M6cgzvrXj8QAi7OxvIkeMzeefq4WdX89Yxh51Zj7QEQ&s'); -fx-background-size: 40px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
       vidare.setAlignment(Pos.BOTTOM_RIGHT);
+      vidare.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+          String namn1 = spelare1.getText();
+          String namn2 = spelare2.getText();
+          String namn3 = spelare3.getText();
+          String namn4 = spelare4.getText();
+          String namn5 = spelare5.getText();
+
+          ArrayList<Spelare> deltagare = new ArrayList<Spelare>();
+          deltagare.add(new Spelare(namn1, 1));
+          if (namn2 != null){
+            deltagare.add(new Spelare(namn2, 2));
+            if(namn3 != null){
+              deltagare.add(new Spelare(namn3, 3));
+              if(namn4 != null){
+                deltagare.add(new Spelare(namn4, 4));
+                if (namn5 != null){
+                  deltagare.add(new Spelare(namn5, 5));
+                }
+              }
+            }
+          }
+          Spel yatzyOmgang = new Spel(deltagare);
+          Protokoll protokoll = new Protokoll(myStage, yatzyOmgang);
+          protokoll.visaProtokoll(myStage);
+        }
+      });
 
       HBox quitVidare = new HBox();
 
