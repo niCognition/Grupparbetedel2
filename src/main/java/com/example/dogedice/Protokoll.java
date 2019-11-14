@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -162,6 +163,7 @@ public class Protokoll {
   private CheckBox checkBox4;
   private CheckBox checkBox5;
 
+  private Button quit;
   private Button kasta;
 
   public Protokoll(Stage myStage, Spel spel){
@@ -172,8 +174,6 @@ public class Protokoll {
   }
 
   public void setUpSida(ArrayList<Spelare> spelare) {
-
-
 
 
     //creating label email
@@ -218,7 +218,26 @@ public class Protokoll {
     tot5 = new Text(" test");
 
     //Label för händelse
-    handelse = new Text("Spelaren 3 ska kasta tärningar ");
+    handelse = new Text(spelare.get(0).getNamn() + " ska kasta första kastet");
+
+    quit = new Button();
+    quit.setStyle("-fx-padding: 5 13 5 13; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    quit.setAlignment(Pos.BOTTOM_LEFT);
+    quit.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent actionEvent) {
+        Avslut avslut = new Avslut(myStage);
+        avslut.visaAvslut(myStage);
+      }
+    });
+
+    kasta = new Button("Kasta t" + (char) 228 + "rningarna");
+
+    HBox quitKasta = new HBox();
+    quitKasta.setSpacing(157);
+    quitKasta.setAlignment(Pos.CENTER);
+    quitKasta.getChildren().addAll(quit, kasta);
+
 
     //Tärningars label
     tarning1 = new Text("t"+(char) 228+"rning 1");
@@ -305,8 +324,162 @@ public class Protokoll {
     button74 = new Button(" ");
     button75 = new Button(" ");
 
-    if (spelare.size() >= 1){
+    gridPane = new GridPane();
+
+    gridPane.setMinSize(400, 200);
+    gridPane.setPadding(new Insets(10, 10, 10, 10));
+    gridPane.setVgap(5);
+    gridPane.setHgap(5);
+    gridPane.setAlignment(Pos.CENTER);
+
+
+    gridPane.add(text0, 0, 0);
+    gridPane.add(text1, 0, 1);
+    gridPane.add(text2, 0, 2);
+    gridPane.add(text3, 0, 3);
+    gridPane.add(text4, 0, 4);
+    gridPane.add(text5, 0, 5);
+    gridPane.add(text6, 0, 6);
+    gridPane.add(text7, 0, 7);
+    gridPane.add(text8, 0, 8);
+    gridPane.add(text9, 0, 9);
+    gridPane.add(text10, 0, 10);
+    gridPane.add(text11, 0, 11);
+    gridPane.add(text12, 0, 12);
+    gridPane.add(text13, 0, 13);
+    gridPane.add(text14, 0, 14);
+    gridPane.add(text15, 0, 15);
+    gridPane.add(text16, 0, 16);
+    gridPane.add(text17, 0, 17);
+    gridPane.add(text18, 0, 18);
+
+    if (spelare.size() >= 1) {
+      setUpSpelare1();
+    }
+
+    if (spelare.size() >=2){
+      setUpSpelare2();
+    }
+
+    if (spelare.size() >=3){
+      setUpSpelare3();
+    }
+
+    if (spelare.size() >=4){
+      setUpSpelare4();
+    }
+
+    if (spelare.size() ==5){
+      setUpSpelare5();
+
+    }
+
+
+    //Händelse utskrift
+    gridPane.add(handelse, 0, 19, 6, 1);
+
+    //Tärningars utskrift
+    gridPane.add(tarning1, 1, 20);
+    gridPane.add(tarning2, 2, 20);
+    gridPane.add(tarning3, 3, 20);
+    gridPane.add(tarning4, 4, 20);
+    gridPane.add(tarning5, 5, 20);
+
+    //Create checkbox
+    checkBox1 = new CheckBox("");
+    checkBox2 = new CheckBox("");
+    checkBox3 = new CheckBox("");
+    checkBox4 = new CheckBox("");
+    checkBox5 = new CheckBox("");
+
+
+    gridPane.add(checkBox1, 1, 21);
+    gridPane.add(checkBox2, 2, 21);
+    gridPane.add(checkBox3, 3, 21);
+    gridPane.add(checkBox4, 4, 21);
+    gridPane.add(checkBox5, 5, 21);
+
+    //Kasta knapp
+
+    gridPane.add(quitKasta, 0, 22, 6, 1);
+
+
+    //Creating a scene object
+    scene = new Scene(gridPane);
+
+    //Setting title to the Stage
+    myStage.setTitle("Protokoll");
+
+    kasta.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+
+        handelse.setText("Varför funkar det inte?");
+        spel.kasta();
+        int[] kastResultat = spel.getTarningar().getVarden();
+        tarning1.setText(String.valueOf(kastResultat[0]));
+        tarning2.setText(String.valueOf(kastResultat[1]));
+        tarning3.setText(String.valueOf(kastResultat[2]));
+        tarning4.setText(String.valueOf(kastResultat[3]));
+        tarning5.setText(String.valueOf(kastResultat[4]));
+
+        handelse.setText(spelare.get(0).getNamn() + ", markera vilka kast som ska sparas");
+
+        int antalMarkerade = 0;
+        if (checkBox1.isSelected()){
+          antalMarkerade++;
+        }
+        if (checkBox2.isSelected()){
+          antalMarkerade++;
+        }
+        if (checkBox3.isSelected()){
+          antalMarkerade++;
+        }
+        if (checkBox4.isSelected()){
+          antalMarkerade++;
+        }
+        if (checkBox5.isSelected()){
+          antalMarkerade++;
+        }
+        int[] sparadeKast = new int[antalMarkerade];
+
+
+      }
+    });
+  }
+
+  public void visaProtokoll(Stage myStage){
+
+      //Adding scene to the stage
+      myStage.setScene(scene);
+
+      //Displaying the contents of the stage
+      myStage.show();
+    }
+
+    private void setUpSpelare1(){
+
       text01.setText(spel.getSpelare().get(0).getNamn());
+
+      gridPane.add(text01, 1, 0);
+      gridPane.add(button1, 1, 1);
+      gridPane.add(button6, 1, 2);
+      gridPane.add(button11, 1, 3);
+      gridPane.add(button16, 1, 4);
+      gridPane.add(button21, 1, 5);
+      gridPane.add(button26, 1, 6);
+      gridPane.add(summa1, 1, 7);
+      gridPane.add(bonus1, 1, 8);
+      gridPane.add(button31, 1, 9);
+      gridPane.add(button36, 1, 10);
+      gridPane.add(button41, 1, 11);
+      gridPane.add(button46, 1, 12);
+      gridPane.add(button51, 1, 13);
+      gridPane.add(button56, 1, 14);
+      gridPane.add(button61, 1, 15);
+      gridPane.add(button66, 1, 16);
+      gridPane.add(button71, 1, 17);
+      gridPane.add(tot1, 1, 18);
 
       button1.setOnAction(new EventHandler<ActionEvent>() {
         @Override
@@ -444,760 +617,648 @@ public class Protokoll {
       });
     }
 
-    if (spelare.size() >=2){
-      text02.setText(spel.getSpelare().get(1).getNamn());
-
-      button2.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(0);
-          spel.getSpelare().get(1).sparaResultat(0, result);
-          button2.setText(String.valueOf(result));
-        }
-      });
-
-      button7.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(1);
-          spel.getSpelare().get(1).sparaResultat(1, result);
-          button7.setText(String.valueOf(result));
-        }
-      });
-
-      button12.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(2);
-          spel.getSpelare().get(1).sparaResultat(2, result);
-          button12.setText(String.valueOf(result));
-        }
-      });
-
-      button17.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(3);
-          spel.getSpelare().get(1).sparaResultat(3, result);
-          button17.setText(String.valueOf(result));
-        }
-      });
-
-      button22.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(4);
-          spel.getSpelare().get(1).sparaResultat(4, result);
-          button22.setText(String.valueOf(result));
-        }
-      });
-
-      button27.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(5);
-          spel.getSpelare().get(1).sparaResultat(5, result);
-          button27.setText(String.valueOf(result));
-        }
-      });
-
-      button32.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(6);
-          spel.getSpelare().get(1).sparaResultat(6, result);
-          button32.setText(String.valueOf(result));
-        }
-      });
-
-      button37.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(7);
-          spel.getSpelare().get(1).sparaResultat(7, result);
-          button37.setText(String.valueOf(result));
-        }
-      });
-
-      button42.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(8);
-          spel.getSpelare().get(1).sparaResultat(8, result);
-          button42.setText(String.valueOf(result));
-        }
-      });
-
-      button47.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(9);
-          spel.getSpelare().get(1).sparaResultat(9, result);
-          button47.setText(String.valueOf(result));
-        }
-      });
-
-      button52.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(10);
-          spel.getSpelare().get(1).sparaResultat(10, result);
-          button52.setText(String.valueOf(result));
-        }
-      });
-
-      button57.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(11);
-          spel.getSpelare().get(1).sparaResultat(11, result);
-          button57.setText(String.valueOf(result));
-        }
-      });
-
-      button62.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(12);
-          spel.getSpelare().get(1).sparaResultat(12, result);
-          button62.setText(String.valueOf(result));
-        }
-      });
-
-      button67.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(13);
-          spel.getSpelare().get(1).sparaResultat(13, result);
-          button67.setText(String.valueOf(result));
-        }
-      });
-
-      button72.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(14);
-          spel.getSpelare().get(1).sparaResultat(14, result);
-          button72.setText(String.valueOf(result));
-        }
-      });
-    }
-
-    if (spelare.size() >=3){
-      text03.setText(spel.getSpelare().get(2).getNamn());
-
-      button3.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(0);
-          spel.getSpelare().get(2).sparaResultat(0, result);
-          button3.setText(String.valueOf(result));
-        }
-      });
-
-      button8.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(1);
-          spel.getSpelare().get(2).sparaResultat(1, result);
-          button8.setText(String.valueOf(result));
-        }
-      });
-
-      button13.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(2);
-          spel.getSpelare().get(2).sparaResultat(2, result);
-          button13.setText(String.valueOf(result));
-        }
-      });
-
-      button18.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(3);
-          spel.getSpelare().get(2).sparaResultat(3, result);
-          button18.setText(String.valueOf(result));
-        }
-      });
-
-      button23.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(4);
-          spel.getSpelare().get(2).sparaResultat(4, result);
-          button23.setText(String.valueOf(result));
-        }
-      });
-
-      button28.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(5);
-          spel.getSpelare().get(2).sparaResultat(5, result);
-          button28.setText(String.valueOf(result));
-        }
-      });
-
-      button33.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(6);
-          spel.getSpelare().get(2).sparaResultat(6, result);
-          button33.setText(String.valueOf(result));
-        }
-      });
-
-      button38.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(7);
-          spel.getSpelare().get(2).sparaResultat(7, result);
-          button38.setText(String.valueOf(result));
-        }
-      });
-
-      button43.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(8);
-          spel.getSpelare().get(2).sparaResultat(8, result);
-          button43.setText(String.valueOf(result));
-        }
-      });
-
-      button48.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(9);
-          spel.getSpelare().get(2).sparaResultat(9, result);
-          button48.setText(String.valueOf(result));
-        }
-      });
-
-      button53.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(10);
-          spel.getSpelare().get(2).sparaResultat(10, result);
-          button53.setText(String.valueOf(result));
-        }
-      });
-
-      button58.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(11);
-          spel.getSpelare().get(2).sparaResultat(11, result);
-          button58.setText(String.valueOf(result));
-        }
-      });
-
-      button63.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(12);
-          spel.getSpelare().get(2).sparaResultat(12, result);
-          button63.setText(String.valueOf(result));
-        }
-      });
-
-      button68.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(13);
-          spel.getSpelare().get(2).sparaResultat(13, result);
-          button68.setText(String.valueOf(result));
-        }
-      });
-
-      button73.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(14);
-          spel.getSpelare().get(2).sparaResultat(14, result);
-          button73.setText(String.valueOf(result));
-        }
-      });
-    }
-
-    if (spelare.size() >=4){
-      text04.setText(spel.getSpelare().get(3).getNamn());
-
-      button4.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(0);
-          spel.getSpelare().get(3).sparaResultat(0, result);
-          button4.setText(String.valueOf(result));
-        }
-      });
-
-      button9.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(1);
-          spel.getSpelare().get(3).sparaResultat(1, result);
-          button9.setText(String.valueOf(result));
-        }
-      });
-
-      button14.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(2);
-          spel.getSpelare().get(3).sparaResultat(2, result);
-          button14.setText(String.valueOf(result));
-        }
-      });
-
-      button19.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(3);
-          spel.getSpelare().get(3).sparaResultat(3, result);
-          button19.setText(String.valueOf(result));
-        }
-      });
-
-      button24.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(4);
-          spel.getSpelare().get(3).sparaResultat(4, result);
-          button24.setText(String.valueOf(result));
-        }
-      });
-
-      button29.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(5);
-          spel.getSpelare().get(3).sparaResultat(5, result);
-          button29.setText(String.valueOf(result));
-        }
-      });
-
-      button34.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(6);
-          spel.getSpelare().get(3).sparaResultat(6, result);
-          button34.setText(String.valueOf(result));
-        }
-      });
-
-      button39.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(7);
-          spel.getSpelare().get(3).sparaResultat(7, result);
-          button39.setText(String.valueOf(result));
-        }
-      });
-
-      button44.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(8);
-          spel.getSpelare().get(3).sparaResultat(8, result);
-          button44.setText(String.valueOf(result));
-        }
-      });
-
-      button49.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(9);
-          spel.getSpelare().get(3).sparaResultat(9, result);
-          button49.setText(String.valueOf(result));
-        }
-      });
-
-      button54.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(10);
-          spel.getSpelare().get(3).sparaResultat(10, result);
-          button54.setText(String.valueOf(result));
-        }
-      });
-
-      button59.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(11);
-          spel.getSpelare().get(3).sparaResultat(11, result);
-          button59.setText(String.valueOf(result));
-        }
-      });
-
-      button64.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(12);
-          spel.getSpelare().get(3).sparaResultat(12, result);
-          button64.setText(String.valueOf(result));
-        }
-      });
-
-      button69.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(13);
-          spel.getSpelare().get(3).sparaResultat(13, result);
-          button69.setText(String.valueOf(result));
-        }
-      });
-
-      button74.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(14);
-          spel.getSpelare().get(3).sparaResultat(14, result);
-          button74.setText(String.valueOf(result));
-        }
-      });
-    }
-
-    if (spelare.size() ==5){
-      text05.setText(spel.getSpelare().get(4).getNamn());
-
-      button5.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(0);
-          spel.getSpelare().get(4).sparaResultat(0, result);
-          button5.setText(String.valueOf(result));
-        }
-      });
-
-      button10.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(1);
-          spel.getSpelare().get(4).sparaResultat(1, result);
-          button10.setText(String.valueOf(result));
-        }
-      });
-
-      button15.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(2);
-          spel.getSpelare().get(4).sparaResultat(2, result);
-          button15.setText(String.valueOf(result));
-        }
-      });
-
-      button20.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(3);
-          spel.getSpelare().get(4).sparaResultat(3, result);
-          button20.setText(String.valueOf(result));
-        }
-      });
-
-      button25.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(4);
-          spel.getSpelare().get(4).sparaResultat(4, result);
-          button25.setText(String.valueOf(result));
-        }
-      });
-
-      button30.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(5);
-          spel.getSpelare().get(4).sparaResultat(5, result);
-          button30.setText(String.valueOf(result));
-        }
-      });
-
-      button35.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(6);
-          spel.getSpelare().get(4).sparaResultat(6, result);
-          button35.setText(String.valueOf(result));
-        }
-      });
-
-      button40.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(7);
-          spel.getSpelare().get(4).sparaResultat(7, result);
-          button40.setText(String.valueOf(result));
-        }
-      });
-
-      button45.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(8);
-          spel.getSpelare().get(4).sparaResultat(8, result);
-          button45.setText(String.valueOf(result));
-        }
-      });
-
-      button50.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(9);
-          spel.getSpelare().get(4).sparaResultat(9, result);
-          button50.setText(String.valueOf(result));
-        }
-      });
-
-      button55.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(10);
-          spel.getSpelare().get(4).sparaResultat(10, result);
-          button55.setText(String.valueOf(result));
-        }
-      });
-
-      button60.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(11);
-          spel.getSpelare().get(4).sparaResultat(11, result);
-          button60.setText(String.valueOf(result));
-        }
-      });
-
-      button65.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(12);
-          spel.getSpelare().get(4).sparaResultat(12, result);
-          button65.setText(String.valueOf(result));
-        }
-      });
-
-      button70.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(13);
-          spel.getSpelare().get(4).sparaResultat(13, result);
-          button70.setText(String.valueOf(result));
-        }
-      });
-
-      button75.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(14);
-          spel.getSpelare().get(4).sparaResultat(14, result);
-          button75.setText(String.valueOf(result));
-        }
-      });
-    }
-
-    //Creating a Grid Pane
-    gridPane = new GridPane();
-
-    //Setting size for the pane
-    gridPane.setMinSize(400, 200);
-
-    //Setting the padding
-    gridPane.setPadding(new Insets(10, 10, 10, 10));
-
-    //Setting the vertical and horizontal gaps between the columns
-    gridPane.setVgap(5);
-    gridPane.setHgap(5);
-
-    //Setting the Grid alignment
-    gridPane.setAlignment(Pos.CENTER);
-
-    //Arranging all the nodes in the grid
-    gridPane.add(text0, 0, 0);
-    gridPane.add(text1, 0, 1);
-    gridPane.add(text2, 0, 2);
-    gridPane.add(text3, 0, 3);
-    gridPane.add(text4, 0, 4);
-    gridPane.add(text5, 0, 5);
-    gridPane.add(text6, 0, 6);
-    gridPane.add(text7, 0, 7);
-    gridPane.add(text8, 0, 8);
-    gridPane.add(text9, 0, 9);
-    gridPane.add(text10, 0, 10);
-    gridPane.add(text11, 0, 11);
-    gridPane.add(text12, 0, 12);
-    gridPane.add(text13, 0, 13);
-    gridPane.add(text14, 0, 14);
-    gridPane.add(text15, 0, 15);
-    gridPane.add(text16, 0, 16);
-    gridPane.add(text17, 0, 17);
-    gridPane.add(text18, 0, 18);
-    gridPane.add(text01, 1, 0);
-    gridPane.add(text02, 2, 0);
-    gridPane.add(text03, 3, 0);
-    gridPane.add(text04, 4, 0);
-    gridPane.add(text05, 5, 0);
-    gridPane.add(summa1, 1, 7);
-    gridPane.add(summa2, 2, 7);
-    gridPane.add(summa3, 3, 7);
-    gridPane.add(summa4, 4, 7);
-    gridPane.add(summa5, 5, 7);
-    gridPane.add(bonus1, 1, 8);
-    gridPane.add(bonus2, 2, 8);
-    gridPane.add(bonus3, 3, 8);
-    gridPane.add(bonus4, 4, 8);
-    gridPane.add(bonus5, 5, 8);
-    gridPane.add(tot1, 1, 18);
-    gridPane.add(tot2, 2, 18);
-    gridPane.add(tot3, 3, 18);
-    gridPane.add(tot4, 4, 18);
-    gridPane.add(tot5, 5, 18);
-
-    gridPane.add(button1, 1, 1);
-    gridPane.add(button2, 2, 1);
-    gridPane.add(button3, 3, 1);
-    gridPane.add(button4, 4, 1);
-    gridPane.add(button5, 5, 1);
-    gridPane.add(button6, 1, 2);
-    gridPane.add(button7, 2, 2);
-    gridPane.add(button8, 3, 2);
-    gridPane.add(button9, 4, 2);
-    gridPane.add(button10, 5, 2);
-    gridPane.add(button11, 1, 3);
-    gridPane.add(button12, 2, 3);
-    gridPane.add(button13, 3, 3);
-    gridPane.add(button14, 4, 3);
-    gridPane.add(button15, 5, 3);
-    gridPane.add(button16, 1, 4);
-    gridPane.add(button17, 2, 4);
-    gridPane.add(button18, 3, 4);
-    gridPane.add(button19, 4, 4);
-    gridPane.add(button20, 5, 4);
-    gridPane.add(button21, 1, 5);
-    gridPane.add(button22, 2, 5);
-    gridPane.add(button23, 3, 5);
-    gridPane.add(button24, 4, 5);
-    gridPane.add(button25, 5, 5);
-    gridPane.add(button26, 1, 6);
-    gridPane.add(button27, 2, 6);
-    gridPane.add(button28, 3, 6);
-    gridPane.add(button29, 4, 6);
-    gridPane.add(button30, 5, 6);
-    gridPane.add(button31, 1, 9);
-    gridPane.add(button32, 2, 9);
-    gridPane.add(button33, 3, 9);
-    gridPane.add(button34, 4, 9);
-    gridPane.add(button35, 5, 9);
-    gridPane.add(button36, 1, 10);
-    gridPane.add(button37, 2, 10);
-    gridPane.add(button38, 3, 10);
-    gridPane.add(button39, 4, 10);
-    gridPane.add(button40, 5, 10);
-    gridPane.add(button41, 1, 11);
-    gridPane.add(button42, 2, 11);
-    gridPane.add(button43, 3, 11);
-    gridPane.add(button44, 4, 11);
-    gridPane.add(button45, 5, 11);
-    gridPane.add(button46, 1, 12);
-    gridPane.add(button47, 2, 12);
-    gridPane.add(button48, 3, 12);
-    gridPane.add(button49, 4, 12);
-    gridPane.add(button50, 5, 12);
-    gridPane.add(button51, 1, 13);
-    gridPane.add(button52, 2, 13);
-    gridPane.add(button53, 3, 13);
-    gridPane.add(button54, 4, 13);
-    gridPane.add(button55, 5, 13);
-    gridPane.add(button56, 1, 14);
-    gridPane.add(button57, 2, 14);
-    gridPane.add(button58, 3, 14);
-    gridPane.add(button59, 4, 14);
-    gridPane.add(button60, 5, 14);
-    gridPane.add(button61, 1, 15);
-    gridPane.add(button62, 2, 15);
-    gridPane.add(button63, 3, 15);
-    gridPane.add(button64, 4, 15);
-    gridPane.add(button65, 5, 15);
-    gridPane.add(button66, 1, 16);
-    gridPane.add(button67, 2, 16);
-    gridPane.add(button68, 3, 16);
-    gridPane.add(button69, 4, 16);
-    gridPane.add(button70, 5, 16);
-    gridPane.add(button71, 1, 17);
-    gridPane.add(button72, 2, 17);
-    gridPane.add(button73, 3, 17);
-    gridPane.add(button74, 4, 17);
-    gridPane.add(button75, 5, 17);
-
-    //Händelse utskrift
-    gridPane.add(handelse, 0, 19, 6, 1);
-
-    //Tärningars utskrift
-    gridPane.add(tarning1, 1, 20);
-    gridPane.add(tarning2, 2, 20);
-    gridPane.add(tarning3, 3, 20);
-    gridPane.add(tarning4, 4, 20);
-    gridPane.add(tarning5, 5, 20);
-
-    //Create checkbox
-    checkBox1 = new CheckBox("");
-    checkBox2 = new CheckBox("");
-    checkBox3 = new CheckBox("");
-    checkBox4 = new CheckBox("");
-    checkBox5 = new CheckBox("");
-
-
-    gridPane.add(checkBox1, 1, 21);
-    gridPane.add(checkBox2, 2, 21);
-    gridPane.add(checkBox3, 3, 21);
-    gridPane.add(checkBox4, 4, 21);
-    gridPane.add(checkBox5, 5, 21);
-
-    //Kasta knapp
-    kasta = new Button("Kasta tärningarna");
-
-    gridPane.add(kasta, 3, 22, 3, 1);
-
-    //Creating a scene object
-    scene = new Scene(gridPane);
-
-    //Setting title to the Stage
-    myStage.setTitle("Protokoll");
-  }
-
-  public void visaProtokoll(Stage myStage){
-
-      //Adding scene to the stage
-      myStage.setScene(scene);
-
-      //Displaying the contents of the stage
-      myStage.show();
-    }
-
-    private void setUpSpelare1(){
-
-
-
-
-    }
-
   private void setUpSpelare2(){
 
+    text02.setText(spel.getSpelare().get(1).getNamn());
+
+    gridPane.add(text02, 2, 0);
+    gridPane.add(button2, 2, 1);
+    gridPane.add(button7, 2, 2);
+    gridPane.add(button12, 2, 3);
+    gridPane.add(button17, 2, 4);
+    gridPane.add(button22, 2, 5);
+    gridPane.add(button27, 2, 6);
+    gridPane.add(summa2, 2, 7);
+    gridPane.add(bonus2, 2, 8);
+    gridPane.add(button32, 2, 9);
+    gridPane.add(button37, 2, 10);
+    gridPane.add(button42, 2, 11);
+    gridPane.add(button47, 2, 12);
+    gridPane.add(button52, 2, 13);
+    gridPane.add(button57, 2, 14);
+    gridPane.add(button62, 2, 15);
+    gridPane.add(button67, 2, 16);
+    gridPane.add(button72, 2, 17);
+    gridPane.add(tot2, 2, 18);
+
+    button2.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(0);
+        spel.getSpelare().get(1).sparaResultat(0, result);
+        button2.setText(String.valueOf(result));
+      }
+    });
+
+    button7.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(1);
+        spel.getSpelare().get(1).sparaResultat(1, result);
+        button7.setText(String.valueOf(result));
+      }
+    });
+
+    button12.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(2);
+        spel.getSpelare().get(1).sparaResultat(2, result);
+        button12.setText(String.valueOf(result));
+      }
+    });
+
+    button17.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(3);
+        spel.getSpelare().get(1).sparaResultat(3, result);
+        button17.setText(String.valueOf(result));
+      }
+    });
+
+    button22.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(4);
+        spel.getSpelare().get(1).sparaResultat(4, result);
+        button22.setText(String.valueOf(result));
+      }
+    });
+
+    button27.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(5);
+        spel.getSpelare().get(1).sparaResultat(5, result);
+        button27.setText(String.valueOf(result));
+      }
+    });
+
+    button32.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(6);
+        spel.getSpelare().get(1).sparaResultat(6, result);
+        button32.setText(String.valueOf(result));
+      }
+    });
+
+    button37.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(7);
+        spel.getSpelare().get(1).sparaResultat(7, result);
+        button37.setText(String.valueOf(result));
+      }
+    });
+
+    button42.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(8);
+        spel.getSpelare().get(1).sparaResultat(8, result);
+        button42.setText(String.valueOf(result));
+      }
+    });
+
+    button47.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(9);
+        spel.getSpelare().get(1).sparaResultat(9, result);
+        button47.setText(String.valueOf(result));
+      }
+    });
+
+    button52.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(10);
+        spel.getSpelare().get(1).sparaResultat(10, result);
+        button52.setText(String.valueOf(result));
+      }
+    });
+
+    button57.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(11);
+        spel.getSpelare().get(1).sparaResultat(11, result);
+        button57.setText(String.valueOf(result));
+      }
+    });
+
+    button62.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(12);
+        spel.getSpelare().get(1).sparaResultat(12, result);
+        button62.setText(String.valueOf(result));
+      }
+    });
+
+    button67.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(13);
+        spel.getSpelare().get(1).sparaResultat(13, result);
+        button67.setText(String.valueOf(result));
+      }
+    });
+
+    button72.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(14);
+        spel.getSpelare().get(1).sparaResultat(14, result);
+        button72.setText(String.valueOf(result));
+      }
+    });
   }
 
   private void setUpSpelare3(){
 
+    text03.setText(spel.getSpelare().get(2).getNamn());
+
+    gridPane.add(text03, 3, 0);
+    gridPane.add(button3, 3, 1);
+    gridPane.add(button8, 3, 2);
+    gridPane.add(button13, 3, 3);
+    gridPane.add(button18, 3, 4);
+    gridPane.add(button23, 3, 5);
+    gridPane.add(button28, 3, 6);
+    gridPane.add(summa3, 3, 7);
+    gridPane.add(bonus3, 3, 8);
+    gridPane.add(button33, 3, 9);
+    gridPane.add(button38, 3, 10);
+    gridPane.add(button43, 3, 11);
+    gridPane.add(button48, 3, 12);
+    gridPane.add(button53, 3, 13);
+    gridPane.add(button58, 3, 14);
+    gridPane.add(button63, 3, 15);
+    gridPane.add(button68, 3, 16);
+    gridPane.add(button73, 3, 17);
+    gridPane.add(tot3, 3, 18);
+
+    button3.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(0);
+        spel.getSpelare().get(2).sparaResultat(0, result);
+        button3.setText(String.valueOf(result));
+      }
+    });
+
+    button8.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(1);
+        spel.getSpelare().get(2).sparaResultat(1, result);
+        button8.setText(String.valueOf(result));
+      }
+    });
+
+    button13.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(2);
+        spel.getSpelare().get(2).sparaResultat(2, result);
+        button13.setText(String.valueOf(result));
+      }
+    });
+
+    button18.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(3);
+        spel.getSpelare().get(2).sparaResultat(3, result);
+        button18.setText(String.valueOf(result));
+      }
+    });
+
+    button23.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(4);
+        spel.getSpelare().get(2).sparaResultat(4, result);
+        button23.setText(String.valueOf(result));
+      }
+    });
+
+    button28.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(5);
+        spel.getSpelare().get(2).sparaResultat(5, result);
+        button28.setText(String.valueOf(result));
+      }
+    });
+
+    button33.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(6);
+        spel.getSpelare().get(2).sparaResultat(6, result);
+        button33.setText(String.valueOf(result));
+      }
+    });
+
+    button38.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(7);
+        spel.getSpelare().get(2).sparaResultat(7, result);
+        button38.setText(String.valueOf(result));
+      }
+    });
+
+    button43.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(8);
+        spel.getSpelare().get(2).sparaResultat(8, result);
+        button43.setText(String.valueOf(result));
+      }
+    });
+
+    button48.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(9);
+        spel.getSpelare().get(2).sparaResultat(9, result);
+        button48.setText(String.valueOf(result));
+      }
+    });
+
+    button53.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(10);
+        spel.getSpelare().get(2).sparaResultat(10, result);
+        button53.setText(String.valueOf(result));
+      }
+    });
+
+    button58.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(11);
+        spel.getSpelare().get(2).sparaResultat(11, result);
+        button58.setText(String.valueOf(result));
+      }
+    });
+
+    button63.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(12);
+        spel.getSpelare().get(2).sparaResultat(12, result);
+        button63.setText(String.valueOf(result));
+      }
+    });
+
+    button68.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(13);
+        spel.getSpelare().get(2).sparaResultat(13, result);
+        button68.setText(String.valueOf(result));
+      }
+    });
+
+    button73.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(14);
+        spel.getSpelare().get(2).sparaResultat(14, result);
+        button73.setText(String.valueOf(result));
+      }
+    });
   }
 
   private void setUpSpelare4(){
 
+    text04.setText(spel.getSpelare().get(3).getNamn());
+
+    gridPane.add(text04, 4, 0);
+    gridPane.add(button4, 4, 1);
+    gridPane.add(button9, 4, 2);
+    gridPane.add(button14, 4, 3);
+    gridPane.add(button19, 4, 4);
+    gridPane.add(button24, 4, 5);
+    gridPane.add(button29, 4, 6);
+    gridPane.add(summa4, 4, 7);
+    gridPane.add(bonus4, 4, 8);
+    gridPane.add(button34, 4, 9);
+    gridPane.add(button39, 4, 10);
+    gridPane.add(button44, 4, 11);
+    gridPane.add(button49, 4, 12);
+    gridPane.add(button54, 4, 13);
+    gridPane.add(button59, 4, 14);
+    gridPane.add(button64, 4, 15);
+    gridPane.add(button69, 4, 16);
+    gridPane.add(button74, 4, 17);
+    gridPane.add(tot4, 4, 18);
+
+
+
+    button4.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(0);
+        spel.getSpelare().get(3).sparaResultat(0, result);
+        button4.setText(String.valueOf(result));
+      }
+    });
+
+    button9.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(1);
+        spel.getSpelare().get(3).sparaResultat(1, result);
+        button9.setText(String.valueOf(result));
+      }
+    });
+
+    button14.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(2);
+        spel.getSpelare().get(3).sparaResultat(2, result);
+        button14.setText(String.valueOf(result));
+      }
+    });
+
+    button19.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(3);
+        spel.getSpelare().get(3).sparaResultat(3, result);
+        button19.setText(String.valueOf(result));
+      }
+    });
+
+    button24.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(4);
+        spel.getSpelare().get(3).sparaResultat(4, result);
+        button24.setText(String.valueOf(result));
+      }
+    });
+
+    button29.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(5);
+        spel.getSpelare().get(3).sparaResultat(5, result);
+        button29.setText(String.valueOf(result));
+      }
+    });
+
+    button34.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(6);
+        spel.getSpelare().get(3).sparaResultat(6, result);
+        button34.setText(String.valueOf(result));
+      }
+    });
+
+    button39.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(7);
+        spel.getSpelare().get(3).sparaResultat(7, result);
+        button39.setText(String.valueOf(result));
+      }
+    });
+
+    button44.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(8);
+        spel.getSpelare().get(3).sparaResultat(8, result);
+        button44.setText(String.valueOf(result));
+      }
+    });
+
+    button49.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(9);
+        spel.getSpelare().get(3).sparaResultat(9, result);
+        button49.setText(String.valueOf(result));
+      }
+    });
+
+    button54.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(10);
+        spel.getSpelare().get(3).sparaResultat(10, result);
+        button54.setText(String.valueOf(result));
+      }
+    });
+
+    button59.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(11);
+        spel.getSpelare().get(3).sparaResultat(11, result);
+        button59.setText(String.valueOf(result));
+      }
+    });
+
+    button64.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(12);
+        spel.getSpelare().get(3).sparaResultat(12, result);
+        button64.setText(String.valueOf(result));
+      }
+    });
+
+    button69.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(13);
+        spel.getSpelare().get(3).sparaResultat(13, result);
+        button69.setText(String.valueOf(result));
+      }
+    });
+
+    button74.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(14);
+        spel.getSpelare().get(3).sparaResultat(14, result);
+        button74.setText(String.valueOf(result));
+      }
+    });
   }
 
   private void setUpSpelare5(){
 
+
+
+    text05.setText(spel.getSpelare().get(4).getNamn());
+
+    gridPane.add(text05, 5, 0);
+    gridPane.add(button5, 5, 1);
+    gridPane.add(button10, 5, 2);
+    gridPane.add(button15, 5, 3);
+    gridPane.add(button20, 5, 4);
+    gridPane.add(button25, 5, 5);
+    gridPane.add(button30, 5, 6);
+    gridPane.add(summa5, 5, 7);
+    gridPane.add(bonus5, 5, 8);
+    gridPane.add(button35, 5, 9);
+    gridPane.add(button40, 5, 10);
+    gridPane.add(button45, 5, 11);
+    gridPane.add(button50, 5, 12);
+    gridPane.add(button55, 5, 13);
+    gridPane.add(button60, 5, 14);
+    gridPane.add(button65, 5, 15);
+    gridPane.add(button70, 5, 16);
+    gridPane.add(button75, 5, 17);
+    gridPane.add(tot5, 5, 18);
+
+
+    button5.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(0);
+        spel.getSpelare().get(4).sparaResultat(0, result);
+        button5.setText(String.valueOf(result));
+      }
+    });
+
+    button10.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(1);
+        spel.getSpelare().get(4).sparaResultat(1, result);
+        button10.setText(String.valueOf(result));
+      }
+    });
+
+    button15.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(2);
+        spel.getSpelare().get(4).sparaResultat(2, result);
+        button15.setText(String.valueOf(result));
+      }
+    });
+
+    button20.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(3);
+        spel.getSpelare().get(4).sparaResultat(3, result);
+        button20.setText(String.valueOf(result));
+      }
+    });
+
+    button25.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(4);
+        spel.getSpelare().get(4).sparaResultat(4, result);
+        button25.setText(String.valueOf(result));
+      }
+    });
+
+    button30.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(5);
+        spel.getSpelare().get(4).sparaResultat(5, result);
+        button30.setText(String.valueOf(result));
+      }
+    });
+
+    button35.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(6);
+        spel.getSpelare().get(4).sparaResultat(6, result);
+        button35.setText(String.valueOf(result));
+      }
+    });
+
+    button40.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(7);
+        spel.getSpelare().get(4).sparaResultat(7, result);
+        button40.setText(String.valueOf(result));
+      }
+    });
+
+    button45.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(8);
+        spel.getSpelare().get(4).sparaResultat(8, result);
+        button45.setText(String.valueOf(result));
+      }
+    });
+
+    button50.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(9);
+        spel.getSpelare().get(4).sparaResultat(9, result);
+        button50.setText(String.valueOf(result));
+      }
+    });
+
+    button55.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(10);
+        spel.getSpelare().get(4).sparaResultat(10, result);
+        button55.setText(String.valueOf(result));
+      }
+    });
+
+    button60.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(11);
+        spel.getSpelare().get(4).sparaResultat(11, result);
+        button60.setText(String.valueOf(result));
+      }
+    });
+
+    button65.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(12);
+        spel.getSpelare().get(4).sparaResultat(12, result);
+        button65.setText(String.valueOf(result));
+      }
+    });
+
+    button70.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(13);
+        spel.getSpelare().get(4).sparaResultat(13, result);
+        button70.setText(String.valueOf(result));
+      }
+    });
+
+    button75.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        int result = spel.getTarningar().kontrolleraResultat(14);
+        spel.getSpelare().get(4).sparaResultat(14, result);
+        button75.setText(String.valueOf(result));
+      }
+    });
   }
 }
