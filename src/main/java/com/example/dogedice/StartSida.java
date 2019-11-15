@@ -107,5 +107,6 @@ public class StartSida {
     myStage.setScene(startScen);
     // Show the stage and its scene.
     myStage.show();
+
   }
 }
