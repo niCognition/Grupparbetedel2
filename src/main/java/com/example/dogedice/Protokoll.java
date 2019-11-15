@@ -164,6 +164,7 @@ public class Protokoll {
   private CheckBox checkBox5;
 
   private Button quit;
+  private Button spara;
   private Button kasta;
 
   public Protokoll(Stage myStage, Spel spel){
@@ -201,24 +202,24 @@ public class Protokoll {
     text16 = new Text("Chans");
     text17 = new Text("Yatzy(50)");
     text18 = new Text("SUMMA: ");
-    summa1 = new Text(" test");
-    summa2 = new Text(" test");
-    summa3 = new Text(" test");
-    summa4 = new Text(" test");
-    summa5 = new Text(" test");
-    bonus1 = new Text(" test");
-    bonus2 = new Text(" test");
-    bonus3 = new Text(" tes");
-    bonus4 = new Text(" test");
-    bonus5 = new Text(" test");
-    tot1 = new Text(" test");
-    tot2 = new Text(" test");
-    tot3 = new Text(" test");
-    tot4 = new Text(" test");
-    tot5 = new Text(" test");
+    summa1 = new Text("0");
+    summa2 = new Text("0");
+    summa3 = new Text("0");
+    summa4 = new Text("0");
+    summa5 = new Text("0");
+    bonus1 = new Text("0");
+    bonus2 = new Text("0");
+    bonus3 = new Text("0");
+    bonus4 = new Text("0");
+    bonus5 = new Text("0");
+    tot1 = new Text("0");
+    tot2 = new Text("0");
+    tot3 = new Text("0");
+    tot4 = new Text("0");
+    tot5 = new Text("0");
 
     //Label för händelse
-    handelse = new Text(spelare.get(0).getNamn() + " ska kasta första kastet");
+    handelse = new Text(spelare.get(0).getNamn() + " spelar");
 
     quit = new Button();
     quit.setStyle("-fx-padding: 5 13 5 13; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
@@ -231,98 +232,99 @@ public class Protokoll {
       }
     });
 
+    spara = new Button("Spara nu");
     kasta = new Button("Kasta t" + (char) 228 + "rningarna");
 
-    HBox quitKasta = new HBox();
-    quitKasta.setSpacing(157);
-    quitKasta.setAlignment(Pos.CENTER);
-    quitKasta.getChildren().addAll(quit, kasta);
+    HBox quitKastaSpara = new HBox();
+    quitKastaSpara.setSpacing(60);
+    quitKastaSpara.setAlignment(Pos.CENTER);
+    quitKastaSpara.getChildren().addAll(quit, kasta, spara);
 
 
     //Tärningars label
-    tarning1 = new Text("t"+(char) 228+"rning 1");
-    tarning2 = new Text("t"+(char) 228+"rning2");
-    tarning3 = new Text("t"+(char) 228+"rning3");
-    tarning4 = new Text("t"+(char) 228+"rning4");
-    tarning5 = new Text("t"+(char) 228+"rning5");
+    tarning1 = new Text("");
+    tarning2 = new Text("");
+    tarning3 = new Text("");
+    tarning4 = new Text("");
+    tarning5 = new Text("");
 
 
     //Creating Buttons
-    button1 = new Button(" ");
-    button2 = new Button(" ");
-    button3 = new Button(" ");
-    button4 = new Button(" ");
-    button5 = new Button(" ");
-    button6 = new Button(" ");
-    button7 = new Button(" ");
-    button8 = new Button(" ");
-    button9 = new Button(" ");
-    button10 = new Button(" ");
-    button11 = new Button(" ");
-    button12 = new Button(" ");
-    button13 = new Button(" ");
-    button14 = new Button(" ");
-    button15 = new Button(" ");
-    button16 = new Button(" ");
-    button17 = new Button(" ");
-    button18 = new Button(" ");
-    button19 = new Button(" ");
-    button20 = new Button(" ");
-    button21 = new Button(" ");
-    button22 = new Button(" ");
-    button23 = new Button(" ");
-    button24 = new Button(" ");
-    button25 = new Button(" ");
-    button26 = new Button(" ");
-    button27 = new Button(" ");
-    button28 = new Button(" ");
-    button29 = new Button(" ");
-    button30 = new Button(" ");
-    button31 = new Button(" ");
-    button32 = new Button(" ");
-    button33 = new Button(" ");
-    button34 = new Button(" ");
-    button35 = new Button(" ");
-    button36 = new Button(" ");
-    button37 = new Button(" ");
-    button38 = new Button(" ");
-    button39 = new Button(" ");
-    button40 = new Button(" ");
-    button41 = new Button(" ");
-    button42 = new Button(" ");
-    button43 = new Button(" ");
-    button44 = new Button(" ");
-    button45 = new Button(" ");
-    button46 = new Button(" ");
-    button47 = new Button(" ");
-    button48 = new Button(" ");
-    button49 = new Button(" ");
-    button50 = new Button(" ");
-    button51 = new Button(" ");
-    button52 = new Button(" ");
-    button53 = new Button(" ");
-    button54 = new Button(" ");
-    button55 = new Button(" ");
-    button56 = new Button(" ");
-    button57 = new Button(" ");
-    button58 = new Button(" ");
-    button59 = new Button(" ");
-    button60 = new Button(" ");
-    button61 = new Button(" ");
-    button62 = new Button(" ");
-    button63 = new Button(" ");
-    button64 = new Button(" ");
-    button65 = new Button(" ");
-    button66 = new Button(" ");
-    button67 = new Button(" ");
-    button68 = new Button(" ");
-    button69 = new Button(" ");
-    button70 = new Button(" ");
-    button71 = new Button(" ");
-    button72 = new Button(" ");
-    button73 = new Button(" ");
-    button74 = new Button(" ");
-    button75 = new Button(" ");
+    button1 = new Button("  ");
+    button2 = new Button("  ");
+    button3 = new Button("  ");
+    button4 = new Button("  ");
+    button5 = new Button("  ");
+    button6 = new Button("  ");
+    button7 = new Button("  ");
+    button8 = new Button("  ");
+    button9 = new Button("  ");
+    button10 = new Button("  ");
+    button11 = new Button("  ");
+    button12 = new Button("  ");
+    button13 = new Button("  ");
+    button14 = new Button("  ");
+    button15 = new Button("  ");
+    button16 = new Button("  ");
+    button17 = new Button("  ");
+    button18 = new Button("  ");
+    button19 = new Button("  ");
+    button20 = new Button("  ");
+    button21 = new Button("  ");
+    button22 = new Button("  ");
+    button23 = new Button("  ");
+    button24 = new Button("  ");
+    button25 = new Button("  ");
+    button26 = new Button("  ");
+    button27 = new Button("  ");
+    button28 = new Button("  ");
+    button29 = new Button("  ");
+    button30 = new Button("  ");
+    button31 = new Button("  ");
+    button32 = new Button("  ");
+    button33 = new Button("  ");
+    button34 = new Button("  ");
+    button35 = new Button("  ");
+    button36 = new Button("  ");
+    button37 = new Button("  ");
+    button38 = new Button("  ");
+    button39 = new Button("  ");
+    button40 = new Button("  ");
+    button41 = new Button("  ");
+    button42 = new Button("  ");
+    button43 = new Button("  ");
+    button44 = new Button("  ");
+    button45 = new Button("  ");
+    button46 = new Button("  ");
+    button47 = new Button("  ");
+    button48 = new Button("  ");
+    button49 = new Button("  ");
+    button50 = new Button("  ");
+    button51 = new Button("  ");
+    button52 = new Button("  ");
+    button53 = new Button("  ");
+    button54 = new Button("  ");
+    button55 = new Button("  ");
+    button56 = new Button("  ");
+    button57 = new Button("  ");
+    button58 = new Button("  ");
+    button59 = new Button("  ");
+    button60 = new Button("  ");
+    button61 = new Button("  ");
+    button62 = new Button("  ");
+    button63 = new Button("  ");
+    button64 = new Button("  ");
+    button65 = new Button("  ");
+    button66 = new Button("  ");
+    button67 = new Button("  ");
+    button68 = new Button("  ");
+    button69 = new Button("  ");
+    button70 = new Button("  ");
+    button71 = new Button("  ");
+    button72 = new Button("  ");
+    button73 = new Button("  ");
+    button74 = new Button("  ");
+    button75 = new Button("  ");
 
     gridPane = new GridPane();
 
@@ -401,7 +403,7 @@ public class Protokoll {
 
     //Kasta knapp
 
-    gridPane.add(quitKasta, 0, 22, 6, 1);
+    gridPane.add(quitKastaSpara, 0, 22, 6, 1);
 
 
     //Creating a scene object
@@ -410,40 +412,131 @@ public class Protokoll {
     //Setting title to the Stage
     myStage.setTitle("Protokoll");
 
+    inaktiveraKnapparSpelare1();
+    inaktiveraKnapparSpelare2();
+    inaktiveraKnapparSpelare3();
+    inaktiveraKnapparSpelare4();
+    inaktiveraKnapparSpelare5();
+    inaktiveraCheckboxar();
+    spara.setDisable(true);
+
     kasta.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
 
-        handelse.setText("Varför funkar det inte?");
-        spel.kasta();
-        int[] kastResultat = spel.getTarningar().getVarden();
+        
+        ArrayList<Integer> kastAttSpara = new ArrayList<Integer>();
+        if (checkBox1.isSelected()){
+          kastAttSpara.add(0);
+        }
+        if (checkBox2.isSelected()){
+          kastAttSpara.add(1);
+        }
+        if (checkBox3.isSelected()){
+          kastAttSpara.add(2);
+        }
+        if (checkBox4.isSelected()){
+          kastAttSpara.add(3);
+        }
+        if (checkBox5.isSelected()){
+          kastAttSpara.add(4);
+        }
+
+        int[] sparadeKast = new int[kastAttSpara.size()];
+
+
+        for (int i = 0; i < sparadeKast.length; i++) {
+        sparadeKast[i] = kastAttSpara.get(i).intValue();
+      }
+
+        spel.kasta(sparadeKast);
+
+      int[] kastResultat = spel.getTarningar().getVarden();
         tarning1.setText(String.valueOf(kastResultat[0]));
         tarning2.setText(String.valueOf(kastResultat[1]));
         tarning3.setText(String.valueOf(kastResultat[2]));
         tarning4.setText(String.valueOf(kastResultat[3]));
         tarning5.setText(String.valueOf(kastResultat[4]));
 
-        handelse.setText(spelare.get(0).getNamn() + ", markera vilka kast som ska sparas");
+        checkBox1.setSelected(false);
+        checkBox2.setSelected(false);
+        checkBox3.setSelected(false);
+        checkBox4.setSelected(false);
+        checkBox5.setSelected(false);
+        aktiveraCheckboxar();
+        spara.setDisable(false);
 
-        int antalMarkerade = 0;
-        if (checkBox1.isSelected()){
-          antalMarkerade++;
+        if (spel.getKast() == 3) {
+
+          inaktiveraCheckboxar();
+          spara.setDisable(true);
+          kasta.setDisable(true);
+
+          int aktivSpelare = spel.getAktivSpelare();
+
+          switch (aktivSpelare) {
+            case 1:
+              aktiveraKnapparSpelare1();
+              break;
+            case 2:
+              aktiveraKnapparSpelare2();
+              break;
+            case 3:
+              aktiveraKnapparSpelare3();
+              break;
+            case 4:
+              aktiveraKnapparSpelare4();
+              break;
+            case 5:
+              aktiveraKnapparSpelare5();
+              break;
+          }
+
         }
-        if (checkBox2.isSelected()){
-          antalMarkerade++;
-        }
-        if (checkBox3.isSelected()){
-          antalMarkerade++;
-        }
-        if (checkBox4.isSelected()){
-          antalMarkerade++;
-        }
-        if (checkBox5.isSelected()){
-          antalMarkerade++;
-        }
-        int[] sparadeKast = new int[antalMarkerade];
+        spel.okaKast();
+
+        if (spel.getKast() == 1) {
+
+        handelse.setText("Spara ditt resultat i valfri position");
+      } else {
+        int aktivSpelare = spel.getAktivSpelare();
+        handelse.setText(spelare.get(aktivSpelare - 1).getNamn() + ", markera vilka kast som ska sparas");
+      }
+
+    }
 
 
+    });
+
+    spara.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+
+        handelse.setText("Spara ditt resultat i valfri position");
+        kasta.setDisable(true);
+        spara.setDisable(true);
+        inaktiveraCheckboxar();
+
+        int aktivSpelare = spel.getAktivSpelare();
+
+        switch(aktivSpelare){
+          case 1:
+            aktiveraKnapparSpelare1();
+            break;
+          case 2:
+            aktiveraKnapparSpelare2();
+            break;
+          case 3:
+            aktiveraKnapparSpelare3();
+            break;
+          case 4:
+            aktiveraKnapparSpelare4();
+            break;
+          case 5:
+            aktiveraKnapparSpelare5();
+            break;
+        }
+        spel.nastaSpelare();
       }
     });
   }
@@ -487,6 +580,22 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(0);
           spel.getSpelare().get(0).sparaResultat(0, result);
           button1.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -496,6 +605,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(1);
           spel.getSpelare().get(0).sparaResultat(1, result);
           button6.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -505,6 +626,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(2);
           spel.getSpelare().get(0).sparaResultat(2, result);
           button11.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -514,6 +647,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(3);
           spel.getSpelare().get(0).sparaResultat(3, result);
           button16.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -523,6 +668,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(4);
           spel.getSpelare().get(0).sparaResultat(4, result);
           button21.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -532,6 +689,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(5);
           spel.getSpelare().get(0).sparaResultat(5, result);
           button26.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -541,6 +710,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(6);
           spel.getSpelare().get(0).sparaResultat(6, result);
           button31.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -550,6 +731,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(7);
           spel.getSpelare().get(0).sparaResultat(7, result);
           button36.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -559,6 +752,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(8);
           spel.getSpelare().get(0).sparaResultat(8, result);
           button41.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -568,6 +773,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(9);
           spel.getSpelare().get(0).sparaResultat(9, result);
           button46.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -577,6 +794,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(10);
           spel.getSpelare().get(0).sparaResultat(10, result);
           button51.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -586,6 +815,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(11);
           spel.getSpelare().get(0).sparaResultat(11, result);
           button56.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -595,6 +836,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(12);
           spel.getSpelare().get(0).sparaResultat(12, result);
           button61.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -604,6 +857,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(13);
           spel.getSpelare().get(0).sparaResultat(13, result);
           button66.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
 
@@ -613,6 +878,18 @@ public class Protokoll {
           int result = spel.getTarningar().kontrolleraResultat(14);
           spel.getSpelare().get(0).sparaResultat(14, result);
           button71.setText(String.valueOf(result));
+          inaktiveraKnapparSpelare1();
+          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+          handelse.setText(aktivSpelare.getNamn() + " spelar");
+          kasta.setDisable(false);
+          tarning1.setText("");
+          tarning2.setText("");
+          tarning3.setText("");
+          tarning4.setText("");
+          tarning5.setText("");
+          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
+          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
+          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
         }
       });
     }
@@ -647,6 +924,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(0);
         spel.getSpelare().get(1).sparaResultat(0, result);
         button2.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -656,6 +945,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(1);
         spel.getSpelare().get(1).sparaResultat(1, result);
         button7.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -665,6 +966,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(2);
         spel.getSpelare().get(1).sparaResultat(2, result);
         button12.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -674,6 +987,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(3);
         spel.getSpelare().get(1).sparaResultat(3, result);
         button17.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -683,6 +1008,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(4);
         spel.getSpelare().get(1).sparaResultat(4, result);
         button22.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -692,6 +1029,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(5);
         spel.getSpelare().get(1).sparaResultat(5, result);
         button27.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -701,6 +1050,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(6);
         spel.getSpelare().get(1).sparaResultat(6, result);
         button32.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -710,6 +1071,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(7);
         spel.getSpelare().get(1).sparaResultat(7, result);
         button37.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -719,6 +1092,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(8);
         spel.getSpelare().get(1).sparaResultat(8, result);
         button42.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -728,6 +1113,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(9);
         spel.getSpelare().get(1).sparaResultat(9, result);
         button47.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -737,6 +1134,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(10);
         spel.getSpelare().get(1).sparaResultat(10, result);
         button52.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -746,6 +1155,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(11);
         spel.getSpelare().get(1).sparaResultat(11, result);
         button57.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -755,6 +1176,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(12);
         spel.getSpelare().get(1).sparaResultat(12, result);
         button62.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -764,6 +1197,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(13);
         spel.getSpelare().get(1).sparaResultat(13, result);
         button67.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
 
@@ -773,6 +1218,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(14);
         spel.getSpelare().get(1).sparaResultat(14, result);
         button72.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare2();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
+        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
+        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
       }
     });
   }
@@ -807,6 +1264,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(0);
         spel.getSpelare().get(2).sparaResultat(0, result);
         button3.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -816,6 +1285,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(1);
         spel.getSpelare().get(2).sparaResultat(1, result);
         button8.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -825,6 +1306,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(2);
         spel.getSpelare().get(2).sparaResultat(2, result);
         button13.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -834,6 +1327,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(3);
         spel.getSpelare().get(2).sparaResultat(3, result);
         button18.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -843,6 +1348,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(4);
         spel.getSpelare().get(2).sparaResultat(4, result);
         button23.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -852,6 +1369,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(5);
         spel.getSpelare().get(2).sparaResultat(5, result);
         button28.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -861,6 +1390,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(6);
         spel.getSpelare().get(2).sparaResultat(6, result);
         button33.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -870,6 +1411,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(7);
         spel.getSpelare().get(2).sparaResultat(7, result);
         button38.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -879,6 +1432,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(8);
         spel.getSpelare().get(2).sparaResultat(8, result);
         button43.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -888,6 +1453,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(9);
         spel.getSpelare().get(2).sparaResultat(9, result);
         button48.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -897,6 +1474,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(10);
         spel.getSpelare().get(2).sparaResultat(10, result);
         button53.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -906,6 +1495,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(11);
         spel.getSpelare().get(2).sparaResultat(11, result);
         button58.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -915,6 +1516,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(12);
         spel.getSpelare().get(2).sparaResultat(12, result);
         button63.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -924,6 +1537,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(13);
         spel.getSpelare().get(2).sparaResultat(13, result);
         button68.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
 
@@ -933,6 +1558,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(14);
         spel.getSpelare().get(2).sparaResultat(14, result);
         button73.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare3();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
+        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
+        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
       }
     });
   }
@@ -969,6 +1606,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(0);
         spel.getSpelare().get(3).sparaResultat(0, result);
         button4.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -978,6 +1627,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(1);
         spel.getSpelare().get(3).sparaResultat(1, result);
         button9.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -987,6 +1648,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(2);
         spel.getSpelare().get(3).sparaResultat(2, result);
         button14.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -996,6 +1669,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(3);
         spel.getSpelare().get(3).sparaResultat(3, result);
         button19.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1005,6 +1690,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(4);
         spel.getSpelare().get(3).sparaResultat(4, result);
         button24.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1014,6 +1711,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(5);
         spel.getSpelare().get(3).sparaResultat(5, result);
         button29.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1023,6 +1732,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(6);
         spel.getSpelare().get(3).sparaResultat(6, result);
         button34.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1032,6 +1753,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(7);
         spel.getSpelare().get(3).sparaResultat(7, result);
         button39.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1041,6 +1774,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(8);
         spel.getSpelare().get(3).sparaResultat(8, result);
         button44.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1050,6 +1795,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(9);
         spel.getSpelare().get(3).sparaResultat(9, result);
         button49.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1059,6 +1816,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(10);
         spel.getSpelare().get(3).sparaResultat(10, result);
         button54.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1068,6 +1837,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(11);
         spel.getSpelare().get(3).sparaResultat(11, result);
         button59.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1077,6 +1858,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(12);
         spel.getSpelare().get(3).sparaResultat(12, result);
         button64.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1086,6 +1879,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(13);
         spel.getSpelare().get(3).sparaResultat(13, result);
         button69.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
 
@@ -1095,6 +1900,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(14);
         spel.getSpelare().get(3).sparaResultat(14, result);
         button74.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare4();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
+        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
+        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
       }
     });
   }
@@ -1132,6 +1949,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(0);
         spel.getSpelare().get(4).sparaResultat(0, result);
         button5.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1141,6 +1970,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(1);
         spel.getSpelare().get(4).sparaResultat(1, result);
         button10.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1150,6 +1991,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(2);
         spel.getSpelare().get(4).sparaResultat(2, result);
         button15.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1159,6 +2012,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(3);
         spel.getSpelare().get(4).sparaResultat(3, result);
         button20.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1168,6 +2033,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(4);
         spel.getSpelare().get(4).sparaResultat(4, result);
         button25.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1177,6 +2054,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(5);
         spel.getSpelare().get(4).sparaResultat(5, result);
         button30.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1186,6 +2075,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(6);
         spel.getSpelare().get(4).sparaResultat(6, result);
         button35.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1195,6 +2096,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(7);
         spel.getSpelare().get(4).sparaResultat(7, result);
         button40.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1204,6 +2117,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(8);
         spel.getSpelare().get(4).sparaResultat(8, result);
         button45.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1213,6 +2138,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(9);
         spel.getSpelare().get(4).sparaResultat(9, result);
         button50.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1222,6 +2159,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(10);
         spel.getSpelare().get(4).sparaResultat(10, result);
         button55.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1231,6 +2180,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(11);
         spel.getSpelare().get(4).sparaResultat(11, result);
         button60.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1240,6 +2201,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(12);
         spel.getSpelare().get(4).sparaResultat(12, result);
         button65.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1249,6 +2222,18 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(13);
         spel.getSpelare().get(4).sparaResultat(13, result);
         button70.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
 
@@ -1258,7 +2243,384 @@ public class Protokoll {
         int result = spel.getTarningar().kontrolleraResultat(14);
         spel.getSpelare().get(4).sparaResultat(14, result);
         button75.setText(String.valueOf(result));
+        inaktiveraKnapparSpelare5();
+        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+        handelse.setText(aktivSpelare.getNamn() + " spelar");
+        kasta.setDisable(false);
+        tarning1.setText("");
+        tarning2.setText("");
+        tarning3.setText("");
+        tarning4.setText("");
+        tarning5.setText("");
+        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
+        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
+        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
       }
     });
+  }
+  
+  public void aktiveraKnapparSpelare1(){
+    
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(0) == null) {
+      button1.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(1) == null) {
+      button6.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(2) == null) {
+      button11.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(3) == null) {
+      button16.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(4) == null) {
+      button21.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(5) == null) {
+      button26.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(6) == null) {
+      button31.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(7) == null) {
+      button36.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(8) == null) {
+      button41.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(9) == null) {
+      button46.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(10) == null) {
+      button51.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(11) == null) {
+      button56.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(12) == null) {
+      button61.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(13) == null) {
+      button66.setDisable(false);
+    }
+    if (spel.getSpelare().get(0).getResultatLista().getResultat(14) == null) {
+      button71.setDisable(false);
+    }
+  }
+
+  public void aktiveraKnapparSpelare2(){
+
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(0) == null) {
+      button2.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(1) == null) {
+      button7.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(2) == null) {
+      button12.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(3) == null) {
+      button17.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(4) == null) {
+      button22.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(5) == null) {
+      button27.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(6) == null) {
+      button32.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(7) == null) {
+      button37.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(8) == null) {
+      button42.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(9) == null) {
+      button47.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(10) == null) {
+      button52.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(11) == null) {
+      button57.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(12) == null) {
+      button62.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(13) == null) {
+      button67.setDisable(false);
+    }
+    if (spel.getSpelare().get(1).getResultatLista().getResultat(14) == null) {
+      button72.setDisable(false);
+    }
+  }
+
+  public void aktiveraKnapparSpelare3(){
+
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(0) == null) {
+      button3.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(1) == null) {
+      button8.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(2) == null) {
+      button13.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(3) == null) {
+      button18.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(4) == null) {
+      button23.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(5) == null) {
+      button28.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(6) == null) {
+      button33.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(7) == null) {
+      button38.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(8) == null) {
+      button43.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(9) == null) {
+      button48.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(10) == null) {
+      button53.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(11) == null) {
+      button58.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(12) == null) {
+      button63.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(13) == null) {
+      button68.setDisable(false);
+    }
+    if (spel.getSpelare().get(2).getResultatLista().getResultat(14) == null) {
+      button73.setDisable(false);
+    }
+  }
+
+  public void aktiveraKnapparSpelare4(){
+
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(0) == null) {
+      button4.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(1) == null) {
+      button9.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(2) == null) {
+      button14.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(3) == null) {
+      button19.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(4) == null) {
+      button24.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(5) == null) {
+      button29.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(6) == null) {
+      button34.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(7) == null) {
+      button39.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(8) == null) {
+      button44.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(9) == null) {
+      button49.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(10) == null) {
+      button54.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(11) == null) {
+      button59.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(12) == null) {
+      button64.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(13) == null) {
+      button69.setDisable(false);
+    }
+    if (spel.getSpelare().get(3).getResultatLista().getResultat(14) == null) {
+      button74.setDisable(false);
+    }
+  }
+
+  public void aktiveraKnapparSpelare5(){
+
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(0) == null) {
+      button5.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(1) == null) {
+      button10.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(2) == null) {
+      button15.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(3) == null) {
+      button20.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(4) == null) {
+      button25.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(5) == null) {
+      button30.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(6) == null) {
+      button35.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(7) == null) {
+      button40.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(8) == null) {
+      button45.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(9) == null) {
+      button50.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(10) == null) {
+      button55.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(11) == null) {
+      button60.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(12) == null) {
+      button65.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(13) == null) {
+      button70.setDisable(false);
+    }
+    if (spel.getSpelare().get(4).getResultatLista().getResultat(14) == null) {
+      button75.setDisable(false);
+    }
+  }
+
+  public void inaktiveraKnapparSpelare1(){
+
+    button1.setDisable(true);
+    button6.setDisable(true);
+    button11.setDisable(true);
+    button16.setDisable(true);
+    button21.setDisable(true);
+    button26.setDisable(true);
+    button31.setDisable(true);
+    button36.setDisable(true);
+    button41.setDisable(true);
+    button46.setDisable(true);
+    button51.setDisable(true);
+    button56.setDisable(true);
+    button61.setDisable(true);
+    button66.setDisable(true);
+    button71.setDisable(true);
+
+  }
+
+  public void inaktiveraKnapparSpelare2(){
+
+    button2.setDisable(true);
+    button7.setDisable(true);
+    button12.setDisable(true);
+    button17.setDisable(true);
+    button22.setDisable(true);
+    button27.setDisable(true);
+    button32.setDisable(true);
+    button37.setDisable(true);
+    button42.setDisable(true);
+    button47.setDisable(true);
+    button52.setDisable(true);
+    button57.setDisable(true);
+    button62.setDisable(true);
+    button67.setDisable(true);
+    button72.setDisable(true);
+
+  }
+
+  public void inaktiveraKnapparSpelare3(){
+
+    button3.setDisable(true);
+    button8.setDisable(true);
+    button13.setDisable(true);
+    button18.setDisable(true);
+    button23.setDisable(true);
+    button28.setDisable(true);
+    button33.setDisable(true);
+    button38.setDisable(true);
+    button43.setDisable(true);
+    button48.setDisable(true);
+    button53.setDisable(true);
+    button58.setDisable(true);
+    button63.setDisable(true);
+    button68.setDisable(true);
+    button73.setDisable(true);
+
+  }
+
+  public void inaktiveraKnapparSpelare4(){
+
+    button4.setDisable(true);
+    button9.setDisable(true);
+    button14.setDisable(true);
+    button19.setDisable(true);
+    button24.setDisable(true);
+    button29.setDisable(true);
+    button34.setDisable(true);
+    button39.setDisable(true);
+    button44.setDisable(true);
+    button49.setDisable(true);
+    button54.setDisable(true);
+    button59.setDisable(true);
+    button64.setDisable(true);
+    button69.setDisable(true);
+    button74.setDisable(true);
+
+  }
+
+  public void inaktiveraKnapparSpelare5(){
+
+    button5.setDisable(true);
+    button10.setDisable(true);
+    button15.setDisable(true);
+    button20.setDisable(true);
+    button25.setDisable(true);
+    button30.setDisable(true);
+    button35.setDisable(true);
+    button40.setDisable(true);
+    button45.setDisable(true);
+    button50.setDisable(true);
+    button55.setDisable(true);
+    button60.setDisable(true);
+    button65.setDisable(true);
+    button70.setDisable(true);
+    button75.setDisable(true);
+
+  }
+  
+  public void inaktiveraCheckboxar(){
+
+    checkBox1.setDisable(true);
+    checkBox2.setDisable(true);
+    checkBox3.setDisable(true);
+    checkBox4.setDisable(true);
+    checkBox5.setDisable(true);
+
+  }
+
+  public void aktiveraCheckboxar(){
+
+    checkBox1.setDisable(false);
+    checkBox2.setDisable(false);
+    checkBox3.setDisable(false);
+    checkBox4.setDisable(false);
+    checkBox5.setDisable(false);
+
   }
 }

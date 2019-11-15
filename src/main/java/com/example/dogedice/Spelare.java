@@ -16,17 +16,25 @@ public class Spelare {
 
   public int getId(){return id;}
 
+  public ResultatLista getResultatLista(){
+    return resultat;
+  }
+
+
   public int getOvreResultat(){
     return resultat.getOvreResultat();
   }
+
 
   public int getBonus(){
     return resultat.getBonus();
   }
 
+
   public int getTotalSumma(){
     return resultat.getTotalSumma();
   }
+
 
   public void sparaResultat(int position, int summa){
 

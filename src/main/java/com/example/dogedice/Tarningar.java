@@ -37,7 +37,8 @@ public class Tarningar<tarningar> {
       int sparatVarde = 0;
       int[] nuvarandeVarden = getVarden();
       for (int i = 0; i < positioner.length; i++){
-        sparatVarde = nuvarandeVarden[positioner[i]];
+        int positionAttSpara = positioner[i];
+        sparatVarde = nuvarandeVarden[positionAttSpara];
         tarningar.get(i).setVarde(sparatVarde);
       }
       for (int i = positioner.length; i < tarningar.size(); i++){
@@ -192,21 +193,12 @@ public class Tarningar<tarningar> {
 
     kast = sortera(kast);
 
-    if ((kontrolleraTretal(kast) != 0)) {
-      if ((kontrolleraTretal(kast)/3) != (kontrolleraPar(kast)/2)){
-        return kontrolleraTretal(kast) + kontrolleraPar(kast);
-      }
-      else {
-        int[] omvantKast = new int[5];
-        omvantKast[0] = kast[4];
-        omvantKast[1] = kast[3];
-        omvantKast[2] = kast[2];
-        omvantKast[3] = kast[1];
-        omvantKast[4] = kast[0];
-        if ((kontrolleraTretal(kast)/3) != (kontrolleraPar(omvantKast)/2)){
-          return kontrolleraTretal(kast) + kontrolleraPar(omvantKast);
-        }
-      }
+    if (((kast[0] == kast[1]) && (kast[1] == kast[2])) && (kast[3] == kast[4])
+        && (kast[2] != kast[3])){
+      return (3 * kast[0] + 2 * kast[4]);
+    } else if (((kast[2] == kast[3]) && (kast[3] == kast[4])) && (kast[0] == kast[1])
+        && (kast[1] != kast[2])) {
+      return (2 * kast[0] + 3 * kast[4]);
     }
     return 0;
   }
