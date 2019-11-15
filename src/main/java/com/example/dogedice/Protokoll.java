@@ -617,6 +617,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -638,6 +642,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -659,6 +667,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -680,6 +692,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -701,6 +717,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -722,6 +742,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -743,6 +767,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -764,6 +792,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -785,6 +817,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -806,6 +842,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -827,6 +867,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -848,6 +892,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -869,6 +917,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
 
@@ -890,6 +942,10 @@ public class Protokoll {
           summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
           bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
           tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
+          if (spel.getKastOmgang() > 15){
+            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+            resultatSida.visaResultatSida(myStage);
+          }
         }
       });
     }
@@ -936,6 +992,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -957,6 +1017,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -978,6 +1042,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -999,6 +1067,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1020,6 +1092,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1041,6 +1117,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1062,6 +1142,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1083,6 +1167,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1104,6 +1192,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1125,6 +1217,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1146,6 +1242,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1167,6 +1267,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1188,6 +1292,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1209,6 +1317,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1230,6 +1342,10 @@ public class Protokoll {
         summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
         bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
         tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
   }
@@ -1276,6 +1392,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1297,6 +1417,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1318,6 +1442,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1339,6 +1467,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1360,6 +1492,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1381,6 +1517,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1402,6 +1542,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1423,6 +1567,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1444,6 +1592,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1465,6 +1617,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1486,6 +1642,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1507,6 +1667,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1528,6 +1692,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1549,6 +1717,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1570,6 +1742,10 @@ public class Protokoll {
         summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
         bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
         tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
   }
@@ -1618,6 +1794,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1639,6 +1819,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1660,6 +1844,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1681,6 +1869,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1702,6 +1894,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1723,6 +1919,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1744,6 +1944,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1765,6 +1969,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1786,6 +1994,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1807,6 +2019,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1828,6 +2044,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1849,6 +2069,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1870,6 +2094,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1891,6 +2119,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1912,6 +2144,10 @@ public class Protokoll {
         summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
         bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
         tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
   }
@@ -1961,6 +2197,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -1982,6 +2222,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2003,6 +2247,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2024,6 +2272,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2045,6 +2297,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2066,6 +2322,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2087,6 +2347,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2108,6 +2372,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2129,6 +2397,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2150,6 +2422,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2171,6 +2447,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2192,6 +2472,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2213,6 +2497,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2234,6 +2522,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
 
@@ -2255,6 +2547,10 @@ public class Protokoll {
         summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
         bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
         tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
+        if (spel.getKastOmgang() > 15){
+          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+          resultatSida.visaResultatSida(myStage);
+        }
       }
     });
   }

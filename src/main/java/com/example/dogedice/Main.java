@@ -17,8 +17,8 @@ public class Main extends Application {
   // Override the start() method.
   public void start(Stage myStage) {
     //Skapar och visar startsidan
-    //StartSida startSida = new StartSida(myStage);
-    //startSida.visaStartSida(myStage);
+    StartSida startSida = new StartSida(myStage);
+    startSida.visaStartSida(myStage);
 
     //Skapar och visar Infosidan
     //InfoSida infoSida = new InfoSida();
