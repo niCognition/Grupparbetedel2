@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
@@ -41,6 +42,11 @@ public class ResultatSida {
   private Label slutPoang3;
   private Label slutPoang4;
   private Label slutPoang5;
+  private Label slutNamn1;
+  private Label slutNamn2;
+  private Label slutNamn3;
+  private Label slutNamn4;
+  private Label slutNamn5;
   private Button startaOm;
   private Button highScoreLista;
   private Button avsluta;
@@ -77,17 +83,17 @@ public class ResultatSida {
       }
     }
 
-    
-    FlowPane rootNode = new FlowPane(Orientation.VERTICAL);
-    rootNode.setVgap(20);
+
+    GridPane rootNode = new GridPane();
     rootNode.setAlignment(Pos.CENTER);
 
     resultatSida = new Scene(rootNode, 450, 600);
 
     rubrik1.setAlignment(Pos.CENTER);
     rubrik1.setStyle("-fx-font-size: 25pt");
+    //rubrik1.setPadding(new Insets(10, 10, 10, 10));
 
-    rootNode.getChildren().add(rubrik1);
+    rootNode.add(rubrik1, 1, 0, 2, 1);
 
     String namn1 = "";
     String namn2 = "";
@@ -121,41 +127,60 @@ public class ResultatSida {
     rubrik2.setAlignment(Pos.CENTER);
     rubrik2.setStyle("-fx-font-size: 18pt");
 
-    slutPoang1 = new Label("1. \t" + namn1 + "\t \t" + slutSummor[0]);
+    slutNamn1 = new Label("1. " + namn1);
+    slutPoang1 = new Label("" + slutSummor[0]);
     slutPoang1.setAlignment(Pos.CENTER);
+    slutNamn1.setStyle("-fx-font-size: 15pt");
     slutPoang1.setStyle("-fx-font-size: 15pt");
 
-    rootNode.getChildren().addAll(vinnare, rubrik2, slutPoang1);
+    rootNode.add(vinnare, 1, 1, 2, 1);
+    rootNode.add(rubrik2, 0, 2, 2, 1);
+    rootNode.add(slutNamn1, 0, 3, 1, 1);
+    rootNode.add(slutPoang1, 2, 3, 1, 1);
+    //rootNode.getChildren().addAll(vinnare, rubrik2, slutPoang1);
 
     if (antalSpelare > 1) {
-      slutPoang2 = new Label("2. \t" + namn2 + "\t \t" + slutSummor[1]);
+      slutNamn2 = new Label("2. " + namn2);
+      slutPoang2 = new Label("" + slutSummor[1]);
       slutPoang2.setAlignment(Pos.CENTER);
+      slutNamn2.setStyle("-fx-font-size: 15pt");
       slutPoang2.setStyle("-fx-font-size: 15pt");
 
-      rootNode.getChildren().add(slutPoang2);
+      rootNode.add(slutNamn2, 0, 4, 1, 1);
+      rootNode.add(slutPoang2, 2, 4, 1, 1);
     }
 
     if (antalSpelare > 2) {
-      slutPoang3 = new Label("3. \t" + namn3 + "\t \t" + slutSummor[2]);
+      slutNamn3 = new Label("3. " + namn3);
+      slutPoang3 = new Label("" + slutSummor[2]);
       slutPoang3.setAlignment(Pos.CENTER);
+      slutNamn3.setStyle("-fx-font-size: 15pt");
       slutPoang3.setStyle("-fx-font-size: 15pt");
 
-      rootNode.getChildren().add(slutPoang3);
+      rootNode.add(slutNamn3, 0, 5, 1, 1);
+      rootNode.add(slutPoang3, 2, 5, 1, 1);
     }
 
     if (antalSpelare > 3) {
-      slutPoang4 = new Label("4. \t" + namn4 + "\t \t" + slutSummor[3]);
+      slutNamn4 = new Label("4. " + namn4);
+      slutPoang4 = new Label("" + slutSummor[3]);
       slutPoang4.setAlignment(Pos.CENTER);
+      slutNamn4.setStyle("-fx-font-size: 15pt");
       slutPoang4.setStyle("-fx-font-size: 15pt");
 
-      rootNode.getChildren().add(slutPoang4);
+      rootNode.add(slutNamn4, 0, 6, 1, 1);
+      rootNode.add(slutPoang4, 2, 6, 1, 1);
     }
 
     if (antalSpelare > 4) {
-      slutPoang5 = new Label("5. \t" + namn5 + "\t \t" + slutSummor[4]);
+      slutNamn5 = new Label("5. " + namn5);
+      slutPoang5 = new Label("" + slutSummor[4]);
       slutPoang5.setAlignment(Pos.CENTER);
+      slutNamn5.setStyle("-fx-font-size: 15pt");
       slutPoang5.setStyle("-fx-font-size: 15pt");
-      rootNode.getChildren().add(slutPoang5);
+
+      rootNode.add(slutNamn5, 0, 7, 1, 1);
+      rootNode.add(slutPoang5, 2, 7, 1, 1);
     }
 
     startaOm.setAlignment(Pos.CENTER);
@@ -195,7 +220,7 @@ public class ResultatSida {
     nyttHighScoreAvsluta.setAlignment(Pos.CENTER);
     nyttHighScoreAvsluta.getChildren().addAll(avsluta, highScoreLista, startaOm);
 
-    rootNode.getChildren().addAll(nyttHighScoreAvsluta);
+    rootNode.add(nyttHighScoreAvsluta, 0, 8, 2, 3);
   }
 
   public void visaResultatSida(Stage myStage) {
