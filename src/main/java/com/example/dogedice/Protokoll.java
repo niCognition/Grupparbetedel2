@@ -446,7 +446,7 @@ public class Protokoll {
 
 
         for (int i = 0; i < sparadeKast.length; i++) {
-        sparadeKast[i] = kastAttSpara.get(i).intValue();
+        sparadeKast[i] = kastAttSpara.get(i);
       }
 
         spel.kasta(sparadeKast);
@@ -577,375 +577,105 @@ public class Protokoll {
       button1.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(0);
-          spel.getSpelare().get(0).sparaResultat(0, result);
-          button1.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 0, button1);
         }
       });
 
       button6.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(1);
-          spel.getSpelare().get(0).sparaResultat(1, result);
-          button6.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 1, button6);
         }
       });
 
       button11.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(2);
-          spel.getSpelare().get(0).sparaResultat(2, result);
-          button11.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 2, button11);
         }
       });
 
       button16.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(3);
-          spel.getSpelare().get(0).sparaResultat(3, result);
-          button16.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 3, button16);
         }
       });
 
       button21.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(4);
-          spel.getSpelare().get(0).sparaResultat(4, result);
-          button21.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 4, button21);
         }
       });
 
       button26.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(5);
-          spel.getSpelare().get(0).sparaResultat(5, result);
-          button26.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 5, button26);
         }
       });
 
       button31.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(6);
-          spel.getSpelare().get(0).sparaResultat(6, result);
-          button31.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 6, button31);
         }
       });
 
       button36.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(7);
-          spel.getSpelare().get(0).sparaResultat(7, result);
-          button36.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 7, button36);
         }
       });
 
       button41.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(8);
-          spel.getSpelare().get(0).sparaResultat(8, result);
-          button41.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 8, button41);
         }
       });
 
       button46.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(9);
-          spel.getSpelare().get(0).sparaResultat(9, result);
-          button46.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 9, button46);
         }
       });
 
       button51.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(10);
-          spel.getSpelare().get(0).sparaResultat(10, result);
-          button51.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 10, button51);
         }
       });
 
       button56.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(11);
-          spel.getSpelare().get(0).sparaResultat(11, result);
-          button56.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 11, button56);
         }
       });
 
       button61.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(12);
-          spel.getSpelare().get(0).sparaResultat(12, result);
-          button61.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 12, button61);
         }
       });
 
       button66.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(13);
-          spel.getSpelare().get(0).sparaResultat(13, result);
-          button66.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 13, button66);
         }
       });
 
       button71.setOnAction(new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-          int result = spel.getTarningar().kontrolleraResultat(14);
-          spel.getSpelare().get(0).sparaResultat(14, result);
-          button71.setText(String.valueOf(result));
-          inaktiveraKnapparSpelare1();
-          Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-          handelse.setText(aktivSpelare.getNamn() + " spelar");
-          kasta.setDisable(false);
-          tarning1.setText("");
-          tarning2.setText("");
-          tarning3.setText("");
-          tarning4.setText("");
-          tarning5.setText("");
-          summa1.setText(String.valueOf(spel.getSpelare().get(0).getOvreResultat()));
-          bonus1.setText(String.valueOf(spel.getSpelare().get(0).getBonus()));
-          tot1.setText(String.valueOf(spel.getSpelare().get(0).getTotalSumma()));
-          if (spel.getKastOmgang() > 15){
-            ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-            resultatSida.visaResultatSida(myStage);
-          }
+          setKnappHandelse(0, 14, button71);
         }
       });
     }
@@ -977,375 +707,105 @@ public class Protokoll {
     button2.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(0);
-        spel.getSpelare().get(1).sparaResultat(0, result);
-        button2.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 0, button2);
       }
     });
 
     button7.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(1);
-        spel.getSpelare().get(1).sparaResultat(1, result);
-        button7.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 1, button7);
       }
     });
 
     button12.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(2);
-        spel.getSpelare().get(1).sparaResultat(2, result);
-        button12.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 2, button12);
       }
     });
 
     button17.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(3);
-        spel.getSpelare().get(1).sparaResultat(3, result);
-        button17.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 3, button17);
       }
     });
 
     button22.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(4);
-        spel.getSpelare().get(1).sparaResultat(4, result);
-        button22.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 4, button22);
       }
     });
 
     button27.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(5);
-        spel.getSpelare().get(1).sparaResultat(5, result);
-        button27.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 5, button27);
       }
     });
 
     button32.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(6);
-        spel.getSpelare().get(1).sparaResultat(6, result);
-        button32.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 6, button32);
       }
     });
 
     button37.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(7);
-        spel.getSpelare().get(1).sparaResultat(7, result);
-        button37.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 7, button37);
       }
     });
 
     button42.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(8);
-        spel.getSpelare().get(1).sparaResultat(8, result);
-        button42.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 8, button42);
       }
     });
 
     button47.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(9);
-        spel.getSpelare().get(1).sparaResultat(9, result);
-        button47.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 9, button47);
       }
     });
 
     button52.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(10);
-        spel.getSpelare().get(1).sparaResultat(10, result);
-        button52.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 10, button52);
       }
     });
 
     button57.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(11);
-        spel.getSpelare().get(1).sparaResultat(11, result);
-        button57.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 11, button57);
       }
     });
 
     button62.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(12);
-        spel.getSpelare().get(1).sparaResultat(12, result);
-        button62.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 12, button62);
       }
     });
 
     button67.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(13);
-        spel.getSpelare().get(1).sparaResultat(13, result);
-        button67.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 13, button67);
       }
     });
 
     button72.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(14);
-        spel.getSpelare().get(1).sparaResultat(14, result);
-        button72.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare2();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa2.setText(String.valueOf(spel.getSpelare().get(1).getOvreResultat()));
-        bonus2.setText(String.valueOf(spel.getSpelare().get(1).getBonus()));
-        tot2.setText(String.valueOf(spel.getSpelare().get(1).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(1, 14, button72);
       }
     });
   }
@@ -1377,375 +837,105 @@ public class Protokoll {
     button3.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(0);
-        spel.getSpelare().get(2).sparaResultat(0, result);
-        button3.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 0, button3);
       }
     });
 
     button8.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(1);
-        spel.getSpelare().get(2).sparaResultat(1, result);
-        button8.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 1, button8);
       }
     });
 
     button13.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(2);
-        spel.getSpelare().get(2).sparaResultat(2, result);
-        button13.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 2, button13);
       }
     });
 
     button18.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(3);
-        spel.getSpelare().get(2).sparaResultat(3, result);
-        button18.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 3, button18);
       }
     });
 
     button23.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(4);
-        spel.getSpelare().get(2).sparaResultat(4, result);
-        button23.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 4, button23);
       }
     });
 
     button28.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(5);
-        spel.getSpelare().get(2).sparaResultat(5, result);
-        button28.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 5, button28);
       }
     });
 
     button33.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(6);
-        spel.getSpelare().get(2).sparaResultat(6, result);
-        button33.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 6, button33);
       }
     });
 
     button38.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(7);
-        spel.getSpelare().get(2).sparaResultat(7, result);
-        button38.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 7, button38);
       }
     });
 
     button43.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(8);
-        spel.getSpelare().get(2).sparaResultat(8, result);
-        button43.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 8, button43);
       }
     });
 
     button48.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(9);
-        spel.getSpelare().get(2).sparaResultat(9, result);
-        button48.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 9, button48);
       }
     });
 
     button53.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(10);
-        spel.getSpelare().get(2).sparaResultat(10, result);
-        button53.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 10, button53);
       }
     });
 
     button58.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(11);
-        spel.getSpelare().get(2).sparaResultat(11, result);
-        button58.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 11, button58);
       }
     });
 
     button63.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(12);
-        spel.getSpelare().get(2).sparaResultat(12, result);
-        button63.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 12, button63);
       }
     });
 
     button68.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(13);
-        spel.getSpelare().get(2).sparaResultat(13, result);
-        button68.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 13, button68);
       }
     });
 
     button73.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(14);
-        spel.getSpelare().get(2).sparaResultat(14, result);
-        button73.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare3();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa3.setText(String.valueOf(spel.getSpelare().get(2).getOvreResultat()));
-        bonus3.setText(String.valueOf(spel.getSpelare().get(2).getBonus()));
-        tot3.setText(String.valueOf(spel.getSpelare().get(2).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(2, 14, button73);
       }
     });
   }
@@ -1779,375 +969,105 @@ public class Protokoll {
     button4.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(0);
-        spel.getSpelare().get(3).sparaResultat(0, result);
-        button4.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 0, button4);
       }
     });
 
     button9.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(1);
-        spel.getSpelare().get(3).sparaResultat(1, result);
-        button9.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 1, button9);
       }
     });
 
     button14.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(2);
-        spel.getSpelare().get(3).sparaResultat(2, result);
-        button14.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 2, button14);
       }
     });
 
     button19.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(3);
-        spel.getSpelare().get(3).sparaResultat(3, result);
-        button19.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 3, button19);
       }
     });
 
     button24.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(4);
-        spel.getSpelare().get(3).sparaResultat(4, result);
-        button24.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 4, button24);
       }
     });
 
     button29.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(5);
-        spel.getSpelare().get(3).sparaResultat(5, result);
-        button29.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 5, button29);
       }
     });
 
     button34.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(6);
-        spel.getSpelare().get(3).sparaResultat(6, result);
-        button34.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 6, button34);
       }
     });
 
     button39.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(7);
-        spel.getSpelare().get(3).sparaResultat(7, result);
-        button39.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 7, button39);
       }
     });
 
     button44.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(8);
-        spel.getSpelare().get(3).sparaResultat(8, result);
-        button44.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 8, button44);
       }
     });
 
     button49.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(9);
-        spel.getSpelare().get(3).sparaResultat(9, result);
-        button49.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 9, button49);
       }
     });
 
     button54.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(10);
-        spel.getSpelare().get(3).sparaResultat(10, result);
-        button54.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 10, button54);
       }
     });
 
     button59.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(11);
-        spel.getSpelare().get(3).sparaResultat(11, result);
-        button59.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 11, button59);
       }
     });
 
     button64.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(12);
-        spel.getSpelare().get(3).sparaResultat(12, result);
-        button64.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 12, button64);
       }
     });
 
     button69.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(13);
-        spel.getSpelare().get(3).sparaResultat(13, result);
-        button69.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 13, button69);
       }
     });
 
     button74.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(14);
-        spel.getSpelare().get(3).sparaResultat(14, result);
-        button74.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare4();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa4.setText(String.valueOf(spel.getSpelare().get(3).getOvreResultat()));
-        bonus4.setText(String.valueOf(spel.getSpelare().get(3).getBonus()));
-        tot4.setText(String.valueOf(spel.getSpelare().get(3).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(3, 14, button74);
       }
     });
   }
@@ -2182,380 +1102,168 @@ public class Protokoll {
     button5.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(0);
-        spel.getSpelare().get(4).sparaResultat(0, result);
-        button5.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 0, button5);
       }
     });
 
     button10.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(1);
-        spel.getSpelare().get(4).sparaResultat(1, result);
-        button10.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 1, button10);
       }
     });
 
     button15.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(2);
-        spel.getSpelare().get(4).sparaResultat(2, result);
-        button15.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 2, button15);
       }
     });
 
     button20.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(3);
-        spel.getSpelare().get(4).sparaResultat(3, result);
-        button20.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 3, button20);
       }
     });
 
     button25.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(4);
-        spel.getSpelare().get(4).sparaResultat(4, result);
-        button25.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 4, button25);
       }
     });
 
     button30.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(5);
-        spel.getSpelare().get(4).sparaResultat(5, result);
-        button30.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 5, button30);
       }
     });
 
     button35.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(6);
-        spel.getSpelare().get(4).sparaResultat(6, result);
-        button35.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 6, button35);
       }
     });
 
     button40.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(7);
-        spel.getSpelare().get(4).sparaResultat(7, result);
-        button40.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 7, button40);
       }
     });
 
     button45.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(8);
-        spel.getSpelare().get(4).sparaResultat(8, result);
-        button45.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 8, button45);
       }
     });
 
     button50.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(9);
-        spel.getSpelare().get(4).sparaResultat(9, result);
-        button50.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 9, button50);
       }
     });
 
     button55.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(10);
-        spel.getSpelare().get(4).sparaResultat(10, result);
-        button55.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 10, button55);
       }
     });
 
     button60.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(11);
-        spel.getSpelare().get(4).sparaResultat(11, result);
-        button60.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 11, button60);
       }
     });
 
     button65.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(12);
-        spel.getSpelare().get(4).sparaResultat(12, result);
-        button65.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 12, button65);
       }
     });
 
     button70.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(13);
-        spel.getSpelare().get(4).sparaResultat(13, result);
-        button70.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 13, button70);
       }
     });
 
     button75.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
-        int result = spel.getTarningar().kontrolleraResultat(14);
-        spel.getSpelare().get(4).sparaResultat(14, result);
-        button75.setText(String.valueOf(result));
-        inaktiveraKnapparSpelare5();
-        Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
-        handelse.setText(aktivSpelare.getNamn() + " spelar");
-        kasta.setDisable(false);
-        tarning1.setText("");
-        tarning2.setText("");
-        tarning3.setText("");
-        tarning4.setText("");
-        tarning5.setText("");
-        summa5.setText(String.valueOf(spel.getSpelare().get(4).getOvreResultat()));
-        bonus5.setText(String.valueOf(spel.getSpelare().get(4).getBonus()));
-        tot5.setText(String.valueOf(spel.getSpelare().get(4).getTotalSumma()));
-        if (spel.getKastOmgang() > 15){
-          ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
-          resultatSida.visaResultatSida(myStage);
-        }
+        setKnappHandelse(4, 14, button75);
       }
     });
   }
+
+  private void setKnappHandelse(int person, int rad, Button knapp){
+
+    int result = spel.getTarningar().kontrolleraResultat(rad);
+    spel.getSpelare().get(person).sparaResultat(rad, result);
+    knapp.setText(String.valueOf(result));
+
+    Spelare aktivSpelare = spel.getSpelare().get(spel.getAktivSpelare()-1);
+    handelse.setText(aktivSpelare.getNamn() + " spelar");
+    kasta.setDisable(false);
+
+    tarning1.setText("");
+    tarning2.setText("");
+    tarning3.setText("");
+    tarning4.setText("");
+    tarning5.setText("");
+
+    String summaText = String.valueOf(spel.getSpelare().get(person).getOvreResultat());
+    String bonusText = String.valueOf(spel.getSpelare().get(person).getBonus());
+    String totalText = String.valueOf(spel.getSpelare().get(person).getTotalSumma());
+
+    switch(person){
+      case 0:
+        inaktiveraKnapparSpelare1();
+        summa1.setText(summaText);
+        bonus1.setText(bonusText);
+        tot1.setText(totalText);
+        break;
+      case 1:
+        inaktiveraKnapparSpelare2();
+        summa2.setText(summaText);
+        bonus2.setText(bonusText);
+        tot2.setText(totalText);
+        break;
+      case 2:
+        inaktiveraKnapparSpelare3();
+        summa3.setText(summaText);
+        bonus3.setText(bonusText);
+        tot3.setText(totalText);
+        break;
+      case 3:
+        inaktiveraKnapparSpelare4();
+        summa4.setText(summaText);
+        bonus4.setText(bonusText);
+        tot4.setText(totalText);
+        break;
+      case 4:
+        inaktiveraKnapparSpelare5();
+        summa5.setText(summaText);
+        bonus5.setText(bonusText);
+        tot5.setText(totalText);
+        break;
+    }
+    if (spel.getKastOmgang() > 15){
+      ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
+      resultatSida.visaResultatSida(myStage);
+    }
+  }
   
-  public void aktiveraKnapparSpelare1(){
+  private void aktiveraKnapparSpelare1(){
     
     if (spel.getSpelare().get(0).getResultatLista().getResultat(0) == null) {
       button1.setDisable(false);
@@ -2604,7 +1312,7 @@ public class Protokoll {
     }
   }
 
-  public void aktiveraKnapparSpelare2(){
+  private void aktiveraKnapparSpelare2(){
 
     if (spel.getSpelare().get(1).getResultatLista().getResultat(0) == null) {
       button2.setDisable(false);
@@ -2653,7 +1361,7 @@ public class Protokoll {
     }
   }
 
-  public void aktiveraKnapparSpelare3(){
+  private void aktiveraKnapparSpelare3(){
 
     if (spel.getSpelare().get(2).getResultatLista().getResultat(0) == null) {
       button3.setDisable(false);
@@ -2702,7 +1410,7 @@ public class Protokoll {
     }
   }
 
-  public void aktiveraKnapparSpelare4(){
+  private void aktiveraKnapparSpelare4(){
 
     if (spel.getSpelare().get(3).getResultatLista().getResultat(0) == null) {
       button4.setDisable(false);
@@ -2751,7 +1459,7 @@ public class Protokoll {
     }
   }
 
-  public void aktiveraKnapparSpelare5(){
+  private void aktiveraKnapparSpelare5(){
 
     if (spel.getSpelare().get(4).getResultatLista().getResultat(0) == null) {
       button5.setDisable(false);
@@ -2800,7 +1508,7 @@ public class Protokoll {
     }
   }
 
-  public void inaktiveraKnapparSpelare1(){
+  private void inaktiveraKnapparSpelare1(){
 
     button1.setDisable(true);
     button6.setDisable(true);
@@ -2820,7 +1528,7 @@ public class Protokoll {
 
   }
 
-  public void inaktiveraKnapparSpelare2(){
+  private void inaktiveraKnapparSpelare2(){
 
     button2.setDisable(true);
     button7.setDisable(true);
@@ -2840,7 +1548,7 @@ public class Protokoll {
 
   }
 
-  public void inaktiveraKnapparSpelare3(){
+  private void inaktiveraKnapparSpelare3(){
 
     button3.setDisable(true);
     button8.setDisable(true);
@@ -2860,7 +1568,7 @@ public class Protokoll {
 
   }
 
-  public void inaktiveraKnapparSpelare4(){
+  private void inaktiveraKnapparSpelare4(){
 
     button4.setDisable(true);
     button9.setDisable(true);
@@ -2880,7 +1588,7 @@ public class Protokoll {
 
   }
 
-  public void inaktiveraKnapparSpelare5(){
+  private void inaktiveraKnapparSpelare5(){
 
     button5.setDisable(true);
     button10.setDisable(true);
@@ -2900,7 +1608,7 @@ public class Protokoll {
 
   }
   
-  public void inaktiveraCheckboxar(){
+  private void inaktiveraCheckboxar(){
 
     checkBox1.setDisable(true);
     checkBox2.setDisable(true);
@@ -2910,7 +1618,7 @@ public class Protokoll {
 
   }
 
-  public void aktiveraCheckboxar(){
+  private void aktiveraCheckboxar(){
 
     checkBox1.setDisable(false);
     checkBox2.setDisable(false);
