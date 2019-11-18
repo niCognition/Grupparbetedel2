@@ -18,6 +18,7 @@
 -fx-background-size: 60px 60px;
 -fx-background-repeat: no-repeat;
 -fx-background-position: center;
+-fx-background-color: #FFD600;
 }
 
 .infoknapp{
@@ -26,6 +27,7 @@
 -fx-background-size: 60px 60px;
 -fx-background-repeat: no-repeat;
 -fx-background-position: center;
+-fx-background-color: #FFD600;
 }
 
 .vidare{
@@ -35,8 +37,6 @@
 -fx-background-repeat: no-repeat;
 -fx-background-position: center;
 -fx-background-color: #FFD600;
-
-
 }
 
 .protokollknapp{
