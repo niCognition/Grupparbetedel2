@@ -5,13 +5,17 @@
 .button{
 -fx-background-color: #33691E;
 -fx-text-fill: #FFD600;
--fx-background-radius: 30;
+-fx-background-radius: 60;
 }
 
 .button{
 
 }
 
-#avslutaKnapp{
+.avslutaknapp{
 -fx-background-image: url("..\resources\avslutaknapp.jpg")
+}
+
+.protokollknapp{
+-fx-pref-width: 30;
 }
