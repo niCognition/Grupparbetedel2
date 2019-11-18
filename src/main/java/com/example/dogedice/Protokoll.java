@@ -8,6 +8,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
@@ -66,7 +68,7 @@ public class Protokoll {
   private Text tot4;
   private Text tot5;
 
-  private Text handelse;
+  private Label handelse;
 
   private Text tarning1;
   private Text tarning2;
@@ -219,12 +221,13 @@ public class Protokoll {
     tot5 = new Text("0");
 
     //Label för händelse
-    handelse = new Text(spelare.get(0).getNamn() + " spelar");
-    handelse.setStyle(" -fx-font-size: 13pt; -fx-text-fill: #33691E;");
+    handelse = new Label(spelare.get(0).getNamn() + " spelar");
+    handelse.setStyle(" -fx-font-size: 11pt; -fx-text-fill: #33481E; -fx-font-weight: bold;");
 
 
     quit = new Button();
     quit.getStyleClass().add("avslutaknapp");
+    quit.setStyle("-fx-padding: 8 16 8 16; -fx-background-size: 40px 40px");
     quit.setAlignment(Pos.BOTTOM_LEFT);
     quit.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -236,6 +239,7 @@ public class Protokoll {
 
     spara = new Button("Spara nu");
     kasta = new Button("Kasta t" + (char) 228 + "rningarna");
+    kasta.setStyle("-fx-border-color: #33481E; -fx-border-radius: 60; -fx-border-width: 2;");
 
     HBox quitKastaSpara = new HBox();
     quitKastaSpara.setSpacing(60);
@@ -404,8 +408,14 @@ public class Protokoll {
     button75.getStyleClass().add("protokollknapp");
 
     gridPane = new GridPane();
+    ColumnConstraints column1 = new ColumnConstraints(70);
+    gridPane.getColumnConstraints().add(column1);
+    for (int i = 1; i < 6; i++) {
+      ColumnConstraints column = new ColumnConstraints(70);
+      gridPane.getColumnConstraints().add(column);
+    }
 
-    gridPane.setMinSize(400, 200);
+    gridPane.setMinSize(500, 200);
     gridPane.setPadding(new Insets(10, 10, 10, 10));
     gridPane.setVgap(5);
     gridPane.setHgap(5);
@@ -455,7 +465,7 @@ public class Protokoll {
 
 
     //Händelse utskrift
-    gridPane.add(handelse, 1, 19, 5, 1);
+    gridPane.add(handelse, 1, 19, 6, 1);
 
     //Tärningars utskrift
     gridPane.add(tarning1, 1, 20);

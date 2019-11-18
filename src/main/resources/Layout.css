@@ -8,10 +8,6 @@
 -fx-background-radius: 60;
 }
 
-.button{
-
-}
-
 .avslutaknapp{
 -fx-background-image: url("Avsluta.jpg");
 -fx-padding: 15 23 15 23;
@@ -23,7 +19,7 @@
 
 .infoknapp{
 -fx-background-image: url("information.jpg");
--fx-padding: 15 23 15 23;
+-fx-padding: 20 28 20 28;
 -fx-background-size: 60px 60px;
 -fx-background-repeat: no-repeat;
 -fx-background-position: center;
