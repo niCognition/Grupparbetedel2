@@ -121,8 +121,8 @@ public class AntalSpelareSida {
         }
 
         //till skriv in namn-sidan, skicka med antal
-        Namnge namnge = new Namnge(myStage);
-        namnge.visaNamnge(myStage, antal);
+        Namnge namnge = new Namnge(myStage, antal);
+        namnge.visaNamnge(myStage);
 
       }
     });
