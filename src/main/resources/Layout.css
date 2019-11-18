@@ -44,6 +44,15 @@
 -fx-background-color: #FFD600;
 }
 
+.yatzybild{
+-fx-background-image: url("yatzy.jpg");
+-fx-padding: 50 125 50 125;
+-fx-background-size: 200px 100px;
+-fx-background-repeat: no-repeat;
+-fx-background-position: center;
+-fx-background-color: #FFD600;
+}
+
 .protokollknapp{
 -fx-pref-width: 30;
 }

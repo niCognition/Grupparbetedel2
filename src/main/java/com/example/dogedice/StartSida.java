@@ -57,7 +57,7 @@ public class StartSida {
 
     // Position och Stil för yatzy
     yatzy.setAlignment(Pos.CENTER);
-    yatzy.setStyle("-fx-padding: 50 125 50 125; -fx-background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/749010/header.jpg?t=1511273662'); -fx-background-size: 200px 100px; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: #FFD600");
+    yatzy.getStyleClass().add("yatzybild");
 
     // Stil för Starta spel knapp
     starta.setStyle("-fx-padding: 28; -fx-font-size: 30pt; -fx-border-color: #33481E; -fx-border-radius: 60; -fx-border-width: 2;");
