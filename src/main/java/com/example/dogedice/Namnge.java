@@ -57,6 +57,7 @@ public class Namnge {
 
       namngeScene = new Scene(gridPane, 400, 500);
 
+      namngeScene.getStylesheets().add("Layout.css");
       rubrik.setAlignment(Pos.CENTER);
       rubrik.setStyle("-fx-font-size: 30pt");
      rubrik.setPadding(new Insets(10, 10, 30, 10));

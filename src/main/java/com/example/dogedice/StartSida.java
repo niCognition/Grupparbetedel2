@@ -13,6 +13,8 @@ import javafx.event.EventHandler;
 
 public class StartSida {
 
+
+
   private Scene startScen;
   private HBox quitInfo;
   private Label yatzy;
@@ -34,6 +36,7 @@ public class StartSida {
     setUpStartSida();
   }
 
+
   private void setUpStartSida(){
 
     // Use a FlowPane for the root node.
@@ -48,13 +51,16 @@ public class StartSida {
 
     // Create a scene.
     startScen = new Scene(rootNode, 400, 500);
+    startScen.getStylesheets().add("Layout.css");
+
+
 
     // Position och Stil för yatzy
     yatzy.setAlignment(Pos.CENTER);
-    yatzy.setStyle("-fx-padding: 50 125 50 125; -fx-background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/749010/header.jpg?t=1511273662'); -fx-background-size: 200px 100px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    yatzy.setStyle("-fx-padding: 50 125 50 125; -fx-background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/749010/header.jpg?t=1511273662'); -fx-background-size: 200px 100px; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: #FFD600");
 
     // Stil för Starta spel knapp
-    starta.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 30; -fx-font-size: 30pt");
+    starta.setStyle("-fx-padding: 28; -fx-font-size: 30pt");
     starta.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
@@ -64,8 +70,9 @@ public class StartSida {
     });
 
     // Stil på High Score knapp
-    highScore.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 28; -fx-font-size: 30pt");
+    highScore.setStyle("-fx-padding: 28; -fx-font-size: 30pt");
     highScore.setOnAction(new EventHandler<ActionEvent>() {
+
       @Override
       public void handle(ActionEvent actionEvent) {
         HighScoreSida highScoreSida = new HighScoreSida(myStage);
@@ -74,7 +81,7 @@ public class StartSida {
     });
 
     //Stil och position på Quit knapp
-    quit.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    quit.setStyle("-fx-padding: 15 23 15 23; -fx-image:('C:\\Users\\ronsal\\IdeaProjects\\Grupparbetedel2\\Grupparbetedel2\\pic\\Avsluta.jpg'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     quit.setAlignment(Pos.BOTTOM_LEFT);
     quit.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -105,6 +112,7 @@ public class StartSida {
   public void visaStartSida(Stage myStage) {
 
     myStage.setScene(startScen);
+
     // Show the stage and its scene.
     myStage.show();
 

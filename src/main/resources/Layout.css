@@ -1,0 +1,17 @@
+.root{
+-fx-background-color: #FFD600;
+}
+
+.button{
+-fx-background-color: #33691E;
+-fx-text-fill: #FFD600;
+-fx-background-radius: 30;
+}
+
+.button{
+
+}
+
+#avslutaKnapp{
+-fx-background-image: url("..\resources\avslutaknapp.jpg")
+}

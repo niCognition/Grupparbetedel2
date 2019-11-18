@@ -43,16 +43,9 @@ import javafx.stage.Stage;
 
   }
 
-
-
-
-
-
       private void closeProgram(){
       myStage.close();
     }
-
-
 
 
     private void setUpAvslut() {

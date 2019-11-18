@@ -408,6 +408,7 @@ public class Protokoll {
 
     //Creating a scene object
     scene = new Scene(gridPane);
+    scene.getStylesheets().add("Layout.css");
 
     //Setting title to the Stage
     myStage.setTitle("Protokoll");
