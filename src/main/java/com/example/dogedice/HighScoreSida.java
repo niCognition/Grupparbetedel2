@@ -45,6 +45,7 @@ public class HighScoreSida {
     rootNode.setOrientation(Orientation.VERTICAL);
     rootNode.setAlignment(Pos.CENTER);
     highScoreScene = new Scene(rootNode, 500, 700);
+    highScoreScene.getStylesheets().add("Layout.css");
 
     Label rubrik = new Label("HighScore");
     rubrik.setAlignment(Pos.CENTER);

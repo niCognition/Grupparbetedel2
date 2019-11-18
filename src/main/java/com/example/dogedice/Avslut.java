@@ -52,11 +52,12 @@ import javafx.stage.Stage;
       GridPane gridPane = new GridPane();
       gridPane.setAlignment(Pos.CENTER);
 
-      avsluta.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 10; -fx-font-size: 20pt");
-      tillbaka.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 10; -fx-font-size: 20pt");
+      avsluta.setStyle("-fx-padding: 10; -fx-font-size: 20pt");
+      tillbaka.setStyle("-fx-padding: 10; -fx-font-size: 20pt");
 
 
       avslutScene = new Scene(gridPane, 500, 700);
+      avslutScene.getStylesheets().add("Layout.css");
 
       gridPane.add(avsluta, 0, 1);
       gridPane.add(tillbaka, 0, 3);
