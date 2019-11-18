@@ -483,7 +483,7 @@ public class Protokoll {
 
 
     //Creating a scene object
-    scene = new Scene(gridPane);
+    scene = new Scene(gridPane, 500, 700);
     scene.getStylesheets().add("Layout.css");
 
     //Setting title to the Stage

@@ -44,7 +44,7 @@ public class HighScoreSida {
     FlowPane rootNode = new FlowPane();
     rootNode.setOrientation(Orientation.VERTICAL);
     rootNode.setAlignment(Pos.CENTER);
-    highScoreScene = new Scene(rootNode, 400, 500);
+    highScoreScene = new Scene(rootNode, 500, 700);
 
     Label rubrik = new Label("HighScore");
     rubrik.setAlignment(Pos.CENTER);

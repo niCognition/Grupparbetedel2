@@ -50,7 +50,7 @@ public class Namnge {
      GridPane gridPane = new GridPane();
       gridPane.setAlignment(Pos.CENTER);
 
-      namngeScene = new Scene(gridPane, 400, 500);
+      namngeScene = new Scene(gridPane, 500, 700);
 
       namngeScene.getStylesheets().add("Layout.css");
       rubrik.setAlignment(Pos.CENTER);

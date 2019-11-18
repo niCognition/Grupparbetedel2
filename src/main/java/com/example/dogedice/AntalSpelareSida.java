@@ -48,7 +48,7 @@ public class AntalSpelareSida {
     rootNode.setOrientation(Orientation.VERTICAL);
     rootNode.setAlignment(Pos.CENTER);
 
-    antalSpelareScen = new Scene(rootNode, 400, 500);
+    antalSpelareScen = new Scene(rootNode, 500, 700);
     antalSpelareScen.getStylesheets().add("Layout.css");
 
     Label rubrik = new Label("Ange antal spelare");

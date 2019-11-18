@@ -50,7 +50,7 @@ public class StartSida {
     quitInfo.setAlignment(Pos.CENTER);
 
     // Create a scene.
-    startScen = new Scene(rootNode, 400, 500);
+    startScen = new Scene(rootNode, 500, 700);
     startScen.getStylesheets().add("Layout.css");
 
 

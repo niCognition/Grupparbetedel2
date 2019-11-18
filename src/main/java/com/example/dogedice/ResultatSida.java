@@ -71,32 +71,15 @@ public class ResultatSida {
 
   private void setUpResultatSida() {
 
-    /*
-    int[] slutSummor = new int[spelare.size()];
-    for (int i = 0; i < spelare.size(); i++) {
-      slutSummor[i] = spelare.get(i).getTotalSumma();
-    }
-    for (int m = slutSummor.length - 1; m > 0; m--) {
-      for (int n = 0; n < m; n++) {
-        if (slutSummor[n] < slutSummor[n + 1]) {
-          int temp = slutSummor[n];
-          slutSummor[n] = slutSummor[n + 1];
-          slutSummor[n + 1] = temp;
-        }
-      }
-    }
-     */
-
     Collections.sort(spelare, new SorteraEfterPoang());
 
     GridPane rootNode = new GridPane();
     rootNode.setAlignment(Pos.CENTER);
 
-    resultatSida = new Scene(rootNode, 450, 600);
+    resultatSida = new Scene(rootNode, 500, 700);
 
     rubrik1.setAlignment(Pos.CENTER);
     rubrik1.setStyle("-fx-font-size: 25pt");
-    //rubrik1.setPadding(new Insets(10, 10, 10, 10));
 
     rootNode.add(rubrik1, 1, 0, 2, 1);
 
