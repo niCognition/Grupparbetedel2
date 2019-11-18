@@ -220,6 +220,7 @@ public class Protokoll {
 
     //Label för händelse
     handelse = new Text(spelare.get(0).getNamn() + " spelar");
+    handelse.setStyle(" -fx-font-size: 13pt; -fx-text-fill: #33691E;");
 
 
     quit = new Button();
@@ -454,7 +455,7 @@ public class Protokoll {
 
 
     //Händelse utskrift
-    gridPane.add(handelse, 0, 19, 6, 1);
+    gridPane.add(handelse, 1, 19, 5, 1);
 
     //Tärningars utskrift
     gridPane.add(tarning1, 1, 20);
