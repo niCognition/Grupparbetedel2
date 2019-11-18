@@ -65,7 +65,7 @@ public class HighScoreSida {
     plats3.setStyle("-fx-font-size: 20pt");
     plats3.setPadding(labelPadding);
 
-    tillbaka.setStyle("-fx-padding: 15 28 15 28; -fx-background-image: url('https://www.netclipart.com/pp/m/0-8877_green-arrow-clipart-green-arrows.png'); -fx-background-size: 50px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    tillbaka.getStyleClass().add("bak");
     tillbaka.setAlignment(Pos.BOTTOM_LEFT);
     tillbaka.setOnAction(new EventHandler<ActionEvent>() {
       @Override

@@ -223,7 +223,7 @@ public class Protokoll {
 
 
     quit = new Button();
-    quit.setStyle("-fx-padding: 5 13 5 13; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    quit.getStyleClass().add("avslutaknapp");
     quit.setAlignment(Pos.BOTTOM_LEFT);
     quit.setOnAction(new EventHandler<ActionEvent>() {
       @Override
