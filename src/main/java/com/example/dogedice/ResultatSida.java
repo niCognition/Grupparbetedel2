@@ -14,6 +14,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 /*
 SPELET SLUT - rubrik1
 <namn> har vunnit! - vinnare
@@ -67,22 +69,25 @@ public class ResultatSida {
 
   }
 
-  private void setUpResultatSida(){
+  private void setUpResultatSida() {
 
+    /*
     int[] slutSummor = new int[spelare.size()];
     for (int i = 0; i < spelare.size(); i++) {
       slutSummor[i] = spelare.get(i).getTotalSumma();
     }
     for (int m = slutSummor.length - 1; m > 0; m--) {
       for (int n = 0; n < m; n++) {
-        if (slutSummor[n] < slutSummor[n+1]) {
+        if (slutSummor[n] < slutSummor[n + 1]) {
           int temp = slutSummor[n];
-          slutSummor[n] = slutSummor[n+1];
-          slutSummor[n+1] = temp;
+          slutSummor[n] = slutSummor[n + 1];
+          slutSummor[n + 1] = temp;
         }
       }
     }
+     */
 
+    Collections.sort(spelare, new SorteraEfterPoang());
 
     GridPane rootNode = new GridPane();
     rootNode.setAlignment(Pos.CENTER);
@@ -102,33 +107,20 @@ public class ResultatSida {
     String namn5 = "";
     int antalSpelare = spelare.size();
 
-    for (Spelare namn : spelare) {
-      if (namn.getTotalSumma() == slutSummor[0]) {
-        namn1 = namn.getNamn();
-      }
-      if ((antalSpelare > 1) && (namn.getTotalSumma() == slutSummor[1])) {
-        namn2 = namn.getNamn();
-      }
-      if ((antalSpelare > 2) && (namn.getTotalSumma() == slutSummor[2])) {
-        namn3 = namn.getNamn();
-      }
-      if ((antalSpelare > 3) && (namn.getTotalSumma() == slutSummor[3])) {
-        namn4 = namn.getNamn();
-      }
-      if ((antalSpelare > 4) && (namn.getTotalSumma() == slutSummor[4])) {
-        namn5 = namn.getNamn();
-      }
-    }
 
-    vinnare = new Label(namn1 + " har vunnit");
+    if (spelare.get(0).getTotalSumma() == spelare.get(1).getTotalSumma()) {
+      vinnare = new Label("Oavgjort!");
+    } else {
+      vinnare = new Label(spelare.get(0) + " har vunnit");
+    }
     vinnare.setAlignment(Pos.CENTER);
     vinnare.setStyle("-fx-font-size: 25pt");
 
     rubrik2.setAlignment(Pos.CENTER);
     rubrik2.setStyle("-fx-font-size: 18pt");
 
-    slutNamn1 = new Label("1. " + namn1);
-    slutPoang1 = new Label("" + slutSummor[0]);
+    slutNamn1 = new Label("1. " + spelare.get(0).getNamn());
+    slutPoang1 = new Label("" + spelare.get(0).getTotalSumma());
     slutPoang1.setAlignment(Pos.CENTER);
     slutNamn1.setStyle("-fx-font-size: 15pt");
     slutPoang1.setStyle("-fx-font-size: 15pt");
@@ -140,8 +132,8 @@ public class ResultatSida {
     //rootNode.getChildren().addAll(vinnare, rubrik2, slutPoang1);
 
     if (antalSpelare > 1) {
-      slutNamn2 = new Label("2. " + namn2);
-      slutPoang2 = new Label("" + slutSummor[1]);
+      slutNamn2 = new Label("2. " + spelare.get(1).getNamn());
+      slutPoang2 = new Label("" + spelare.get(1).getTotalSumma());
       slutPoang2.setAlignment(Pos.CENTER);
       slutNamn2.setStyle("-fx-font-size: 15pt");
       slutPoang2.setStyle("-fx-font-size: 15pt");
@@ -151,8 +143,8 @@ public class ResultatSida {
     }
 
     if (antalSpelare > 2) {
-      slutNamn3 = new Label("3. " + namn3);
-      slutPoang3 = new Label("" + slutSummor[2]);
+      slutNamn3 = new Label("3. " + spelare.get(2).getNamn());
+      slutPoang3 = new Label("" + spelare.get(2).getTotalSumma());
       slutPoang3.setAlignment(Pos.CENTER);
       slutNamn3.setStyle("-fx-font-size: 15pt");
       slutPoang3.setStyle("-fx-font-size: 15pt");
@@ -162,8 +154,8 @@ public class ResultatSida {
     }
 
     if (antalSpelare > 3) {
-      slutNamn4 = new Label("4. " + namn4);
-      slutPoang4 = new Label("" + slutSummor[3]);
+      slutNamn4 = new Label("4. " + spelare.get(3).getNamn());
+      slutPoang4 = new Label("" + spelare.get(3).getTotalSumma());
       slutPoang4.setAlignment(Pos.CENTER);
       slutNamn4.setStyle("-fx-font-size: 15pt");
       slutPoang4.setStyle("-fx-font-size: 15pt");
@@ -173,8 +165,8 @@ public class ResultatSida {
     }
 
     if (antalSpelare > 4) {
-      slutNamn5 = new Label("5. " + namn5);
-      slutPoang5 = new Label("" + slutSummor[4]);
+      slutNamn5 = new Label("5. " + spelare.get(4).getNamn());
+      slutPoang5 = new Label("" + spelare.get(4).getTotalSumma());
       slutPoang5.setAlignment(Pos.CENTER);
       slutNamn5.setStyle("-fx-font-size: 15pt");
       slutPoang5.setStyle("-fx-font-size: 15pt");

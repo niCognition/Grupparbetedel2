@@ -17,8 +17,8 @@ public class Main extends Application {
   // Override the start() method.
   public void start(Stage myStage) {
     //Skapar och visar startsidan
-    StartSida startSida = new StartSida(myStage);
-    startSida.visaStartSida(myStage);
+    //StartSida startSida = new StartSida(myStage);
+    //startSida.visaStartSida(myStage);
 
     //Skapar och visar Infosidan
     //InfoSida infoSida = new InfoSida();
@@ -44,25 +44,25 @@ public class Main extends Application {
     //protokoll.visaProtokoll(myStage);
 
     //Visar resultatsida
-    //ArrayList<Spelare> testOmgang = new ArrayList<>();
-    //Spelare spelare1 = new Spelare("Kalle", 1);
-    //Spelare spelare2 = new Spelare("Ida", 2);
-    //Spelare spelare3 = new Spelare("qwer", 3);
-    //Spelare spelare4 = new Spelare("ASDASD", 4);
-    //Spelare spelare5 = new Spelare("AAAD", 5);
-    //testOmgang.add(spelare1);
-    //testOmgang.add(spelare2);
-    //testOmgang.add(spelare3);
-    //testOmgang.add(spelare4);
-    //testOmgang.add(spelare5);
-    //spelare1.sparaResultat(1, 200);
-    //spelare2.sparaResultat(1, 300);
-    //spelare3.sparaResultat(1, 150);
-    //spelare4.sparaResultat(1, 240);
-    //spelare5.sparaResultat(1, 240);
+    ArrayList<Spelare> testOmgang = new ArrayList<>();
+    Spelare spelare1 = new Spelare("Kalle", 1);
+    Spelare spelare2 = new Spelare("Ida", 2);
+    Spelare spelare3 = new Spelare("qwer", 3);
+    Spelare spelare4 = new Spelare("ASDASD", 4);
+    Spelare spelare5 = new Spelare("AAAD", 5);
+    testOmgang.add(spelare1);
+    testOmgang.add(spelare2);
+    testOmgang.add(spelare3);
+    testOmgang.add(spelare4);
+    testOmgang.add(spelare5);
+    spelare1.sparaResultat(1, 300);
+    spelare2.sparaResultat(1, 300);
+    spelare3.sparaResultat(1, 150);
+    spelare4.sparaResultat(1, 240);
+    spelare5.sparaResultat(1, 240);
 
-    //ResultatSida resultatSida = new ResultatSida(myStage, testOmgang);
-    //resultatSida.visaResultatSida(myStage);
+    ResultatSida resultatSida = new ResultatSida(myStage, testOmgang);
+    resultatSida.visaResultatSida(myStage);
   }
 }
 

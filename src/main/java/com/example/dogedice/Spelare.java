@@ -5,11 +5,13 @@ public class Spelare {
   private String namn;
   private int id;
   private ResultatLista resultat;
+  private int slutSumma;
 
   public Spelare(String namn, int id){
     this.namn = namn;
     this.id = id;
     this.resultat = new ResultatLista();
+    this.slutSumma = 0;
   }
 
   public String getNamn(){return namn;}
@@ -33,6 +35,12 @@ public class Spelare {
 
   public int getTotalSumma(){
     return resultat.getTotalSumma();
+  }
+
+  public int getSlutSumma() { return slutSumma; }
+
+  public void setSlutSumma(int poang) {
+    slutSumma = poang;
   }
 
 
