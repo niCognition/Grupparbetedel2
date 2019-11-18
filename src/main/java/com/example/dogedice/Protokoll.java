@@ -1259,6 +1259,11 @@ public class Protokoll {
         break;
     }
     if (spel.getKastOmgang() > 15){
+      HighScoreSida.uppdateraHighScore((spel.getSpelare()));
+      ArrayList<Spelare> deltagarna = spel.getSpelare();
+      //for (Spelare deltagare : deltagarna){
+     //   deltagare.setSlutSumma(deltagare.getResultatLista().getTotalSumma());
+      //}
       ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
       resultatSida.visaResultatSida(myStage);
     }

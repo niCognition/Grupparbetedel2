@@ -25,17 +25,17 @@ public class HighScoreSida {
 
   private Button tillbaka;
 
-  private int[] highScore;
+  private static int[] highScore = {0, 0, 0};
+  private static String[] textHighScore = {"", "", ""};
 
   public HighScoreSida(Stage myStage){
 
     this.myStage = myStage;
-    plats1 = new Label("Plats 1");
-    plats2 = new Label("Plats 2");
-    plats3 = new Label("Plats 3");
+    plats1 = new Label("1\t" + textHighScore[0]);
+    plats2 = new Label("2\t" + textHighScore[1]);
+    plats3 = new Label("3\t" + textHighScore[2]);
 
     tillbaka = new Button();
-    highScore = new int[3];
     setUpSida();
   }
 
@@ -85,7 +85,7 @@ public class HighScoreSida {
     myStage.show();
   }
 
-  public void uppdateraHighScore(ArrayList<Spelare> spelare){
+  public static void uppdateraHighScore(ArrayList<Spelare> spelare){
 
       for(int i = 0; i<spelare.size(); i++){
         if (spelare.get(i).getTotalSumma() > highScore[2]){
@@ -95,22 +95,24 @@ public class HighScoreSida {
               highScore[1] = highScore[0];
               highScore[0] = spelare.get(i).getTotalSumma();
 
-              plats3.setText(plats2.getText());
-              plats2.setText(plats1.getText());
-              plats1.setText(spelare.get(i).getNamn() + ", " + String.valueOf(highScore[0]));
+              textHighScore[2] = textHighScore[1];
+              textHighScore[1] = textHighScore[0];
+              textHighScore[0] = spelare.get(i).getNamn() + ",\t " + String.valueOf(highScore[0]);
+
             }
             else{
               highScore[2] = highScore[1];
               highScore[1] = spelare.get(i).getTotalSumma();
 
-              plats3.setText(plats2.getText());
-              plats2.setText(spelare.get(i).getNamn() + ", " + String.valueOf(highScore[1]));
+              textHighScore[2] = textHighScore[1];
+              textHighScore[1] = spelare.get(i).getNamn() + ",\t " + String.valueOf(highScore[1]);
 
             }
           }
           else{
             highScore[2] = spelare.get(i).getTotalSumma();
-            plats3.setText(spelare.get(i).getNamn() + ", " + String.valueOf(highScore[2]));
+            textHighScore[2] = spelare.get(i).getNamn() + ",\t " + String.valueOf(highScore[2]);
+
           }
         }
       }
