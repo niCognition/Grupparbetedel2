@@ -35,7 +35,7 @@ public class InfoSida {
     reglerInfo.setVgap(30);
     reglerInfo.setAlignment(Pos.CENTER);
 
-    infoScen = new Scene(reglerInfo, 400, 500);
+    infoScen = new Scene(reglerInfo, 500, 700);
 
     regelLabel.setStyle("-fx-font-size: 30pt");
 
