@@ -37,7 +37,7 @@ import javafx.stage.Stage;
          StartSida startSida = new StartSida(myStage);
         startSida.visaStartSida(myStage);
          }
-                             });
+      });
 
       setUpAvslut();
 
@@ -56,7 +56,7 @@ import javafx.stage.Stage;
       tillbaka.setStyle("-fx-border-color: #E6E6E6; -fx-padding: 10; -fx-font-size: 20pt");
 
 
-      avslutScene = new Scene(gridPane, 400, 500);
+      avslutScene = new Scene(gridPane, 500, 700);
 
       gridPane.add(avsluta, 0, 1);
       gridPane.add(tillbaka, 0, 3);
