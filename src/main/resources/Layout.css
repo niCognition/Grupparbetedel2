@@ -13,7 +13,30 @@
 }
 
 .avslutaknapp{
--fx-background-image: url("..\resources\avslutaknapp.jpg")
+-fx-background-image: url("Avsluta.jpg");
+-fx-padding: 15 23 15 23;
+-fx-background-size: 60px 60px;
+-fx-background-repeat: no-repeat;
+-fx-background-position: center;
+}
+
+.infoknapp{
+-fx-background-image: url("information.jpg");
+-fx-padding: 15 23 15 23;
+-fx-background-size: 60px 60px;
+-fx-background-repeat: no-repeat;
+-fx-background-position: center;
+}
+
+.vidare{
+-fx-background-image: url("pilfram.png");
+-fx-padding: 15 23 15 23;
+-fx-background-size: 60px 60px;
+-fx-background-repeat: no-repeat;
+-fx-background-position: center;
+-fx-background-color: #FFD600;
+
+
 }
 
 .protokollknapp{

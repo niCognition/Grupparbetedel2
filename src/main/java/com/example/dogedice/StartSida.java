@@ -81,7 +81,8 @@ public class StartSida {
     });
 
     //Stil och position på Quit knapp
-    quit.setStyle("-fx-padding: 15 23 15 23; -fx-image:('C:\\Users\\ronsal\\IdeaProjects\\Grupparbetedel2\\Grupparbetedel2\\pic\\Avsluta.jpg'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    //quit.setStyle("-fx-padding: 15 23 15 23; -fx-image:('C:\\Users\\ronsal\\IdeaProjects\\Grupparbetedel2\\Grupparbetedel2\\pic\\Avsluta.jpg'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    quit.getStyleClass().add("avslutaknapp");
     quit.setAlignment(Pos.BOTTOM_LEFT);
     quit.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -93,7 +94,7 @@ public class StartSida {
 
 
     //Stil och position för info knapp
-    info.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://www.iconsdb.com/icons/preview/tropical-blue/info-xxl.png'); -fx-background-size: 65px 65px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    info.getStyleClass().add("infoknapp");
     info.setAlignment(Pos.BOTTOM_RIGHT);
     info.setOnAction(new EventHandler<ActionEvent>() {
       @Override
