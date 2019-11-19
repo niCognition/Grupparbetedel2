@@ -1671,6 +1671,7 @@ public class Protokoll {
   
   private void inaktiveraCheckboxar(){
 
+
     checkBox1.setDisable(true);
     checkBox2.setDisable(true);
     checkBox3.setDisable(true);
