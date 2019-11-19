@@ -1,6 +1,5 @@
 package com.example.dogedice;
 
-import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -68,7 +67,6 @@ public class InfoSida {
     });
 
     reglerInfo.getChildren().addAll(regelLabel, regelText, infoText, tillbaka);
-
   }
 
   public void visaInfoSida(Stage myStage) {
@@ -76,5 +74,4 @@ public class InfoSida {
     myStage.setScene(infoScen);
     myStage.show();
   }
-
 }

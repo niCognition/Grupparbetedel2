@@ -13,8 +13,6 @@ import javafx.event.EventHandler;
 
 public class StartSida {
 
-
-
   private Scene startScen;
   private HBox quitInfo;
   private Label yatzy;
@@ -36,30 +34,21 @@ public class StartSida {
     setUpStartSida();
   }
 
-
   private void setUpStartSida(){
 
-    // Use a FlowPane for the root node.
     FlowPane rootNode = new FlowPane(Orientation.VERTICAL);
     rootNode.setVgap(10);
-    //Center the controls in the scene.
     rootNode.setAlignment(Pos.CENTER);
 
-    //Sätter mellanrummet mellan Quit och Info knapp
     quitInfo.setSpacing(157);
     quitInfo.setAlignment(Pos.CENTER);
 
-    // Create a scene.
     startScen = new Scene(rootNode, 500, 700);
     startScen.getStylesheets().add("Layout.css");
 
-
-
-    // Position och Stil för yatzy
     yatzy.setAlignment(Pos.CENTER);
     yatzy.getStyleClass().add("yatzybild");
 
-    // Stil för Starta spel knapp
     starta.setStyle("-fx-padding: 28; -fx-font-size: 30pt; -fx-border-color: #33481E; -fx-border-radius: 60; -fx-border-width: 2;");
     starta.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -69,10 +58,8 @@ public class StartSida {
       }
     });
 
-    // Stil på High Score knapp
     highScore.setStyle("-fx-padding: 28; -fx-font-size: 30pt; -fx-border-color: #33481E; -fx-border-radius: 60; -fx-border-width: 2;");
     highScore.setOnAction(new EventHandler<ActionEvent>() {
-
       @Override
       public void handle(ActionEvent actionEvent) {
         HighScoreSida highScoreSida = new HighScoreSida(myStage);
@@ -80,8 +67,6 @@ public class StartSida {
       }
     });
 
-    //Stil och position på Quit knapp
-    //quit.setStyle("-fx-padding: 15 23 15 23; -fx-image:('C:\\Users\\ronsal\\IdeaProjects\\Grupparbetedel2\\Grupparbetedel2\\pic\\Avsluta.jpg'); -fx-background-size: 60px 60px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     quit.getStyleClass().add("avslutaknapp");
     quit.setAlignment(Pos.BOTTOM_LEFT);
     quit.setOnAction(new EventHandler<ActionEvent>() {
@@ -92,8 +77,6 @@ public class StartSida {
       }
     });
 
-
-    //Stil och position för info knapp
     info.getStyleClass().add("infoknapp");
     info.setAlignment(Pos.BOTTOM_RIGHT);
     info.setOnAction(new EventHandler<ActionEvent>() {
@@ -113,8 +96,6 @@ public class StartSida {
   public void visaStartSida(Stage myStage) {
 
     myStage.setScene(startScen);
-
-    // Show the stage and its scene.
     myStage.show();
 
   }

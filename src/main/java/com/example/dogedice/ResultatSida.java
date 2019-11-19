@@ -1,37 +1,17 @@
 package com.example.dogedice;
 
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-/*
-SPELET SLUT - rubrik1
-<namn> har vunnit! - vinnare
-
-Slutpoäng: - rubrik2
-1. <poäng> - slutpoang1
-2. <poäng> - slutpoang2
-3. <poäng> - slutpoang3
-4. <poäng> - slutpoang4
-5. <poäng> - slutpoang5
-
-Vill du: - rubrik3
-Starta ett nytt spel <visa AntalSpelareSida> - startaOm
-Se High Score lista <visa HighScoreSida> - highScoreLista
-Avsluta Spel <visa Avslut> - avsluta
- */
 
 public class ResultatSida {
 
@@ -64,9 +44,8 @@ public class ResultatSida {
     rubrik2 = new Label("Slutpo"+(char) 228+"ng");
     startaOm = new Button("Starta nytt Spel");
     highScoreLista = new Button("High Score");
-    avsluta = new Button("Avsluta spel");
+    avsluta = new Button();
     setUpResultatSida();
-
   }
 
   private void setUpResultatSida() {
@@ -77,24 +56,19 @@ public class ResultatSida {
     rootNode.setAlignment(Pos.CENTER);
 
     resultatSida = new Scene(rootNode, 500, 700);
+    resultatSida.getStylesheets().add("Layout.css");
 
     rubrik1.setAlignment(Pos.CENTER);
     rubrik1.setStyle("-fx-font-size: 25pt");
 
     rootNode.add(rubrik1, 1, 0, 2, 1);
 
-    String namn1 = "";
-    String namn2 = "";
-    String namn3 = "";
-    String namn4 = "";
-    String namn5 = "";
     int antalSpelare = spelare.size();
 
-
-    if (spelare.get(0).getTotalSumma() == spelare.get(1).getTotalSumma()) {
+    if ((antalSpelare > 2) && spelare.get(0).getTotalSumma() == spelare.get(1).getTotalSumma()) {
       vinnare = new Label("Oavgjort!");
     } else {
-      vinnare = new Label(spelare.get(0) + " har vunnit");
+      vinnare = new Label(spelare.get(0).getNamn() + " har vunnit");
     }
     vinnare.setAlignment(Pos.CENTER);
     vinnare.setStyle("-fx-font-size: 25pt");
@@ -112,7 +86,6 @@ public class ResultatSida {
     rootNode.add(rubrik2, 0, 2, 2, 1);
     rootNode.add(slutNamn1, 0, 3, 1, 1);
     rootNode.add(slutPoang1, 2, 3, 1, 1);
-    //rootNode.getChildren().addAll(vinnare, rubrik2, slutPoang1);
 
     if (antalSpelare > 1) {
       slutNamn2 = new Label("2. " + spelare.get(1).getNamn());
@@ -178,8 +151,7 @@ public class ResultatSida {
       }
     });
 
-    avsluta = new Button();
-    avsluta.setStyle("-fx-padding: 5 13 5 13; -fx-background-image: url('http://pluspng.com/img-png/exit-button-png-open-2000.png'); -fx-background-size: 35px 35px; -fx-background-repeat: no-repeat; -fx-background-position: center");
+    avsluta.getStyleClass().add("avslutaknapp");
     avsluta.setAlignment(Pos.BOTTOM_LEFT);
     avsluta.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -189,7 +161,7 @@ public class ResultatSida {
       }
     });
 
-    HBox nyttHighScoreAvsluta = new HBox();
+    nyttHighScoreAvsluta = new HBox();
     nyttHighScoreAvsluta.setSpacing(60);
     nyttHighScoreAvsluta.setPadding(new Insets(50, 0, 0, 0));
     nyttHighScoreAvsluta.setAlignment(Pos.CENTER);
@@ -202,6 +174,5 @@ public class ResultatSida {
 
     myStage.setScene(resultatSida);
     myStage.show();
-
   }
 }
