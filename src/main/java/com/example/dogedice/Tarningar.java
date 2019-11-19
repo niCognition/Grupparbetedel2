@@ -3,7 +3,7 @@ package com.example.dogedice;
 import java.util.ArrayList;
 
 
-public class Tarningar<tarningar> {
+public class Tarningar {
 
   private ArrayList<Tarning> tarningar;
 
@@ -46,7 +46,7 @@ public class Tarningar<tarningar> {
       }
     }
 
-    public int kontrolleraResultat(int radIProtokoll){
+  public int kontrolleraResultat(int radIProtokoll){
     switch(radIProtokoll){
       case 0:
         return kontrolleraEttor(getVarden());
@@ -96,7 +96,7 @@ public class Tarningar<tarningar> {
       default:
         return 0;
     }
-    }
+  }
 
   private int kontrolleraEttor(int[] kast){
 

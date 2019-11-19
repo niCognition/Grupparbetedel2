@@ -1,6 +1,5 @@
 package com.example.dogedice;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -173,13 +172,10 @@ public class Protokoll {
     this.myStage = myStage;
     this.spel = spel;
     setUpSida(spel.getSpelare());
-
   }
 
   public void setUpSida(ArrayList<Spelare> spelare) {
 
-
-    //creating label email
     text0 = new Text("Spelare: ");
     text01 = new Text(" ");
     text02 = new Text(" ");
@@ -220,10 +216,8 @@ public class Protokoll {
     tot4 = new Text("0");
     tot5 = new Text("0");
 
-    //Label för händelse
     handelse = new Label(spelare.get(0).getNamn() + " spelar");
     handelse.setStyle(" -fx-font-size: 11pt; -fx-text-fill: #33481E; -fx-font-weight: bold;");
-
 
     quit = new Button();
     quit.getStyleClass().add("avslutaknapp");
@@ -246,16 +240,12 @@ public class Protokoll {
     quitKastaSpara.setAlignment(Pos.CENTER);
     quitKastaSpara.getChildren().addAll(quit, kasta, spara);
 
-
-    //Tärningars label
     tarning1 = new Text("");
     tarning2 = new Text("");
     tarning3 = new Text("");
     tarning4 = new Text("");
     tarning5 = new Text("");
 
-
-    //Creating Buttons
     button1 = new Button("  ");
     button1.getStyleClass().add("protokollknapp");
     button2 = new Button("  ");
@@ -421,7 +411,6 @@ public class Protokoll {
     gridPane.setHgap(5);
     gridPane.setAlignment(Pos.CENTER);
 
-
     gridPane.add(text0, 0, 0);
     gridPane.add(text1, 0, 1);
     gridPane.add(text2, 0, 2);
@@ -463,24 +452,19 @@ public class Protokoll {
 
     }
 
-
-    //Händelse utskrift
     gridPane.add(handelse, 1, 19, 6, 1);
 
-    //Tärningars utskrift
     gridPane.add(tarning1, 1, 20);
     gridPane.add(tarning2, 2, 20);
     gridPane.add(tarning3, 3, 20);
     gridPane.add(tarning4, 4, 20);
     gridPane.add(tarning5, 5, 20);
 
-    //Create checkbox
     checkBox1 = new CheckBox("");
     checkBox2 = new CheckBox("");
     checkBox3 = new CheckBox("");
     checkBox4 = new CheckBox("");
     checkBox5 = new CheckBox("");
-
 
     gridPane.add(checkBox1, 1, 21);
     gridPane.add(checkBox2, 2, 21);
@@ -488,16 +472,11 @@ public class Protokoll {
     gridPane.add(checkBox4, 4, 21);
     gridPane.add(checkBox5, 5, 21);
 
-    //Kasta knapp
-
     gridPane.add(quitKastaSpara, 0, 22, 6, 1);
 
-
-    //Creating a scene object
     scene = new Scene(gridPane, 500, 700);
     scene.getStylesheets().add("Layout.css");
 
-    //Setting title to the Stage
     myStage.setTitle("Protokoll");
 
     inaktiveraKnapparSpelare1();
@@ -512,7 +491,6 @@ public class Protokoll {
       @Override
       public void handle(ActionEvent event) {
 
-        
         ArrayList<Integer> kastAttSpara = new ArrayList<Integer>();
         if (checkBox1.isSelected()){
           kastAttSpara.add(0);
@@ -534,12 +512,12 @@ public class Protokoll {
 
 
         for (int i = 0; i < sparadeKast.length; i++) {
-        sparadeKast[i] = kastAttSpara.get(i);
-      }
+          sparadeKast[i] = kastAttSpara.get(i);
+        }
 
         spel.kasta(sparadeKast);
 
-      int[] kastResultat = spel.getTarningar().getVarden();
+        int[] kastResultat = spel.getTarningar().getVarden();
         tarning1.setText(String.valueOf(kastResultat[0]));
         tarning2.setText(String.valueOf(kastResultat[1]));
         tarning3.setText(String.valueOf(kastResultat[2]));
@@ -585,15 +563,13 @@ public class Protokoll {
 
         if (spel.getKast() == 1) {
 
-        handelse.setText("Spara ditt resultat i valfri position");
-      } else {
-        int aktivSpelare = spel.getAktivSpelare();
-        handelse.setText(spelare.get(aktivSpelare - 1).getNamn() + ", markera vilka kast som ska sparas");
+          handelse.setText("Spara ditt resultat i valfri position");
+        } else {
+          int aktivSpelare = spel.getAktivSpelare();
+          handelse.setText(spelare.get(aktivSpelare - 1).getNamn() + ", markera vilka kast som ska sparas");
+        }
+
       }
-
-    }
-
-
     });
 
     spara.setOnAction(new EventHandler<ActionEvent>() {
@@ -631,10 +607,7 @@ public class Protokoll {
 
   public void visaProtokoll(Stage myStage){
 
-      //Adding scene to the stage
       myStage.setScene(scene);
-
-      //Displaying the contents of the stage
       myStage.show();
     }
 
@@ -1162,8 +1135,6 @@ public class Protokoll {
 
   private void setUpSpelare5(){
 
-
-
     text05.setText(spel.getSpelare().get(4).getNamn());
 
     gridPane.add(text05, 5, 0);
@@ -1185,7 +1156,6 @@ public class Protokoll {
     gridPane.add(button70, 5, 16);
     gridPane.add(button75, 5, 17);
     gridPane.add(tot5, 5, 18);
-
 
     button5.setOnAction(new EventHandler<ActionEvent>() {
       @Override
@@ -1348,9 +1318,7 @@ public class Protokoll {
     if (spel.getKastOmgang() > 15){
       HighScoreSida.uppdateraHighScore((spel.getSpelare()));
       ArrayList<Spelare> deltagarna = spel.getSpelare();
-      //for (Spelare deltagare : deltagarna){
-     //   deltagare.setSlutSumma(deltagare.getResultatLista().getTotalSumma());
-      //}
+
       ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
       resultatSida.visaResultatSida(myStage);
     }

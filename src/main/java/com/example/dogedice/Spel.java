@@ -28,7 +28,7 @@ public class Spel {
     return aktivSpelare;
   }
 
-  public void okaKastomgang(){
+  private void okaKastomgang(){
     kastOmgang++;
   }
 
@@ -48,6 +48,7 @@ public class Spel {
       okaKastomgang();
     }
   }
+
   public ArrayList<Spelare> getSpelare(){
     return spelare;
   }
@@ -56,22 +57,7 @@ public class Spel {
     return tarningar;
   }
 
-  /*public void spela () {
-    while (kastOmgang < 16) {
-
-      for (int i = 0; i < spelare.size(); i++) {
-        kasta();
-        int radIProtokoll = getResultatTyp(); // ofärdig metod, ska få input från spelaren vad resultatet ska sparas som
-        int summa = tarningar.kontrolleraResultat(radIProtokoll);
-        spelare.get(i).sparaResultat(radIProtokoll, summa);
-      }
-      kastOmgang++;
-
-    }
-  }*/
-
   public void kasta (int[] positioner) {
-
 
       if (positioner.length == 0) {
         tarningar.kasta();
@@ -80,23 +66,6 @@ public class Spel {
       }
 
   }
-
-
-  //Ta emot input från spelaren på vilka tärningar som ska sparas. Positionerna
-  // på tärningarna skickas vidare i en int-array
-  public int[] getInput () {
-    int[] sparadeTarningar = {1, 2};
-    return getInput(); // måste ha med return för att inte programmet ska krascha, ingen färdig metod
-  }
-
-
-  // Tar emot input om vilken sorts resultat spelaren vill spara
-  // (Ettor, tvåor, kåk...)
-  // Skickas som en int motsvarande raden i protokollet
-  public int getResultatTyp () {
-    return 1; // måste ha med return för att inte programmet ska krascha, ingen färdig metod
-  }
-
 
 }
 

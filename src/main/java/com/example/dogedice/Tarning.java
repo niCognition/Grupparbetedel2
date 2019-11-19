@@ -15,7 +15,7 @@ public class Tarning {
 
   public  void kasta() {
     Random r = new Random();
-    varde = 1 + r.nextInt(6);
+    varde = 1 + r.nextInt(antalSidor);
 
   }
 
