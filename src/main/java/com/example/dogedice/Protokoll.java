@@ -223,6 +223,7 @@ public class Protokoll {
     quit.getStyleClass().add("avslutaknapp");
     quit.setStyle("-fx-padding: 8 16 8 16; -fx-background-size: 40px 40px");
     quit.setAlignment(Pos.BOTTOM_LEFT);
+
     quit.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent actionEvent) {
@@ -1316,8 +1317,8 @@ public class Protokoll {
         break;
     }
     if (spel.getKastOmgang() > 15){
+
       HighScoreSida.uppdateraHighScore((spel.getSpelare()));
-      ArrayList<Spelare> deltagarna = spel.getSpelare();
 
       ResultatSida resultatSida = new ResultatSida(myStage, spel.getSpelare());
       resultatSida.visaResultatSida(myStage);
