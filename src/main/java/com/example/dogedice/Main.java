@@ -15,7 +15,6 @@ public class Main extends Application {
 
     StartSida startSida = new StartSida(myStage);
     startSida.visaStartSida(myStage);
-
   }
 }
 

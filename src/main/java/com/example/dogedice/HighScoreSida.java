@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -23,17 +24,24 @@ public class HighScoreSida {
   private Label plats2;
   private Label plats3;
 
+  private Label plats1Resultat;
+  private Label plats2Resultat;
+  private Label plats3Resultat;
+
   private Button tillbaka;
 
   private static int[] highScore = {0, 0, 0};
-  private static String[] textHighScore = {"", "", ""};
+  private static String[] namnHighScore = {"", "", ""};
 
   public HighScoreSida(Stage myStage){
 
     this.myStage = myStage;
-    plats1 = new Label("1\t" + textHighScore[0]);
-    plats2 = new Label("2\t" + textHighScore[1]);
-    plats3 = new Label("3\t" + textHighScore[2]);
+    plats1Resultat = new Label(String.valueOf(highScore[0]));
+    plats2Resultat = new Label(String.valueOf(highScore[1]));
+    plats3Resultat = new Label(String.valueOf(highScore[2]));
+    plats1 = new Label("1.\t" + namnHighScore[0]);
+    plats2 = new Label("2.\t" + namnHighScore[1]);
+    plats3 = new Label("3.\t" + namnHighScore[2]);
 
     tillbaka = new Button();
     setUpSida();
@@ -41,8 +49,7 @@ public class HighScoreSida {
 
   private void setUpSida(){
 
-    FlowPane rootNode = new FlowPane();
-    rootNode.setOrientation(Orientation.VERTICAL);
+    GridPane rootNode = new GridPane();
     rootNode.setAlignment(Pos.CENTER);
     highScoreScene = new Scene(rootNode, 500, 700);
     highScoreScene.getStylesheets().add("Layout.css");
@@ -52,18 +59,32 @@ public class HighScoreSida {
     rubrik.setStyle("-fx-font-size: 30pt");
     rubrik.setPadding(new Insets(10, 10, 30, 10));
 
-    Insets labelPadding = new Insets(10, 10, 10, 50);
+    rootNode.add(rubrik, 0, 0, 2, 1);
+
+    Insets labelPadding = new Insets(10, 50, 10, 10);
 
     plats1.setStyle("-fx-font-size: 20pt");
     plats1.setPadding(labelPadding);
+    rootNode.add(plats1, 0, 1);
+
+    plats1Resultat.setStyle("-fx-font-size: 20pt");
+    rootNode.add(plats1Resultat, 1, 1);
 
 
     plats2.setStyle("-fx-font-size: 20pt");
     plats2.setPadding(labelPadding);
+    rootNode.add(plats2, 0, 2);
+
+    plats2Resultat.setStyle("-fx-font-size: 20pt");
+    rootNode.add(plats2Resultat, 1, 2);
 
 
     plats3.setStyle("-fx-font-size: 20pt");
     plats3.setPadding(labelPadding);
+    rootNode.add(plats3, 0, 3);
+
+    plats3Resultat.setStyle("-fx-font-size: 20pt");
+    rootNode.add(plats3Resultat, 1, 3);
 
     tillbaka.getStyleClass().add("bak");
     tillbaka.setAlignment(Pos.BOTTOM_LEFT);
@@ -75,7 +96,7 @@ public class HighScoreSida {
       }
     });
 
-    rootNode.getChildren().addAll(rubrik, plats1, plats2, plats3, tillbaka);
+    rootNode.add(tillbaka, 0, 4);
 
   }
 
@@ -96,23 +117,23 @@ public class HighScoreSida {
               highScore[1] = highScore[0];
               highScore[0] = spelare.get(i).getTotalSumma();
 
-              textHighScore[2] = textHighScore[1];
-              textHighScore[1] = textHighScore[0];
-              textHighScore[0] = spelare.get(i).getNamn() + ",\t " + String.valueOf(highScore[0]);
+              namnHighScore[2] = namnHighScore[1];
+              namnHighScore[1] = namnHighScore[0];
+              namnHighScore[0] = spelare.get(i).getNamn();
 
             }
             else{
               highScore[2] = highScore[1];
               highScore[1] = spelare.get(i).getTotalSumma();
 
-              textHighScore[2] = textHighScore[1];
-              textHighScore[1] = spelare.get(i).getNamn() + ",\t " + String.valueOf(highScore[1]);
+              namnHighScore[2] = namnHighScore[1];
+              namnHighScore[1] = spelare.get(i).getNamn();
 
             }
           }
           else{
             highScore[2] = spelare.get(i).getTotalSumma();
-            textHighScore[2] = spelare.get(i).getNamn() + ",\t " + String.valueOf(highScore[2]);
+            namnHighScore[2] = spelare.get(i).getNamn();
 
           }
         }
