@@ -601,6 +601,11 @@ public class Protokoll {
             aktiveraKnapparSpelare5();
             break;
         }
+        checkBox1.setSelected(false);
+        checkBox2.setSelected(false);
+        checkBox3.setSelected(false);
+        checkBox4.setSelected(false);
+        checkBox5.setSelected(false);
         spel.nastaSpelare();
       }
     });
