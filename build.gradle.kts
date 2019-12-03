@@ -1,5 +1,7 @@
+
 plugins {
-  java
+  id("java")
+  id( "idea")
   // Gradle plugin for handling jfx.
   id("application")
   id("org.openjfx.javafxplugin") version "0.0.8"
@@ -17,12 +19,20 @@ repositories {
 }
 
 dependencies {
+  testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
   // No dependencies yet. Except for JavaFX.
 }
 
 configure<JavaPluginConvention> {
   sourceCompatibility = JavaVersion.VERSION_11
   targetCompatibility = JavaVersion.VERSION_11
+}
+
+tasks.test {
+  useJUnitPlatform()
+  testLogging {
+    events("passed", "skipped", "failed")
+  }
 }
 
 javafx {
