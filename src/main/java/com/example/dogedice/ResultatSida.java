@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ResultatSida {
 
@@ -33,10 +34,10 @@ public class ResultatSida {
   private Button highScoreLista;
   private Button avsluta;
   private Stage myStage;
-  private ArrayList<Spelare> spelare;
+  private List<Spelare> spelare;
   private HBox nyttHighScoreAvsluta;
 
-  public ResultatSida(Stage myStage, ArrayList<Spelare> spelare) {
+  public ResultatSida(Stage myStage, List<Spelare> spelare) {
 
     this.myStage = myStage;
     this.spelare = spelare;

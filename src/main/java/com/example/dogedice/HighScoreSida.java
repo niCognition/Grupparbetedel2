@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HighScoreSida {
 
@@ -107,7 +108,7 @@ public class HighScoreSida {
     myStage.show();
   }
 
-  public static void uppdateraHighScore(ArrayList<Spelare> spelare){
+  public static void uppdateraHighScore(List<Spelare> spelare){
 
       for(int i = 0; i<spelare.size(); i++){
         if (spelare.get(i).getTotalSumma() > highScore[2]){

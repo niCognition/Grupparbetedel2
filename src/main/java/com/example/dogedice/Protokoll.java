@@ -15,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Protokoll {
 
@@ -174,7 +175,7 @@ public class Protokoll {
     setUpSida(spel.getSpelare());
   }
 
-  public void setUpSida(ArrayList<Spelare> spelare) {
+  public void setUpSida(List<Spelare> spelare) {
 
     text0 = new Text("Spelare: ");
     text01 = new Text(" ");
