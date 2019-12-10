@@ -12,7 +12,8 @@ class SpelTest {
 
   List<Spelare> spelare = List.of(new Spelare("ibbe", 123),
       new Spelare("ronald", 122),
-       new Spelare("moe", 1234), new Spelare("Tarik", 2333),
+      new Spelare("moe", 1234),
+      new Spelare("Tarik", 2333),
       new Spelare("mille", 14785)
   );
 
@@ -22,7 +23,7 @@ class SpelTest {
     //Arrange
 
     Spel spel = new Spel(spelare);
-  int val = spel.getKast();
+    int val = spel.getKast();
     //act
     spel.okaKast();
 

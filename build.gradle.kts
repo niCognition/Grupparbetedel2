@@ -20,6 +20,8 @@ repositories {
 
 dependencies {
   testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
+  testImplementation("org.mockito:mockito-core:3.1.0")
+  testImplementation("org.mockito:mockito-junit-jupiter:3.1.0")
   // No dependencies yet. Except for JavaFX.
 }
 

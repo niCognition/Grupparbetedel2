@@ -39,7 +39,7 @@ public class Spelare {
   public void sparaResultat(int position, int summa){
 
     if (resultat.getResultat(position) == null) {
-      resultat.setResultat(position, summa);
+        resultat.setResultat(position, summa);
     }
   }
 }
