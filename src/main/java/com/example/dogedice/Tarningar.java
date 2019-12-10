@@ -1,11 +1,12 @@
 package com.example.dogedice;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Tarningar {
 
-  private ArrayList<Tarning> tarningar;
+  private List<Tarning> tarningar;
 
   public Tarningar() {
 
