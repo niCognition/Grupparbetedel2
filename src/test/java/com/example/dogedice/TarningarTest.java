@@ -10,6 +10,18 @@ class TarningarTest {
 
 
   @Test
+  void kastaChangeValueOfFiveDice(){
+    Tarningar tarningar = new TarningarStub(6,6,6,6,6);
+
+    tarningar.kasta();
+    int[] expected = {5,5,5,5,5};
+    int[] actual = tarningar.getVarden();
+
+
+    assertArrayEquals(expected, actual);
+
+  }
+  @Test
   void kontrolleraResultatReturns3forThreeOnesOnRow0(){
     Tarningar tarningar = new TarningarStub(1, 1, 1, 6, 6);
 
