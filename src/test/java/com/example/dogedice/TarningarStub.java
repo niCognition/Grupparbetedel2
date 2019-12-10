@@ -34,4 +34,25 @@ public class TarningarStub extends Tarningar{
     }
     return varden;
   }
+
+  @Override
+  public void kasta() {
+   for (Tarning tarning : tarningar){
+     tarning.setVarde(5);
+   }
+  }
+
+  @Override
+  public void sparaKast(int[] positioner) {
+    int sparatVarde = 0;
+    int[] nuvarandeVarden = getVarden();
+    for (int i = 0; i < positioner.length; i++){
+      int positionAttSpara = positioner[i];
+      sparatVarde = nuvarandeVarden[positionAttSpara];
+      tarningar.get(i).setVarde(sparatVarde);
+    }
+    for (int i = positioner.length; i < tarningar.size(); i++){
+      tarningar.get(i).setVarde(5);
+    }
+  }
 }

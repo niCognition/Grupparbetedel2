@@ -8,12 +8,20 @@ public class Spel {
   private int aktivSpelare;
   private Tarningar tarningar;
 
-
   public Spel(List<Spelare> spelare, Tarningar tarningar) {
     this.spelare = spelare;
     this.kastOmgang = 1;
     this.kast = 1;
     this.tarningar = tarningar;
+    this.aktivSpelare = 1;
+
+  }
+
+    public Spel(List<Spelare> spelare) {
+    this.spelare = spelare;
+    this.kastOmgang = 1;
+    this.kast = 1;
+    this.tarningar = new Tarningar();
     this.aktivSpelare = 1;
 
   }
