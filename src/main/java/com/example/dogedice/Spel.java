@@ -1,5 +1,4 @@
 package com.example.dogedice;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Spel {
@@ -9,13 +8,17 @@ public class Spel {
   private int aktivSpelare;
   private Tarningar tarningar;
 
-  public Spel(List<Spelare> spelare) {
+
+  public Spel(List<Spelare> spelare, Tarningar tarningar) {
     this.spelare = spelare;
     this.kastOmgang = 1;
     this.kast = 1;
-    this.tarningar = new Tarningar();
+    this.tarningar = tarningar;
     this.aktivSpelare = 1;
+
   }
+
+
 
   public int getKastOmgang(){
     return kastOmgang;

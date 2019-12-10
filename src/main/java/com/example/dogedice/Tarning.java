@@ -27,4 +27,7 @@ public class Tarning {
   public void setVarde(int varde){
     this.varde = varde;
   }
+
+  public void sparaKast(int[] positioner) {
+  }
 }

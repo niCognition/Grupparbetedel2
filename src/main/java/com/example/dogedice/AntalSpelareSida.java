@@ -90,13 +90,7 @@ public class AntalSpelareSida {
 
     quit.getStyleClass().add("avslutaknapp");
     quit.setAlignment(Pos.BOTTOM_LEFT);
-    quit.setOnAction(new EventHandler<ActionEvent>() {
-      @Override
-      public void handle(ActionEvent actionEvent) {
-        Avslut avslut = new Avslut(myStage);
-        avslut.visaAvslut(myStage);
-      }
-    });
+    quit.setOnAction(this::actionQuit);
 
     //vidare.setStyle("-fx-padding: 15 23 15 23; -fx-background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sTy5PQ5M6cgzvrXj8QAi7OxvIkeMzeefq4WdX89Yxh51Zj7QEQ&s'); -fx-background-size: 40px 40px; -fx-background-repeat: no-repeat; -fx-background-position: center");
     vidare.getStyleClass().add("vidare");
@@ -135,6 +129,11 @@ public class AntalSpelareSida {
     quitVidare.getChildren().addAll(quit, vidare);
 
     rootNode.getChildren().addAll(rubrik, enSpelare, tvaSpelare, treSpelare, fyraSpelare, femSpelare, quitVidare);
+  }
+
+  private void actionQuit(ActionEvent actionEvent) {
+        Avslut avslut = new Avslut(myStage);
+        avslut.visaAvslut(myStage);
   }
 
   public void visaAntalSpelareSida(Stage myStage){
