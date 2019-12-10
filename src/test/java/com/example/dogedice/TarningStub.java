@@ -12,5 +12,9 @@ public class TarningStub extends Tarning{
     setVarde(varde);
   }
 
+  @Override
+  public void kasta() {
+    setVarde(5);
+  }
 
 }

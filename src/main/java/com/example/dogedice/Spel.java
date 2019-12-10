@@ -51,7 +51,7 @@ public class Spel {
       nastaSpelare();
     }
   }
-
+  
   public void nastaSpelare(){
     aktivSpelare++;
     kast = 1;

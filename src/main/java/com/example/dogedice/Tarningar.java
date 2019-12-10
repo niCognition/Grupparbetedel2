@@ -16,6 +16,10 @@ public class Tarningar {
     }
   }
 
+  public Tarningar(List<Tarning> tarningar) {
+    this.tarningar = tarningar;
+  }
+
   public int[] getVarden() {
     int[] varden = new int[tarningar.size()];
     for (int i = 0; i < tarningar.size(); i++) {

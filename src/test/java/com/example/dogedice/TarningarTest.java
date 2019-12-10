@@ -2,6 +2,9 @@ package com.example.dogedice;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -11,7 +14,11 @@ class TarningarTest {
 
   @Test
   void kastaChangeValueOfFiveDice(){
-    Tarningar tarningar = new TarningarStub(6,6,6,6,6);
+    List<Tarning> testTarningar = new ArrayList<>();
+    for (int i = 1; i <= 5; i++) {
+      testTarningar.add(new TarningStub(6));
+    }
+    Tarningar tarningar = new Tarningar(testTarningar);
 
     tarningar.kasta();
     int[] expected = {5,5,5,5,5};
@@ -19,8 +26,26 @@ class TarningarTest {
 
 
     assertArrayEquals(expected, actual);
-
   }
+  @Test
+  void kastaTarningarMedTreSparadeVardenAndrarTvaTarningar() {
+
+    //Arrange
+    List<Tarning> testTarningar = new ArrayList<>();
+    for (int i = 1; i <= 5; i++) {
+      testTarningar.add(new TarningStub(6));
+    }
+    Tarningar tarningar = new Tarningar(testTarningar);
+    int [] positioner = {0,1,2};
+    //Act
+    tarningar.sparaKast(positioner);
+    int[] expected = {6,6,6,5,5};
+    int[] actual = tarningar.getVarden();
+
+    //Assert
+    assertArrayEquals(expected, actual);
+  }
+
   @Test
   void kontrolleraResultatReturns3forThreeOnesOnRow0(){
     Tarningar tarningar = new TarningarStub(1, 1, 1, 6, 6);
