@@ -66,5 +66,22 @@ class SpelTest {
 
   }
 
+  @Test
+  void kastaTarningarMedTreSparadeVardenAndrarTvaTarningar() {
 
+    //Arrange
+    int [] positioner = {0,1,2};
+    Tarningar tarningar = new TarningarStub();
+    Spel spel = new Spel(spelare, tarningar);
+    //Act
+
+    spel.kasta(positioner);
+    int[] expected = {6,6,6,5,5};
+    int[] actual = tarningar.getVarden();
+
+    //Assert
+    assertArrayEquals(expected, actual);
+
+
+  }
 }

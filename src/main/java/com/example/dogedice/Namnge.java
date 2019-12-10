@@ -154,7 +154,7 @@ public class Namnge {
           }
 
           if (meddelande.getText().equals("")){
-            Spel yatzyOmgang = new Spel(deltagare, new Tarningar());
+            Spel yatzyOmgang = new Spel(deltagare);
             Protokoll protokoll = new Protokoll(myStage, yatzyOmgang);
             protokoll.visaProtokoll(myStage);
           }
