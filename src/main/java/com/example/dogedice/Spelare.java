@@ -12,6 +12,12 @@ public class Spelare {
     this.resultat = new ResultatLista();
   }
 
+  public Spelare(String namn, int id, ResultatLista resultat){
+    this.namn = namn;
+    this.id = id;
+    this.resultat = resultat;
+  }
+
   public String getNamn(){return namn;}
 
   public int getId(){return id;}

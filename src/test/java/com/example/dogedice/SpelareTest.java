@@ -1,28 +1,37 @@
 package com.example.dogedice;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.*;
 
 
-//@ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class)
 class SpelareTest {
 
-  @Test
-  void testSparaResultatSeeIfsetResultatIsCalled() {
+  //Arrange
+  ResultatLista resultat = mock(ResultatLista.class);
+  Spelare spelare = new Spelare("Anton", 1, resultat);
 
-    //Arrange
-    //ResultatLista resultat = mock(ResultatLista.class);
-    //ResultatLista resultat = new ResultatLista();
-    Spelare spelare = new Spelare("Anton", 1);
+  @Test
+  void testsparaResultatCalledWhenReturnValueEqualsNull() {
+
     //Act
-    //when(resultat.getResultat(0)).thenReturn(null);
+    when(resultat.getResultat(0)).thenReturn(null);
     spelare.sparaResultat(0, 3);
-    //resultat.setResultat(0,3);
+
     //Assert
-    //verify(resultat).setResultat(0, 3);
-    assertEquals(3, spelare.getResultatLista().getResultat(0).getVarde());
+    verify(resultat).setResultat(0, 3);
+  }
+
+  @Test
+  void testsparaResultatNotCalledWhenReturnValueIsNotEqualNull(){
+
+    //Act
+    when(resultat.getResultat(0)).thenReturn(new Resultat(3));
+    spelare.sparaResultat(0, 3);
+
+    //Assert
+    verify(resultat, times(0)).setResultat(0,3);
   }
 }
